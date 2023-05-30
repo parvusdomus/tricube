@@ -1,0 +1,53 @@
+{
+    "Actor": {
+        "types":
+        [
+            "Actor",
+            "Challenge"
+        ],
+        "Actor": {
+            "resources":{
+                "resolve": {
+                    "current": 3,
+                    "max": 3
+                },
+                "karma": {
+                    "current": 3,
+                    "max": 3
+                }
+            },
+            "rank": 1,
+            "trait": "",
+            "concept": "",
+            "bio": ""
+        },
+        "Challenge": {
+            "resources":{
+                "effort": {
+                    "current": 3,
+                    "max": 3
+                }
+            },
+            "rank": 1,
+            "description": ""
+        }
+    },
+    "Item": {
+        "types":
+        [
+            "Perk",
+            "Quirk",
+            "Power"
+        ],
+        "Perk": {
+            "desc": ""
+        },
+        "Quirk": {
+            "desc": ""
+        },
+        "Power": {
+            "desc": ""
+        }
+    }
+
+}

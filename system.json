@@ -1,0 +1,45 @@
+{
+    "id": "tricube",
+    "title": "Tricube Tales",
+    "description": "Game System for Tricube Tales.",
+    "version": "0.0.1",
+    "authors": [
+      {
+        "name": "ParvusDomus",
+        "flags": {}
+      }
+    ],
+    "compatibility": {
+      "minimum": "11",
+      "verified": "11"
+    },
+    "esmodules": [
+      "tricube.js"
+    ],
+    "styles": [
+      "style/tricube.css"
+    ],
+    "languages": [
+      {
+        "lang": "es",
+        "name": "Spanish",
+        "path": "lang/es.json",
+        "flags": {}
+      },
+      {
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json",
+        "flags": {}
+      }
+    ],
+    "initiative": "1d6",
+    "gridDistance": 2,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "attributes.resolve",
+    "secondaryTokenAttribute": "attributes.karma",
+    "url": "https://github.com/parvusdomus/tricube",
+    "manifest": "https://raw.githubusercontent.com/parvusdomus/tricube/master/system.json",
+    "download": "https://github.com/parvusdomus/tricube/archive/refs/heads/master.zip",
+    "license": "LICENSE.txt"
+  }
