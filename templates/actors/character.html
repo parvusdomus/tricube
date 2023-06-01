@@ -1,6 +1,55 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <div class=cabecera>
-      <div class="PJ-nombre"><input name="name" type="text" value="{{actor.name}}" placeholder='Nombre' onClick="this.select();"/></div>
-      <div class="PJ-foto"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
-    </div>
-  </form>
+  <div class="charsheet">
+    <section class="left-section">
+      <div class="char-name"><h2><input name="name" type="text" value="{{actor.name}}" placeholder='Nombre' onClick="this.select();"/></h2></div>
+      <div class="char-pic"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
+      <h2><label>Resolve</label></h2>
+      <ul class="resources">
+        <li><img src="systems/tricube/style/icons/heart.svg"></li>
+        <li><img src="systems/tricube/style/icons/heart.svg"></li>
+        <li><img src="systems/tricube/style/icons/heart.svg"></li>
+        <li><img src="systems/tricube/style/icons/heart.svg"></li>
+        <li><img src="systems/tricube/style/icons/heart.svg"></li>
+        <li><img src="systems/tricube/style/icons/heart.svg"></li>
+      </ul>
+      <h2><label>Karma</label></h2>
+      <ul class="resources">
+        <li><img src="systems/tricube/style/icons/clover.svg"></li>
+        <li><img src="systems/tricube/style/icons/clover.svg"></li>
+        <li><img src="systems/tricube/style/icons/clover.svg"></li>
+        <li><img src="systems/tricube/style/icons/clover.svg"></li>
+        <li><img src="systems/tricube/style/icons/clover.svg"></li>
+        <li><img src="systems/tricube/style/icons/clover.svg"></li>
+      </ul>
+      <h2><label>Afflictions</label></h2>
+      <ul class="resources">
+        <li><img src="systems/tricube/style/icons/skull.svg"></li>
+        <li><img src="systems/tricube/style/icons/skull.svg"></li>
+        <li><img src="systems/tricube/style/icons/skull.svg"></li>
+      </ul>
+    </section>
+    <section class="right-section">
+        <nav class="sheet-tabs tabs" data-group="primary">
+          <a class="item" data-tab="general">General</a>
+          <a class="item" data-tab="notes">Notes</a>
+          <a class="item" data-tab="config">Config</a>
+        </nav>
+      {{!-- Item Sheet Body --}}
+      <section class="sheet-body">
+        {{!-- General Tab --}}
+        <div class="tab general" data-group="primary" data-tab="general">
+          {{> "/systems/tricube/templates/actors/parts/general.html"}}
+        </div>
+        {{!-- General Tab --}}
+        <div class="tab notes" data-group="primary" data-tab="notes">
+          {{editor actor.system.notes target="system.notes" button=true owner=owner editable=true}}
+        </div>
+        {{!-- General Tab --}}
+        <div class="tab config" data-group="primary" data-tab="config">
+          {{> "/systems/tricube/templates/actors/parts/config.html"}}
+        </div>
+      </section>
+      
+    </section>
+  </div>
+</form>

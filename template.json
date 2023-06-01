@@ -2,10 +2,10 @@
     "Actor": {
         "types":
         [
-            "Actor",
+            "Player",
             "Challenge"
         ],
-        "Actor": {
+        "Player": {
             "resources":{
                 "resolve": {
                     "current": 3,
@@ -19,7 +19,7 @@
             "rank": 1,
             "trait": "",
             "concept": "",
-            "bio": ""
+            "notes": ""
         },
         "Challenge": {
             "resources":{
@@ -37,7 +37,7 @@
         [
             "Perk",
             "Quirk",
-            "Power"
+            "Affliction"
         ],
         "Perk": {
             "desc": ""
@@ -45,7 +45,7 @@
         "Quirk": {
             "desc": ""
         },
-        "Power": {
+        "Affliction": {
             "desc": ""
         }
     }

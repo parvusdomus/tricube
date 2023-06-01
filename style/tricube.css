@@ -1,0 +1,98 @@
+.charsheet {
+    display: flex;
+    background-color: green;
+  }
+
+.left-section {
+    background-color: blue;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+}
+
+.left-section h2{
+    border-bottom: none;
+}
+
+.char-pic img{
+    border-radius: 16px;
+    width: 100%;
+    height: 30%;
+}
+
+.char-name input{
+    border-radius: 16px; 
+    background-color: yellow;
+}
+
+.resources {
+    list-style: none;
+    margin: -0.5em 0px;
+    padding: 0px 0px 0px 0.5em;
+}
+
+.resources li {
+    display: inline-block;
+    padding: 0px 1px;
+}
+
+.resources img {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: auto;
+}
+
+.right-section {
+    background-color: pink;
+    width: 60%;
+}
+
+.left-tab-content2 {
+    background-color: aqua;
+    height: 100%
+}
+
+.editor-content, .editor, .tox,.tox-edit-area, .notes, .tox-tinymce
+{
+    list-style: circle;
+    text-align: left;
+    padding: 5px;
+	background-color: #cac2b085;
+    color: #000000;
+    height: 100%;
+}
+
+.archetype {
+    list-style: none;
+    margin: -0.5em 0px;
+    padding: 0px 0px 0px 0.5em;
+}
+
+.archetype li {
+    display: inline-block;
+    padding: 5px 1px;
+    vertical-align: middle;
+}
+
+.archetype img {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: auto;
+}
+
+.archetype input {
+    width: 190%;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.item-list {
+    list-style: none;
+}
+
+.item-list h3 {
+    background-color: gray;
+    border-bottom: none;
+}

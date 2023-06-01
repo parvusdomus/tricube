@@ -1,0 +1,35 @@
+<ul class="archetype">
+    <li><img src="systems/tricube/style/icons/brain.svg"></li>
+    <li><input name="system.concept" type="text" value="{{actor.system.concept}}" placeholder='Concept' data-dtype="String"/></li>
+</ul>
+<ul class="item-list">
+    <h3><label>PERKS</label></h3>
+    {{#each Perks as |item id|}}
+        <li data-item-id="{{item._id}}">
+            <span>
+                <div><label>{{item.name}}</label></div>
+                <span class="item-controls">
+                    <a class="item-edit" data-id="{{item._id}}"><i class="fas fa-edit"></i></a>
+                    <a class="item-delete" data-id="{{item._id}}"><i class="fas fa-trash"></i></a>
+                </span>
+            </span>
+            
+        </li>
+    {{/each}}
+</ul>
+<ul class="item-list">
+    <h3><label>QUIRKS</label></h3>
+    {{#each Quirks as |item id|}}
+        <li data-item-id="{{item._id}}">
+            <div><label>{{item.name}}</label></div>
+        </li>
+    {{/each}}
+</ul>
+<ul class="item-list">
+    <h3><label>AFFLICTIONS</label></h3>
+    {{#each Afflictions as |item id|}}
+        <li data-item-id="{{item._id}}">
+            <div><label>{{item.name}}</label></div>
+        </li>
+    {{/each}}
+</ul>
