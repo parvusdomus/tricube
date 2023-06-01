@@ -89,10 +89,16 @@
 }
 
 .item-list {
-    list-style: none;
+    width: 100%;
+    border: none;
 }
 
-.item-list h3 {
+.item-header {
     background-color: gray;
     border-bottom: none;
+}
+
+.item-controls {
+    align-items: right;
+    text-align: right;
 }
