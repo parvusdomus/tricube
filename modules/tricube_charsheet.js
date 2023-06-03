@@ -283,8 +283,6 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      console.log ("DICE ROLL")
-      console.log (dataset)
       let tirada= ""
       let ndice=dataset.ndice
       let difficulty=dataset.ndiff
@@ -296,11 +294,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         difficulty=6
       }
       tirada=ndice+"d6cs>="+difficulty
-      console.log ("TIRADA")
-      console.log (tirada)
       let d6Roll = new Roll(String(tirada)).roll({async: false});
-      console.log ("TIRADA 2")
-      console.log (d6Roll)
       d6Roll.toMessage({
         rollMode: 'roll',
         speaker: {alias: this.actor}
