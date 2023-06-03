@@ -69,14 +69,14 @@
     height: 100%;
 }
 
-.editor-content, .editor, .tox,.tox-edit-area, .notes, .tox-tinymce
+.editor-content, .editor, .tox,.tox-edit-area, .tox-tinymce
 {
     list-style: circle;
     text-align: left;
     padding: 5px;
-	background-color: #cac2b085;
+	background-color: #00000010;
     color: #000000;
-    height: 100%;
+    height: 400px;
 }
 
 .archetype {
@@ -113,9 +113,17 @@
     border: none;
 }
 
-.item-header {
+.item-list th{
+    border: none;
     background-color: gray;
+    padding-left: 10px;
+    padding-right: 8px;
+    padding-top:0;
+    padding-bottom: 0;
+}
+.item-header {
     border-bottom: none;
+    text-align: left;
 }
 
 .item-controls {
@@ -123,32 +131,10 @@
     text-align: right;
 }
 
-.config {
-    border: none;
-    background-color: rgba(0, 0, 0, 0.0);
+.item-name input{
+    border-radius: 16px; 
 }
 
-.config h3 {
+.item-name h2{
     border-bottom: none;
-}
-
-.config tr {
-    display: inline-block;
-    padding: 5px 1px;
-    vertical-align: middle;
-    text-align: right;
-}
-
-.config tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.0);
-}
-
-.config tr:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.0);
-}
-
-.config input {
-    width: 30%;
-    border-radius: 16px;
-    text-align: center;
 }

@@ -25,17 +25,17 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
 		  const Afflictions = [];
       for (let i of sheetData.items){
         switch (i.type){
-				  case 'Perk':
+				  case 'perk':
 				  {
 					  Perks.push(i);
 					  break;
 				  }
-          case 'Quirk':
+          case 'quirk':
           {
             Quirks.push(i);
             break;
           }
-          case 'Affliction':
+          case 'affliction':
           {
             nAfflictions++;
             Afflictions.push(i);
@@ -52,6 +52,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     activateListeners(html)
 	  {
 		  super.activateListeners(html);
+      html.find('a.item-create').click(this._onItemCreate.bind(this));
       html.find('a.item-edit').click(this._onEditClick.bind(this));
 		  html.find('a.item-delete').click(this._onDeleteClick.bind(this));
       html.find('a.trait-change').click(this._onTraitChange.bind(this));
@@ -63,6 +64,29 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       html.find('a.karma-change').contextmenu(this._onKarmaDecrease.bind(this));
       html.find('a.afflictions-change').click(this._onAfflictionsIncrease.bind(this));
       html.find('a.afflictions-change').contextmenu(this._onAfflictionsDecrease.bind(this));
+    }
+
+    _onItemCreate(event) {
+      event.preventDefault();
+      const header = event.currentTarget;
+      // Get the type of item to create.
+      const type = header.dataset.type;
+      // Grab any data associated with this control.
+      const data = duplicate(header.dataset);
+      // Initialize a default name.
+      const name = `${type.capitalize()}`;
+      // Prepare the item object.
+      const itemData = {
+        name: name,
+        type: type,
+        data: data
+      };
+      // Remove the type from the dataset since it's in the itemData.type prop.
+      delete itemData.data["type"];
+    
+      // Finally, create the item!
+      //     return this.actor.createOwnedItem(itemData);
+      return Item.create(itemData, {parent: this.actor});
     }
 
     async _onEditClick(event, data)

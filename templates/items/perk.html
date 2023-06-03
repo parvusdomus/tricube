@@ -1,0 +1,9 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="item-name">
+        <h2><input name="name" type="text" value="{{item.name}}" placeholder='Perk' onClick="this.select();"/></h2>
+        <input name="system.tag" type="text" value="{{item.system.tag}}" placeholder='Tag' data-dtype="String"/>
+    </div>
+    <div class="desc">
+        {{editor item.system.desc target="system.desc" button=true owner=owner editable=true}}
+    </div>
+</form>

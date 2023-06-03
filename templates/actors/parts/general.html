@@ -5,14 +5,17 @@
     <a class="trait-change">{{#if (eq actor.system.trait "Crafty")}}<li><img src="systems/tricube/style/icons/brain.svg"></li>{{/if}}</a>
     <li><input name="system.concept" type="text" value="{{actor.system.concept}}" placeholder='Concept' data-dtype="String"/></li>
 </ul>
-<h3 class="item-header"><label>PERKS</label></h3>
 <table class="item-list">
+    <tr>
+        <th><h3 class="item-header"><label>PERKS</label></h3></th>
+        <th></th>
+        <th class="item-controls">
+            <a class="item-create" data-type="perk"><i class="fas fa-plus"></i></a>
+        </th>
+    </tr>
     {{#each Perks as |item id|}}
         <tr data-item-id="{{item._id}}">
             <td>
-
-            </td>
-            <td>
                 <label>{{item.name}}</label>
             </td>
             <td>
@@ -26,14 +29,17 @@
         </tr>
     {{/each}}
 </table>
-<h3 class="item-header"><label>QUIRKS</label></h3>
 <table class="item-list">
+    <tr>
+        <th><h3 class="item-header"><label>QUIRKS</label></h3></th>
+        <th></th>
+        <th class="item-controls">
+            <a class="item-create" data-type="quirk"><i class="fas fa-plus"></i></a>
+        </th>
+    </tr>
     {{#each Quirks as |item id|}}
         <tr data-item-id="{{item._id}}">
             <td>
-
-            </td>
-            <td>
                 <label>{{item.name}}</label>
             </td>
             <td>
@@ -47,13 +53,16 @@
         </tr>
     {{/each}}
 </table>
-<h3 class="item-header"><label>AFFLICTIONS</label></h3>
 <table class="item-list">
+    <tr>
+        <th><h3 class="item-header"><label>AFFLICTIONS</label></h3></th>
+        <th></th>
+        <th class="item-controls">
+            <a class="item-create" data-type="affliction"><i class="fas fa-plus"></i></a>
+        </th>
+    </tr>
     {{#each Afflictions as |item id|}}
         <tr data-item-id="{{item._id}}">
-            <td>
-
-            </td>
             <td>
                 <label>{{item.name}}</label>
             </td>

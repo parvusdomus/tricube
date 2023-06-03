@@ -75,8 +75,7 @@
     <section class="right-section">
         <nav class="sheet-tabs tabs" data-group="primary">
           <a class="item" data-tab="general">General</a>
-          <a class="item" data-tab="notes">Notes</a>
-          <a class="item" data-tab="config">Config</a>
+          <a class="item" data-tab="bio">Notes</a>
         </nav>
         {{!-- Item Sheet Body --}}
         <section class="sheet-body">
@@ -85,12 +84,8 @@
             {{> "/systems/tricube/templates/actors/parts/general.html"}}
           </div>
           {{!-- Notes Tab --}}
-          <div class="tab notes" data-group="primary" data-tab="notes">
+          <div class="tab bio" data-group="primary" data-tab="bio">
             {{editor actor.system.notes target="system.notes" button=true owner=owner editable=true}}
-          </div>
-          {{!-- Config Tab --}}
-          <div class="tab config" data-group="primary" data-tab="config">
-            {{> "/systems/tricube/templates/actors/parts/config.html"}}
           </div>
         </section>
     </section>

@@ -39,17 +39,26 @@
     "Item": {
         "types":
         [
-            "Perk",
-            "Quirk",
-            "Affliction"
+            "perk",
+            "quirk",
+            "affliction"
         ],
-        "Perk": {
+        "perk": {
+            "tag": "",
+            "bg_color": "",
+            "text_color": "",
             "desc": ""
         },
-        "Quirk": {
+        "quirk": {
+            "tag": "",
+            "bg_color": "",
+            "text_color": "",
             "desc": ""
         },
-        "Affliction": {
+        "affliction": {
+            "tag": "",
+            "bg_color": "",
+            "text_color": "",
             "desc": ""
         }
     }
