@@ -1,5 +1,8 @@
 <ul class="archetype">
-    <li><img src="systems/tricube/style/icons/brain.svg"></li>
+    <li><h1><a class="rank-change"><label>{{actor.system.rank}}</label></a></h1></li>
+    <a class="trait-change">{{#if (eq actor.system.trait "Agile")}}<li><img src="systems/tricube/style/icons/juggler.svg"></li>{{/if}}</a>
+    <a class="trait-change">{{#if (eq actor.system.trait "Brawny")}}<li><img src="systems/tricube/style/icons/muscle-up.svg"></li>{{/if}}</a>
+    <a class="trait-change">{{#if (eq actor.system.trait "Crafty")}}<li><img src="systems/tricube/style/icons/brain.svg"></li>{{/if}}</a>
     <li><input name="system.concept" type="text" value="{{actor.system.concept}}" placeholder='Concept' data-dtype="String"/></li>
 </ul>
 <h3 class="item-header"><label>PERKS</label></h3>

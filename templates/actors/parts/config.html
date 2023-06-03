@@ -1,1 +1,41 @@
-CONFIG
+<table class="config">
+    <tr>
+        <td>
+        <h3>
+            <label>Trait: </label>
+            <select name="system.trait" data-dtype="String">
+                {{#select actor.system.trait}}
+                <option value="Agile">Agile</option>
+                <option value="Brawny">Brawny</option>
+                <option value="Crafty">Crafty</option>
+                {{/select}}
+            </select>
+        </h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <h3>
+            <label>Rank: </label><input name="system.rank" type="text" value="{{actor.system.rank}}" data-dtype="Number"/>
+        </h3>
+        </td>
+    </tr>
+    <tr>
+        
+            <td><h3><label>Resolve: </label><input name="system.resources.resolve.current" type="text" value="{{actor.system.resources.resolve.current}}" data-dtype="Number"/></h3></td>
+            <td><h3><label>Max: </label><input name="system.resources.resolve.max" type="text" value="{{actor.system.resources.resolve.max}}" data-dtype="Number"/></h3></td>
+      
+    </tr>
+    <tr>
+      
+            <td><h3><label>Karma: </label><input name="system.resources.karma.current" type="text" value="{{actor.system.resources.karma.current}}" data-dtype="Number"/></h3></td>
+            <td><h3><label>Max: </label><input name="system.resources.karma.max" type="text" value="{{actor.system.resources.karma.max}}" data-dtype="Number"/></h3></td>
+      
+    </tr>
+    <tr>
+        
+            <td><h3><label>Afflictions: </label><input name="system.resources.afflictions.current" type="text" value="{{actor.system.resources.afflictions.current}}" data-dtype="Number"/></h3></td>
+            <td><h3><label>Max: </label><input name="system.resources.afflictions.max" type="text" value="{{actor.system.resources.afflictions.max}}" data-dtype="Number"/></h3></td>
+        
+    </tr>
+</table>

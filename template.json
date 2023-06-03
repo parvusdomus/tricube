@@ -14,10 +14,14 @@
                 "karma": {
                     "current": 3,
                     "max": 3
+                },
+                "afflictions": {
+                    "current": 0,
+                    "max": 3
                 }
             },
             "rank": 1,
-            "trait": "",
+            "trait": "Agile",
             "concept": "",
             "notes": ""
         },

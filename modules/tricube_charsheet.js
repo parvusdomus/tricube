@@ -11,22 +11,14 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     }
     getData() {
       const data = super.getData();
-      console.log ("DATA")
-      console.log (data)
-      //data.dtypes = ["String", "Number", "Boolean"];
       if (this.actor.type == 'Player') {
         this._prepareCharacterItems(data);
-        //this._calculaValores(data);
       }
-      console.log ("ACTOR")
-      console.log (this.actor)
-      console.log ("ACTOR DATA")
-      console.log (data)
       return data;
     }
 
     _prepareCharacterItems(sheetData){
-      console.log ("PREPARE ITEMS")
+      let nAfflictions = 0;
       const actorData = sheetData;
       const Perks = [];
 		  const Quirks = [];
@@ -35,19 +27,17 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         switch (i.type){
 				  case 'Perk':
 				  {
-            console.log ("PERK")
 					  Perks.push(i);
 					  break;
 				  }
           case 'Quirk':
           {
-            console.log ("QUIRK")
             Quirks.push(i);
             break;
           }
           case 'Affliction':
           {
-            console.log ("AFFLICTION")
+            nAfflictions++;
             Afflictions.push(i);
             break;
           }
@@ -56,6 +46,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       actorData.Perks = Perks;
       actorData.Quirks = Quirks;
       actorData.Afflictions = Afflictions;
+      this.actor.update ({ 'system.resources.afflictions.current': nAfflictions });
     }
 
     activateListeners(html)
@@ -63,6 +54,15 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
 		  super.activateListeners(html);
       html.find('a.item-edit').click(this._onEditClick.bind(this));
 		  html.find('a.item-delete').click(this._onDeleteClick.bind(this));
+      html.find('a.trait-change').click(this._onTraitChange.bind(this));
+      html.find('a.rank-change').click(this._onRankIncrease.bind(this));
+      html.find('a.rank-change').contextmenu(this._onRankDecrease.bind(this));
+      html.find('a.resolve-change').click(this._onResolveIncrease.bind(this));
+      html.find('a.resolve-change').contextmenu(this._onResolveDecrease.bind(this));
+      html.find('a.karma-change').click(this._onKarmaIncrease.bind(this));
+      html.find('a.karma-change').contextmenu(this._onKarmaDecrease.bind(this));
+      html.find('a.afflictions-change').click(this._onAfflictionsIncrease.bind(this));
+      html.find('a.afflictions-change').contextmenu(this._onAfflictionsDecrease.bind(this));
     }
 
     async _onEditClick(event, data)
@@ -88,7 +88,174 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       return;
     }
 
-
+    async _onTraitChange(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let trait = this.actor.system.trait
+      switch (trait){
+        case 'Agile':
+        {
+          trait="Brawny"
+          break;
+        }
+        case 'Brawny':
+        {
+          trait="Crafty"
+          break;
+        }
+        case 'Crafty':
+        {
+          trait="Agile"
+          break;
+        }
+      }
+      this.actor.update ({ 'system.trait': trait });
+      return;
+    }
     
+    async _onRankIncrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let rank=this.actor.system.rank
+      rank++
+      if (rank > 6){rank=6}
+      this.actor.update ({ 'system.rank': rank });
+      return;
+    }
+
+    async _onRankDecrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let rank=this.actor.system.rank
+      rank--
+      if (rank < 1){rank=1}
+      this.actor.update ({ 'system.rank': rank });
+      return;
+    }
+
+    async _onResolveIncrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let resolve=this.actor.system.resources.resolve.current
+      let max_resolve=this.actor.system.resources.resolve.max
+      if (event.shiftKey) {
+        max_resolve++
+        if (max_resolve > 6){max_resolve=6}
+        this.actor.update ({ 'system.resources.resolve.max': max_resolve });
+      }
+      else
+      {
+        resolve++
+        if (resolve > max_resolve){resolve=max_resolve}
+        this.actor.update ({ 'system.resources.resolve.current': resolve });
+      } 
+      return;
+    }
+
+    async _onResolveDecrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let resolve=this.actor.system.resources.resolve.current
+      let max_resolve=this.actor.system.resources.resolve.max
+      if (event.shiftKey) {
+        max_resolve--
+        if (max_resolve < 1){max_resolve=1}
+        this.actor.update ({ 'system.resources.resolve.max': max_resolve });
+        if (resolve > max_resolve){
+          resolve=max_resolve
+          this.actor.update ({ 'system.resources.resolve.current': resolve });
+        }
+      }
+      else{
+        resolve--
+        if (resolve < 0){resolve=0}
+        this.actor.update ({ 'system.resources.resolve.current': resolve });
+      }
+      
+      return;
+    }
+
+    async _onKarmaIncrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let karma=this.actor.system.resources.karma.current
+      let max_karma=this.actor.system.resources.karma.max
+      if (event.shiftKey) {
+        max_karma++
+        if (max_karma > 6){max_karma=6}
+        this.actor.update ({ 'system.resources.karma.max': max_karma });
+      }
+      else
+      {
+        karma++
+        if (karma > max_karma){karma=max_karma}
+        this.actor.update ({ 'system.resources.karma.current': karma });
+      }
+      
+      return;
+    }
+
+    async _onKarmaDecrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let karma=this.actor.system.resources.karma.current
+      let max_karma=this.actor.system.resources.karma.max
+      if (event.shiftKey){
+        max_karma--
+        if (max_karma < 1){max_karma=1}
+        this.actor.update ({ 'system.resources.karma.max': max_karma });
+        if (karma > max_karma){
+          karma=max_karma
+          this.actor.update ({ 'system.resources.karma.current': karma });
+        }
+      }
+      else
+      {
+        karma--
+        if (karma < 0){karma=0}
+        this.actor.update ({ 'system.resources.karma.current': karma });
+      }
+      
+      return;
+    }
+    
+    async _onAfflictionsIncrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let afflictions=this.actor.system.resources.afflictions.current
+      let max_afflictions=this.actor.system.resources.afflictions.max
+      if (event.shiftKey) {
+        max_afflictions++
+        if (max_afflictions > 6){max_afflictions=6}
+        this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
+      }
+      return;
+    }
+
+    async _onAfflictionsDecrease(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let afflictions=this.actor.system.resources.afflictions.current
+      let max_afflictions=this.actor.system.resources.afflictions.max
+      if (event.shiftKey){
+        max_afflictions--
+        if (max_afflictions < 1){max_afflictions=1}
+        this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
+        if (afflictions > max_afflictions){
+          afflictions=max_afflictions
+          this.actor.update ({ 'system.resources.afflictions.current': afflictions });
+        }
+      }
+      return;
+    }
   
   }

@@ -4,7 +4,7 @@
 
 .left-section {
     width: 40%;
-    height: 100%;
+    max-height: 100%;
     text-align: center;
 }
 
@@ -66,6 +66,7 @@
 
 .right-section {
     width: 60%;
+    height: 100%;
 }
 
 .editor-content, .editor, .tox,.tox-edit-area, .notes, .tox-tinymce
@@ -84,6 +85,10 @@
     padding: 0px 0px 0px 0.5em;
 }
 
+.archetype h1 {
+    border-bottom: none;
+}
+
 .archetype li {
     display: inline-block;
     padding: 5px 1px;
@@ -98,7 +103,7 @@
 }
 
 .archetype input {
-    width: 190%;
+    width: 180%;
     border-radius: 16px;
     text-align: center;
 }
@@ -116,4 +121,34 @@
 .item-controls {
     align-items: right;
     text-align: right;
+}
+
+.config {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.config h3 {
+    border-bottom: none;
+}
+
+.config tr {
+    display: inline-block;
+    padding: 5px 1px;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.config tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.config tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.config input {
+    width: 30%;
+    border-radius: 16px;
+    text-align: center;
 }
