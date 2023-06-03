@@ -64,18 +64,15 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       html.find('a.karma-change').contextmenu(this._onKarmaDecrease.bind(this));
       html.find('a.afflictions-change').click(this._onAfflictionsIncrease.bind(this));
       html.find('a.afflictions-change').contextmenu(this._onAfflictionsDecrease.bind(this));
+      html.find('a.dice-roll').click(this._onDiceRoll.bind(this));
     }
 
     _onItemCreate(event) {
       event.preventDefault();
       const header = event.currentTarget;
-      // Get the type of item to create.
       const type = header.dataset.type;
-      // Grab any data associated with this control.
       const data = duplicate(header.dataset);
-      // Initialize a default name.
       const name = `${type.capitalize()}`;
-      // Prepare the item object.
       const itemData = {
         name: name,
         type: type,
@@ -279,6 +276,35 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
           this.actor.update ({ 'system.resources.afflictions.current': afflictions });
         }
       }
+      return;
+    }
+
+    async _onDiceRoll(event,data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      console.log ("DICE ROLL")
+      console.log (dataset)
+      let tirada= ""
+      let ndice=dataset.ndice
+      let difficulty=dataset.ndiff
+      if (event.shiftKey){
+        difficulty=4
+        
+      }
+      if (event.ctrlKey){
+        difficulty=6
+      }
+      tirada=ndice+"d6cs>="+difficulty
+      console.log ("TIRADA")
+      console.log (tirada)
+      let d6Roll = new Roll(String(tirada)).roll({async: false});
+      console.log ("TIRADA 2")
+      console.log (d6Roll)
+      d6Roll.toMessage({
+        rollMode: 'roll',
+        speaker: {alias: this.actor}
+        });
       return;
     }
   
