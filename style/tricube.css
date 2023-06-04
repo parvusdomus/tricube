@@ -146,3 +146,11 @@
 .tag li{
     display: inline-block;
 }
+
+#pause .pause-image {
+    background: url("icons/pause.svg");
+    background-size: 128px;
+    width: 128px;
+    height: 128px;
+    padding-left: 128px;
+}

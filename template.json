@@ -51,19 +51,19 @@
         "perk": {
             "tag": "",
             "bg_color": "#ffffff",
-            "text_color": "",
+            "text_color": "#000000",
             "desc": ""
         },
         "quirk": {
             "tag": "",
             "bg_color": "#ffffff",
-            "text_color": "",
+            "text_color": "#000000",
             "desc": ""
         },
         "affliction": {
             "tag": "",
             "bg_color": "#ffffff",
-            "text_color": "",
+            "text_color": "#000000",
             "desc": ""
         }
     }

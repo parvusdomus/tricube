@@ -23,3 +23,7 @@ Hooks.once("init", function(){
   });
   preloadHandlebarsTemplates();
 });
+
+Hooks.on("renderPause", () => {
+  $("#pause img").attr("class", "fa-spin pause-image");
+});
