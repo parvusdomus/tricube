@@ -1,4 +1,5 @@
 import TRICUBE_CHAR_SHEET from "./modules/tricube_charsheet.js";
+import TRICUBE_CHALLENGE_SHEET from "./modules/tricube_challengesheet.js";
 import TRICUBE_ITEM_SHEET from "./modules/tricube_itemsheet.js";
 import { preloadHandlebarsTemplates } from "./modules/preloadTemplates.js";
 
@@ -8,6 +9,10 @@ Hooks.once("init", function(){
   Actors.registerSheet("tricube", TRICUBE_CHAR_SHEET, {
     makeDefault: true,
     types: ['Player']
+  });
+  Actors.registerSheet("tricube", TRICUBE_CHALLENGE_SHEET, {
+    makeDefault: true,
+    types: ['Challenge']
   });
   console.log("test | INITIALIZING TRICUBE ITEM SHEETS...");
   Items.unregisterSheet("core", ItemSheet);

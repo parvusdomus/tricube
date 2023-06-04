@@ -46,7 +46,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       actorData.Perks = Perks;
       actorData.Quirks = Quirks;
       actorData.Afflictions = Afflictions;
-      this.actor.update ({ 'system.resources.afflictions.current': nAfflictions });
+      this.actor.update ({ 'system.resources.afflictions.value': nAfflictions });
     }
 
     activateListeners(html)
@@ -69,7 +69,11 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
 
     _onItemCreate(event) {
       event.preventDefault();
+      console.log ("EVENT")
+      console.log (event)
       const header = event.currentTarget;
+      console.log ("HEADER")
+      console.log (header)
       const type = header.dataset.type;
       const data = duplicate(header.dataset);
       const name = `${type.capitalize()}`;
@@ -161,7 +165,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let resolve=this.actor.system.resources.resolve.current
+      let resolve=this.actor.system.resources.resolve.value
       let max_resolve=this.actor.system.resources.resolve.max
       if (event.shiftKey) {
         max_resolve++
@@ -172,7 +176,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       {
         resolve++
         if (resolve > max_resolve){resolve=max_resolve}
-        this.actor.update ({ 'system.resources.resolve.current': resolve });
+        this.actor.update ({ 'system.resources.resolve.value': resolve });
       } 
       return;
     }
@@ -181,7 +185,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let resolve=this.actor.system.resources.resolve.current
+      let resolve=this.actor.system.resources.resolve.value
       let max_resolve=this.actor.system.resources.resolve.max
       if (event.shiftKey) {
         max_resolve--
@@ -189,13 +193,13 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         this.actor.update ({ 'system.resources.resolve.max': max_resolve });
         if (resolve > max_resolve){
           resolve=max_resolve
-          this.actor.update ({ 'system.resources.resolve.current': resolve });
+          this.actor.update ({ 'system.resources.resolve.value': resolve });
         }
       }
       else{
         resolve--
         if (resolve < 0){resolve=0}
-        this.actor.update ({ 'system.resources.resolve.current': resolve });
+        this.actor.update ({ 'system.resources.resolve.value': resolve });
       }
       
       return;
@@ -205,7 +209,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let karma=this.actor.system.resources.karma.current
+      let karma=this.actor.system.resources.karma.value
       let max_karma=this.actor.system.resources.karma.max
       if (event.shiftKey) {
         max_karma++
@@ -216,7 +220,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       {
         karma++
         if (karma > max_karma){karma=max_karma}
-        this.actor.update ({ 'system.resources.karma.current': karma });
+        this.actor.update ({ 'system.resources.karma.value': karma });
       }
       
       return;
@@ -226,7 +230,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let karma=this.actor.system.resources.karma.current
+      let karma=this.actor.system.resources.karma.value
       let max_karma=this.actor.system.resources.karma.max
       if (event.shiftKey){
         max_karma--
@@ -234,14 +238,14 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         this.actor.update ({ 'system.resources.karma.max': max_karma });
         if (karma > max_karma){
           karma=max_karma
-          this.actor.update ({ 'system.resources.karma.current': karma });
+          this.actor.update ({ 'system.resources.karma.value': karma });
         }
       }
       else
       {
         karma--
         if (karma < 0){karma=0}
-        this.actor.update ({ 'system.resources.karma.current': karma });
+        this.actor.update ({ 'system.resources.karma.value': karma });
       }
       
       return;
@@ -251,7 +255,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let afflictions=this.actor.system.resources.afflictions.current
+      let afflictions=this.actor.system.resources.afflictions.value
       let max_afflictions=this.actor.system.resources.afflictions.max
       if (event.shiftKey) {
         max_afflictions++
@@ -265,7 +269,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let afflictions=this.actor.system.resources.afflictions.current
+      let afflictions=this.actor.system.resources.afflictions.value
       let max_afflictions=this.actor.system.resources.afflictions.max
       if (event.shiftKey){
         max_afflictions--
@@ -273,7 +277,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
         if (afflictions > max_afflictions){
           afflictions=max_afflictions
-          this.actor.update ({ 'system.resources.afflictions.current': afflictions });
+          this.actor.update ({ 'system.resources.afflictions.value': afflictions });
         }
       }
       return;
