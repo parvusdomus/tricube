@@ -2,10 +2,20 @@
 Tricube Tales system for FoundryVTT
 
 Tricube Tales is a RPG Game by Zadmar Games:
+
 https://zadmar.itch.io/
+
 https://savage-stuff.blogspot.com/
+
 https://www.drivethrurpg.com/browse/pub/12255/Zadmar-Games
 
+The Tricube Tales icon is from Zadmar Games. All other icons are from:
+
+https://game-icons.net
+
+and from the free collection of font awesome:
+
+https://fontawesome.com
 
 Intructions:
 
