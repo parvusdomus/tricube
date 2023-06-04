@@ -16,5 +16,9 @@
     "TRI.ui.concept": "Concept",
     "TRI.ui.tab.general": "General",
     "TRI.ui.tab.notes": "Notes",
-    "TRI.ui.tag": "Tags"
+    "TRI.ui.tag": "Tags",
+    "TRI.ui.deleteTitle": "Delete item?",
+    "TRI.ui.deleteText": "Please confirm if you want to delete this item.",
+    "TRI.ui.yes": "Yes",
+    "TRI.ui.no": "No"
 }

@@ -70,11 +70,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
 
     _onItemCreate(event) {
       event.preventDefault();
-      console.log ("EVENT")
-      console.log (event)
       const header = event.currentTarget;
-      console.log ("HEADER")
-      console.log (header)
       const type = header.dataset.type;
       const data = duplicate(header.dataset);
       const name = `${type.capitalize()}`;
@@ -117,10 +113,10 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
       Dialog.confirm({
-        title: "Delete item?",
-        content: "Please confirm if you want to delete this item.",
-        yes: () => this.actor.deleteEmbeddedDocuments("Item", [dataset.id]),
-        no: () => {},
+        title: game.i18n.localize("TRI.ui.deleteTitle"),
+			  content: game.i18n.localize("TRI.ui.deleteText"),
+        Yes: () => this.actor.deleteEmbeddedDocuments("Item", [dataset.id]),
+        No: () => {},
         defaultYes: false
          });
       return;

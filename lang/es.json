@@ -16,5 +16,9 @@
     "TRI.ui.concept": "Concepto",
     "TRI.ui.tab.general": "General",
     "TRI.ui.tab.notes": "Notas",
-    "TRI.ui.tag": "Etiquetas"
+    "TRI.ui.tag": "Etiquetas",
+    "TRI.ui.deleteTitle": "¿Borrar objeto?",
+    "TRI.ui.deleteText": "Por favor confirma si quieres borrar este objeto.",
+    "TRI.ui.yes": "Si",
+    "TRI.ui.no": "No"
 }
