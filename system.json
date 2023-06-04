@@ -47,7 +47,7 @@
     "primaryTokenAttribute": "resources.resolve",
     "secondaryTokenAttribute": "resources.karma",
     "url": "https://github.com/parvusdomus/tricube",
-    "manifest": "https://github.com/parvusdomus/tricube/releases/download/latest/system.json",
-    "download": "https://github.com/parvusdomus/tricube/releases/download/latest/tricube.zip",
+    "manifest": "https://github.com/parvusdomus/tricube/releases/latest/download/system.json",
+    "download": "https://github.com/parvusdomus/tricube/releases/latest/download/tricube.zip",
     "license": "LICENSE.txt"
   }
