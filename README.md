@@ -40,6 +40,11 @@ On Afflictions (skull);
     - Shift + Left click increases Max value (max 6)
     - Shift + Right click decreases Max value (min 1)
 
+On the Dice Icons:
+    - Left click to roll the number of dices represented by the icon VS a difficulty of 5
+    - Shift + Left click to roll the number of dices represented by the icon VS a difficulty of 4
+    - Ctrl + Left click to roll the number of dices represented by the icon VS a difficulty of 6
+
 To add a Perk, Quirk or Affliction to the sheet, you'll have to create it in the Items tab and drop it in your character sheet. 
 When you add or remove an affliction the affliction marker (skull icon) will automatically update.
 
