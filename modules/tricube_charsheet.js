@@ -54,6 +54,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
 		  super.activateListeners(html);
       html.find('a.item-create').click(this._onItemCreate.bind(this));
       html.find('a.item-edit').click(this._onEditClick.bind(this));
+      html.find('a.item-show').click(this._onShowClick.bind(this));
 		  html.find('a.item-delete').click(this._onDeleteClick.bind(this));
       html.find('a.trait-change').click(this._onTraitChange.bind(this));
       html.find('a.rank-change').click(this._onRankIncrease.bind(this));
@@ -96,6 +97,18 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
 		  const dataset = event.currentTarget.dataset;
 		  const item = this.actor.items.get(dataset.id);
 		  item.sheet.render(true);
+		  return;
+    }
+
+    async _onShowClick(event, data)
+	  {
+      event.preventDefault();
+		  const dataset = event.currentTarget.dataset;
+		  const item = this.actor.items.get(dataset.id);
+      const chatData = {
+        content: "<p>"+item.name+" ("+item.system.tag+")</p><hr><p>"+item.system.desc+"</p>",
+      };
+      ChatMessage.create(chatData);
 		  return;
     }
     

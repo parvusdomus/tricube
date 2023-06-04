@@ -142,3 +142,7 @@
 .dice-roll .dice-tooltip {
     display: block !important;
 }
+
+.tag li{
+    display: inline-block;
+}
