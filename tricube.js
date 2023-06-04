@@ -22,7 +22,22 @@ Hooks.once("init", function(){
     types: ['perk','quirk','affliction']
   });
   preloadHandlebarsTemplates();
-  
+
+  console.log("test | INITIALIZING TRICUBE SETTINGS...");
+
+  game.settings.register('tricube', 'bgImage', {
+    name: 'Background Image',
+    hint: 'Select a Background Image',
+    type: String,
+    default: 'systems/tricube/style/white.webp',
+    scope: 'world',
+    config: true,
+    filePicker: 'image',
+  });
+
+  const root = document.querySelector(':root');
+  let bgImagePath="url(../../../"+game.settings.get ("tricube", "bgImage")+")"
+  root.style.setProperty('--bg-image',bgImagePath)
 
 });
 

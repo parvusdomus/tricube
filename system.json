@@ -22,8 +22,8 @@
     "media": [
       {
         "type": "setup",
-        "url": "systems/tricube/style/TT_Logo.png",
-        "thumbnail": "systems/tricube/style/TT_Logo.png"
+        "url": "systems/tricube/style/TT_Logo2.png",
+        "thumbnail": "systems/tricube/style/TT_Logo2.png"
       }
     ],
   
@@ -48,6 +48,6 @@
     "secondaryTokenAttribute": "resources.karma",
     "url": "https://github.com/parvusdomus/tricube",
     "manifest": "https://raw.githubusercontent.com/parvusdomus/tricube/master/system.json",
-    "download": "https://github.com/parvusdomus/tricube/archive/refs/heads/master.zip",
+    "download": "https://github.com/parvusdomus/tricube/archive/refs/heads/tricube.zip",
     "license": "LICENSE.txt"
   }

@@ -20,6 +20,7 @@
 
 .char-name input{
     border-radius: 16px; 
+    background-color: beige;
 }
 
 .resources {
@@ -106,6 +107,7 @@
     width: 180%;
     border-radius: 16px;
     text-align: center;
+    background-color: beige;
 }
 
 .item-list {
@@ -115,7 +117,8 @@
 
 .item-list th{
     border: none;
-    background-color: gray;
+    background-color: black;
+    color: white;
     padding-left: 10px;
     padding-right: 8px;
     padding-top:0;
@@ -153,4 +156,12 @@
     width: 128px;
     height: 128px;
     padding-left: 128px;
+}
+
+:root { --bg-image: url("../../../systems/tricube/style/white.svg"); }
+
+.window-app .window-content {
+    background-color: white;
+    background: var(--bg-image) no-repeat;
+    background-size: cover;
 }
