@@ -19,6 +19,14 @@
     "styles": [
       "style/tricube.css"
     ],
+    "media": [
+      {
+        "type": "setup",
+        "url": "systems/tricube/style/TT_Logo.png",
+        "thumbnail": "systems/tricube/style/TT_Logo.png"
+      }
+    ],
+  
     "languages": [
       {
         "lang": "es",
