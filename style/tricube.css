@@ -138,3 +138,7 @@
 .item-name h2{
     border-bottom: none;
 }
+
+.dice-roll .dice-tooltip {
+    display: block !important;
+}

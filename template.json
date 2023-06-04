@@ -8,15 +8,18 @@
         "Player": {
             "resources":{
                 "resolve": {
-                    "current": 3,
+                    "value": 3,
+                    "min": 0,
                     "max": 3
                 },
                 "karma": {
-                    "current": 3,
+                    "value": 3,
+                    "min": 0,
                     "max": 3
                 },
                 "afflictions": {
-                    "current": 0,
+                    "value": 0,
+                    "min": 0,
                     "max": 3
                 }
             },

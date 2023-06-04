@@ -296,8 +296,9 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       tirada=ndice+"d6cs>="+difficulty
       let d6Roll = new Roll(String(tirada)).roll({async: false});
       d6Roll.toMessage({
+        flavor: ndice+"D6 VS "+difficulty,
         rollMode: 'roll',
-        speaker: {alias: this.actor}
+        speaker: ChatMessage.getSpeaker({ alias: this.actor.name })
         });
       return;
     }
