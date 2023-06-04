@@ -22,6 +22,8 @@ Hooks.once("init", function(){
     types: ['perk','quirk','affliction']
   });
   preloadHandlebarsTemplates();
+  
+
 });
 
 Hooks.on("renderPause", () => {

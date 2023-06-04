@@ -1,9 +1,9 @@
 {
-    "ACTOR.TypePlayer": "Jugador",
-    "ACTOR.TypeChallenge": "Reto",
-    "ITEM.TypePerk": "Ventaja",
-    "ITEM.TypeQuirk": "Peculiaridad",
-    "ITEM.TypeAffliction": "Afflicción",
+    "TYPES.Actor.Player": "Jugador",
+    "TYPES.Actor.Challenge": "Reto",
+    "TYPES.Item.perk": "Ventaja",
+    "TYPES.Item.quirk": "Peculiaridad",
+    "TYPES.Item.affliction": "Afflicción",
 
     "TRI.resources.resolve": "Determinación",
     "TRI.resources.karma": "Karma",
@@ -18,7 +18,5 @@
     "TRI.ui.tab.notes": "Notas",
     "TRI.ui.tag": "Etiquetas",
     "TRI.ui.deleteTitle": "¿Borrar objeto?",
-    "TRI.ui.deleteText": "Por favor confirma si quieres borrar este objeto.",
-    "TRI.ui.yes": "Si",
-    "TRI.ui.no": "No"
+    "TRI.ui.deleteText": "Por favor confirma si quieres borrar este objeto."
 }

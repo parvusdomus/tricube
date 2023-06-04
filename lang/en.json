@@ -1,9 +1,9 @@
 {
-    "ACTOR.TypePlayer": "Player",
-    "ACTOR.TypeChallenge": "Challenge",
-    "ITEM.TypePerk": "Perk",
-    "ITEM.TypeQuirk": "Quirk",
-    "ITEM.TypeAffliction": "Affliction",
+    "TYPES.Actor.Player": "Player",
+    "TYPES.Actor.Challenge": "Challenge",
+    "TYPES.Item.perk": "Perk",
+    "TYPES.Item.quirk": "Quirk",
+    "TYPES.Item.affliction": "Affliction",
 
     "TRI.resources.resolve": "Resolve",
     "TRI.resources.karma": "Karma",
@@ -18,7 +18,5 @@
     "TRI.ui.tab.notes": "Notes",
     "TRI.ui.tag": "Tags",
     "TRI.ui.deleteTitle": "Delete item?",
-    "TRI.ui.deleteText": "Please confirm if you want to delete this item.",
-    "TRI.ui.yes": "Yes",
-    "TRI.ui.no": "No"
+    "TRI.ui.deleteText": "Please confirm if you want to delete this item."
 }
