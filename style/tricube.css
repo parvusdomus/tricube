@@ -160,7 +160,7 @@
 
 :root { --bg-image: url("../../../systems/tricube/style/white.svg"); }
 
-.window-app .window-content {
+.window-app .window-content .tricube{
     background-color: white;
     background: var(--bg-image) no-repeat;
     background-size: cover;
