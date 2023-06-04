@@ -1,0 +1,20 @@
+{
+    "ACTOR.TypePlayer": "Jugador",
+    "ACTOR.TypeChallenge": "Reto",
+    "ITEM.TypePerk": "Ventaja",
+    "ITEM.TypeQuirk": "Peculiaridad",
+    "ITEM.TypeAffliction": "Afflicción",
+
+    "TRI.resources.resolve": "Determinación",
+    "TRI.resources.karma": "Karma",
+    "TRI.resources.afflictions": "Afflicciones",
+    "TRI.resources.effort": "Esfuerzo",
+
+    "TRI.ui.perks": "Ventajas",
+    "TRI.ui.quirks": "Peculiaridades",
+    "TRI.ui.afflictions": "Afflicciones",
+    "TRI.ui.concept": "Concepto",
+    "TRI.ui.tab.general": "General",
+    "TRI.ui.tab.notes": "Notas",
+    "TRI.ui.tag": "Etiquetas"
+}

@@ -3,7 +3,7 @@
     <section class="left-section">
       <div class="char-name"><h2><input name="name" type="text" value="{{actor.name}}" placeholder='Nombre' onClick="this.select();"/></h2></div>
       <div class="char-pic"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
-      <h2><label>Effort</label></h2>
+      <h2><label>{{localize "TRI.resources.effort"}}</label></h2>
       <ul class="resources">
         {{#if (gt actor.system.resources.effort.max 0)}}
           {{#if (gt actor.system.resources.effort.current 0)}}<li><a class="effort-change"><img src="systems/tricube/style/icons/heart.svg"></a></li>{{else}}<li><a class="effort-change"><img src="systems/tricube/style/icons/void-heart.svg"></a></li>{{/if}}
@@ -148,7 +148,7 @@
     <section class="right-section">
       <ul class="archetype">
         <li><h1><a class="rank-change"><label>{{actor.system.rank}}</label></a></h1></li>
-        <li><input name="system.traits" type="text" value="{{actor.system.traits}}" placeholder='Traits' data-dtype="String"/></li>
+        <li><input name="system.traits" type="text" value="{{actor.system.traits}}" placeholder='{{localize "TRI.ui.tag"}}' data-dtype="String"/></li>
       </ul>
       <div>
         {{editor actor.system.notes target="system.notes" button=true owner=owner editable=true}}

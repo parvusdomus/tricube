@@ -1,0 +1,20 @@
+{
+    "ACTOR.TypePlayer": "Player",
+    "ACTOR.TypeChallenge": "Challenge",
+    "ITEM.TypePerk": "Perk",
+    "ITEM.TypeQuirk": "Quirk",
+    "ITEM.TypeAffliction": "Affliction",
+
+    "TRI.resources.resolve": "Resolve",
+    "TRI.resources.karma": "Karma",
+    "TRI.resources.afflictions": "Afflictions",
+    "TRI.resources.effort": "Effort",
+
+    "TRI.ui.perks": "Perks",
+    "TRI.ui.quirks": "Quirks",
+    "TRI.ui.afflictions": "Afflictions",
+    "TRI.ui.concept": "Concept",
+    "TRI.ui.tab.general": "General",
+    "TRI.ui.tab.notes": "Notes",
+    "TRI.ui.tag": "Tags"
+}

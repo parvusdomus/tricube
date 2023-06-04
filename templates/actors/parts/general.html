@@ -3,11 +3,11 @@
     <a class="trait-change">{{#if (eq actor.system.trait "Agile")}}<li><img src="systems/tricube/style/icons/juggler.svg"></li>{{/if}}</a>
     <a class="trait-change">{{#if (eq actor.system.trait "Brawny")}}<li><img src="systems/tricube/style/icons/muscle-up.svg"></li>{{/if}}</a>
     <a class="trait-change">{{#if (eq actor.system.trait "Crafty")}}<li><img src="systems/tricube/style/icons/brain.svg"></li>{{/if}}</a>
-    <li><input name="system.concept" type="text" value="{{actor.system.concept}}" placeholder='Concept' data-dtype="String"/></li>
+    <li><input name="system.concept" type="text" value="{{actor.system.concept}}" placeholder='{{localize "TRI.ui.concept"}}' data-dtype="String"/></li>
 </ul>
 <table class="item-list">
     <tr>
-        <th><h3 class="item-header"><label>PERKS</label></h3></th>
+        <th><h3 class="item-header"><label>{{localize "TRI.ui.perks"}}</label></h3></th>
         <th></th>
         <th class="item-controls">
             <a class="item-create" data-type="perk"><i class="fas fa-plus"></i></a>
@@ -31,7 +31,7 @@
 </table>
 <table class="item-list">
     <tr>
-        <th><h3 class="item-header"><label>QUIRKS</label></h3></th>
+        <th><h3 class="item-header"><label>{{localize "TRI.ui.quirks"}}</label></h3></th>
         <th></th>
         <th class="item-controls">
             <a class="item-create" data-type="quirk"><i class="fas fa-plus"></i></a>
@@ -55,7 +55,7 @@
 </table>
 <table class="item-list">
     <tr>
-        <th><h3 class="item-header"><label>AFFLICTIONS</label></h3></th>
+        <th><h3 class="item-header"><label>{{localize "TRI.ui.afflictions"}}</label></h3></th>
         <th></th>
         <th class="item-controls">
             <a class="item-create" data-type="affliction"><i class="fas fa-plus"></i></a>
