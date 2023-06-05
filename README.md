@@ -1,6 +1,10 @@
 # tricube
 Tricube Tales system for FoundryVTT
 
+LEGALESE
+Tricube Tales version 4 © 2019 Richard Woolcock
+All text (not art) released under the CC BY 3.0 license
+
 Tricube Tales is a RPG Game by Zadmar Games:
 
 https://zadmar.itch.io/
