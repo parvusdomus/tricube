@@ -4,7 +4,7 @@ export default class TRICUBE_ITEM_SHEET extends ItemSheet{
           classes: ["tricube", "sheet", "item"],
           template: "systems/tricube/templates/actors/character.html",
           width: 400,
-          height: 520
+          height: 530
         });
   
     }

@@ -173,4 +173,5 @@
     background-color: white;
     background: var(--bg-image) no-repeat;
     background-size: cover;
+    padding: 5px;
 }
