@@ -4,7 +4,7 @@
    style="height: 512px; width: 512px;"
    version="1.1"
    id="svg6"
-   sodipodi:docname="nested-hearts.svg"
+   sodipodi:docname="void-heart.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,8 +22,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="1.6992188"
-     inkscape:cx="256"
-     inkscape:cy="256"
+     inkscape:cx="256.5885"
+     inkscape:cy="255.99999"
      inkscape:window-width="1920"
      inkscape:window-height="1052"
      inkscape:window-x="0"
@@ -35,5 +35,6 @@
      fill="#d0021b"
      fill-opacity="1"
      id="path2"
-     sodipodi:nodetypes="ccccccccccccccsccccccccccccss" />
+     sodipodi:nodetypes="ccccccccccccccsccccccccccccss"
+     style="stroke:#000000;stroke-opacity:1;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none" />
 </svg>
