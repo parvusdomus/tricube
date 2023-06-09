@@ -101,8 +101,13 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       event.preventDefault();
 		  const dataset = event.currentTarget.dataset;
 		  const item = this.actor.items.get(dataset.id);
-      const chatData = {
-        content: "<p>"+item.name+" ("+item.system.tag+")</p><hr><p>"+item.system.desc+"</p>",
+      let chatData = {}
+      let msg_content = "<p><span>"+item.name+" </span>"
+      if (item.system.tag != ""){msg_content+="<span style=\"background-color:"+item.system.bg_color+"; color:"+item.system.text_color+"\">&nbsp;"+item.system.tag+"&nbsp;</span>"}
+      msg_content+="</p>"
+      if (item.system.desc != ""){msg_content+="<hr>"+item.system.desc}
+      chatData = {
+        content: msg_content,
       };
       ChatMessage.create(chatData);
 		  return;
@@ -112,11 +117,12 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
+      console.log ("dataset")
       Dialog.confirm({
         title: game.i18n.localize("TRI.ui.deleteTitle"),
 			  content: game.i18n.localize("TRI.ui.deleteText"),
-        Yes: () => this.actor.deleteEmbeddedDocuments("Item", [dataset.id]),
-        No: () => {},
+        yes: () => this.actor.deleteEmbeddedDocuments("Item", [dataset.id]),
+        no: () => {},
         defaultYes: false
          });
       return;

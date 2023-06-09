@@ -19,7 +19,7 @@
                 <label>{{item.name}}</label>
             </td>
             <td>
-                <label style="background-color:{{{item.system.bg_color}}}; color:{{{item.system.text_color}}}">{{item.system.tag}}</label>
+                {{#unless (eq item.system.tag "")}}<label style="background-color:{{{item.system.bg_color}}}; color:{{{item.system.text_color}}}">&nbsp;{{item.system.tag}}&nbsp;</label>{{/unless}}
             </td>
             <td class="item-controls">
                 <a class="item-show" data-id="{{item._id}}"><i class="fas fa-eye"></i></a>
@@ -43,7 +43,7 @@
                 <label>{{item.name}}</label>
             </td>
             <td>
-                <label style="background-color:{{{item.system.bg_color}}}; color:{{{item.system.text_color}}}">{{item.system.tag}}</label>
+                {{#unless (eq item.system.tag "")}}<label style="background-color:{{{item.system.bg_color}}}; color:{{{item.system.text_color}}}">&nbsp;{{item.system.tag}}&nbsp;</label>{{/unless}}
             </td>
             <td class="item-controls">
                 <a class="item-show" data-id="{{item._id}}"><i class="fas fa-eye"></i></a>
@@ -67,7 +67,7 @@
                 <label>{{item.name}}</label>
             </td>
             <td>
-                <label style="background-color:{{{item.system.bg_color}}}; color:{{{item.system.text_color}}}">{{item.system.tag}}</label>
+                {{#unless (eq item.system.tag "")}}<label style="background-color:{{{item.system.bg_color}}}; color:{{{item.system.text_color}}}">&nbsp;{{item.system.tag}}&nbsp;</label>{{/unless}}
             </td>
             <td class="item-controls">
                 <a class="item-show" data-id="{{item._id}}"><i class="fas fa-eye"></i></a>
