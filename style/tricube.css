@@ -108,11 +108,38 @@
 }
 
 .archetype input {
-    width: 180%;
+    width: 155%;
     border-radius: 16px;
     text-align: center;
     background-color: beige;
 }
+
+.npctag {
+    list-style: none;
+    margin: -0.5em 0px;
+    padding: 0px 0px 0px 0.5em;
+}
+
+.npctag h1 {
+    border-bottom: none;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.npctag li {
+    display: inline-block;
+    padding: 5px 1px;
+    vertical-align: middle;
+}
+
+.npctag input {
+    width: 200%;
+    border-radius: 16px;
+    text-align: center;
+    background-color: beige;
+}
+
+
 
 .item-list {
     width: 100%;

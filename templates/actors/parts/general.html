@@ -3,6 +3,9 @@
     <a class="trait-change">{{#if (eq actor.system.trait "Agile")}}<li><img src="systems/tricube/style/icons/juggler.svg" title="AGILE&#013;Click to cycle"></li>{{/if}}</a>
     <a class="trait-change">{{#if (eq actor.system.trait "Brawny")}}<li><img src="systems/tricube/style/icons/muscle-up.svg" title="BRAWNY&#013;Click to Cycle"></li>{{/if}}</a>
     <a class="trait-change">{{#if (eq actor.system.trait "Crafty")}}<li><img src="systems/tricube/style/icons/brain.svg" title="CRAFTY&#013;Click to cycle"></li>{{/if}}</a>
+    <a class="combat-change">{{#if (eq actor.system.combat "Ranged")}}<li><img src="systems/tricube/style/icons/high-shot.svg" title="RANGED&#013;Click to cycle"></li>{{/if}}</a>
+    <a class="combat-change">{{#if (eq actor.system.combat "Melee")}}<li><img src="systems/tricube/style/icons/crossed-swords.svg" title="MELEE&#013;Click to Cycle"></li>{{/if}}</a>
+    <a class="combat-change">{{#if (eq actor.system.combat "Mental")}}<li><img src="systems/tricube/style/icons/gaze.svg" title="MENTAL&#013;Click to cycle"></li>{{/if}}</a>
     <li><input name="system.concept" type="text" value="{{actor.system.concept}}" placeholder='{{localize "TRI.ui.concept"}}' data-dtype="String"/></li>
 </ul>
 <table class="item-list">

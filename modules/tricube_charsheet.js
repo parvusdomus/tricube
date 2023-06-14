@@ -57,6 +57,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       html.find('a.item-show').click(this._onShowClick.bind(this));
 		  html.find('a.item-delete').click(this._onDeleteClick.bind(this));
       html.find('a.trait-change').click(this._onTraitChange.bind(this));
+      html.find('a.combat-change').click(this._onCombatChange.bind(this));
       html.find('a.rank-change').click(this._onRankIncrease.bind(this));
       html.find('a.rank-change').contextmenu(this._onRankDecrease.bind(this));
       html.find('a.resolve-change').click(this._onResolveIncrease.bind(this));
@@ -151,6 +152,32 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         }
       }
       this.actor.update ({ 'system.trait': trait });
+      return;
+    }
+
+    async _onCombatChange(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let combat = this.actor.system.combat
+      switch (combat){
+        case 'Ranged':
+        {
+          combat="Melee"
+          break;
+        }
+        case 'Melee':
+        {
+          combat="Mental"
+          break;
+        }
+        case 'Mental':
+        {
+          combat="Ranged"
+          break;
+        }
+      }
+      this.actor.update ({ 'system.combat': combat });
       return;
     }
     
