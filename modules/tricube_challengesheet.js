@@ -49,8 +49,9 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let effort=this.actor.system.resources.effort.current
+      let effort=this.actor.system.resources.effort.value
       let max_effort=this.actor.system.resources.effort.max
+      console.log ("EFFORT: "+effort+" MAX: "+max_effort)
       if (event.shiftKey) {
         max_effort++
         if (max_effort > 43){max_effort=43}
@@ -60,7 +61,7 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
       {
         effort++
         if (effort > max_effort){effort=max_effort}
-        this.actor.update ({ 'system.resources.effort.current': effort });
+        this.actor.update ({ 'system.resources.effort.value': effort });
       } 
       return;
     }
@@ -69,21 +70,22 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let effort=this.actor.system.resources.effort.current
+      let effort=this.actor.system.resources.effort.value
       let max_effort=this.actor.system.resources.effort.max
+      console.log ("EFFORT: "+effort+" MAX: "+max_effort)
       if (event.shiftKey) {
         max_effort--
         if (max_effort < 1){max_effort=1}
         this.actor.update ({ 'system.resources.effort.max': max_effort });
         if (effort > max_effort){
           effort=max_effort
-          this.actor.update ({ 'system.resources.effort.current': effort });
+          this.actor.update ({ 'system.resources.effort.value': effort });
         }
       }
       else{
         effort--
         if (effort < 0){effort=0}
-        this.actor.update ({ 'system.resources.effort.current': effort });
+        this.actor.update ({ 'system.resources.effort.value': effort });
       }
       
       return;
