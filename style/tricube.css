@@ -194,7 +194,7 @@
     padding-left: 128px;
 }
 
-:root { --bg-image: url("../../../systems/tricube/style/white.svg"); }
+:root { --bg-image: url("../../../systems/tricube/style/images/white.svg"); }
 
 .window-app .window-content .tricube{
     background-color: white;

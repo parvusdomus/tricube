@@ -22,8 +22,8 @@
     "media": [
       {
         "type": "setup",
-        "url": "systems/tricube/style/TT_Logo2.png",
-        "thumbnail": "systems/tricube/style/TT_Logo2.png"
+        "url": "systems/tricube/style/images/TT_Logo2.png",
+        "thumbnail": "systems/tricube/style/images/TT_Logo2.png"
       }
     ],
   

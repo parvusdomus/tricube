@@ -4,7 +4,7 @@ import TRICUBE_ITEM_SHEET from "./modules/tricube_itemsheet.js";
 import { preloadHandlebarsTemplates } from "./modules/preloadTemplates.js";
 
 Hooks.once("init", function(){
-  document.getElementById("logo").src = "/systems/tricube/style/TT_Logo2.png";
+  document.getElementById("logo").src = "/systems/tricube/style/images/TT_Logo2.png";
   console.log("test | INITIALIZING TRICUBE CHARACTER SHEETS...");
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("tricube", TRICUBE_CHAR_SHEET, {
@@ -31,6 +31,7 @@ Hooks.once("init", function(){
     type: String,
     default: 'systems/tricube/style/white.webp',
     scope: 'world',
+    requiresReload: true,
     config: true,
     filePicker: 'image',
   });
