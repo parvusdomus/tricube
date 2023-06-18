@@ -18,5 +18,21 @@
     "TRI.ui.tab.notes": "Notes",
     "TRI.ui.tag": "Tags",
     "TRI.ui.deleteTitle": "Delete item?",
-    "TRI.ui.deleteText": "Please confirm if you want to delete this item."
+    "TRI.ui.deleteText": "Please confirm if you want to delete this item.",
+
+    "TRI.config.bgImageName": "Background Image",
+    "TRI.config.bgImageHint": "Select an Image to Use as Background",
+    "TRI.config.listHeaderBgColorName": "List Header Background Color",
+    "TRI.config.listHeaderBgColorHint": "Pick a Color to be Used as the Item List Header Background Color",
+    "TRI.config.listHeaderFontColorName": "List Header Font Color",
+    "TRI.config.listHeaderFontColorHint": "Pick a Color to be Used as the Item List Header Font Color",
+    "TRI.config.headerFontColorName": "Header Font Color",
+    "TRI.config.headerFontColorHint": "Pick a Color to be Used as the Header Font Color",
+    "TRI.config.itemFontColorName": "Item Font Color",
+    "TRI.config.itemFontColorHint": "Pick a Color to be Used as the Item List Font Color",
+    "TRI.config.inputBgColorName": "Input Background Color",
+    "TRI.config.inputBgColorHint": "Pick a Color to be Used as the Text Input Background Color",
+    "TRI.config.inputFontColorName": "Input Font Color",
+    "TRI.config.inputFontColorHint": "Pick a Color to be Used as the Text Input Font Color"
+
 }

@@ -4,7 +4,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
           classes: ["tricube", "sheet", "actor"],
           template: "systems/tricube/templates/actors/character.html",
           width: 600,
-          height: 520,
+          height: 550,
           tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }]
         });
   

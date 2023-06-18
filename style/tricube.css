@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Title";
+    src: url("../../../systems/tricube/style/fonts/Dominican.ttf");
+}
+
+
 .charsheet {
     display: flex;
   }
@@ -9,9 +15,9 @@
 }
 
 .left-section h2{
+    font-family: var(--font-name);
+    color: var(--header-font-color);
     border-bottom: none;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .char-pic img{
@@ -21,8 +27,10 @@
 }
 
 .char-name input{
+    font-family: var(--font-name);
     border-radius: 16px; 
-    background-color: beige;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
 }
 
 .resources {
@@ -62,6 +70,7 @@
 }
 
 .sheet nav.sheet-tabs {
+    font-family: var(--font-name);
     margin: 4px 0;
     border-top: none;
     border-bottom: none;
@@ -89,9 +98,9 @@
 }
 
 .archetype h1 {
+    color: var(--header-font-color);
+    font-family: var(--font-name);
     border-bottom: none;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .archetype li {
@@ -111,7 +120,8 @@
     width: 155%;
     border-radius: 16px;
     text-align: center;
-    background-color: beige;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
 }
 
 .npctag {
@@ -121,9 +131,8 @@
 }
 
 .npctag h1 {
+    color: var(--header-font-color);
     border-bottom: none;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .npctag li {
@@ -136,10 +145,9 @@
     width: 200%;
     border-radius: 16px;
     text-align: center;
-    background-color: beige;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
 }
-
-
 
 .item-list {
     width: 100%;
@@ -148,34 +156,39 @@
 
 .item-list th{
     border: none;
-    background-color: black;
-    color: white;
+    background-color: var(--list-header-color);
+    color: var(--list-header-font-color);
     padding-left: 10px;
     padding-right: 8px;
     padding-top:0;
     padding-bottom: 0;
 }
 .item-header {
+    font-family: var(--font-name);
     border-bottom: none;
     text-align: left;
+}
+.item-list td{
+    color: var(--list-text-color);
 }
 
 .item-controls {
     align-items: right;
     text-align: right;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .item-name input{
     border-radius: 16px; 
-    background-color: beige;
+    text-align: center;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
 }
 
 .item-name h2{
+    color: var(--header-font-color);
+    font-family: var(--font-name);
+    text-align: center;
     border-bottom: none;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 .dice-roll .dice-tooltip {
@@ -194,7 +207,28 @@
     padding-left: 128px;
 }
 
-:root { --bg-image: url("../../../systems/tricube/style/images/white.svg"); }
+#pause .pause-tricube {
+    font-family: var(--font-name);
+    margin: 0 auto;
+    text-align: center;
+    transform: scale3d(1, 1, 1);
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #f4eded;
+}
+
+
+:root { 
+    --bg-image: url("../../../systems/tricube/style/images/white.svg");
+    --font-name: "Title";
+    --main-font-color: #000000;
+    --header-font-color: #000000;
+    --list-header-font-color: #ffffff;
+    --list-header-color: #000000;
+    --input-bg-color: #ffffdc;
+    --list-text-color: #000000;
+    --input-text-color: #000000;
+}
 
 .window-app .window-content .tricube{
     background-color: white;

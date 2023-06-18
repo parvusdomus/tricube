@@ -4,7 +4,7 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
           classes: ["tricube", "sheet", "actor"],
           template: "systems/tricube/templates/actors/challenge.html",
           width: 600,
-          height: 500,
+          height: 505,
           tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }]
         });
   
@@ -54,7 +54,7 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
       console.log ("EFFORT: "+effort+" MAX: "+max_effort)
       if (event.shiftKey) {
         max_effort++
-        if (max_effort > 43){max_effort=43}
+        if (max_effort > 36){max_effort=36}
         this.actor.update ({ 'system.resources.effort.max': max_effort });
       }
       else
