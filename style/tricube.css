@@ -1,8 +1,42 @@
 @font-face {
-    font-family: "Title";
+    font-family: "Dominican";
     src: url("../../../systems/tricube/style/fonts/Dominican.ttf");
 }
 
+@font-face {
+    font-family: "Batman";
+    src: url("../../../systems/tricube/style/fonts/Batman.ttf");
+}
+
+@font-face {
+    font-family: "Cloister";
+    src: url("../../../systems/tricube/style/fonts/Cloister.ttf");
+}
+
+@font-face {
+    font-family: "Devit";
+    src: url("../../../systems/tricube/style/fonts/devit.otf");
+}
+
+@font-face {
+    font-family: "Lordish";
+    src: url("../../../systems/tricube/style/fonts/Lordish.ttf");
+}
+
+@font-face {
+    font-family: "Plank";
+    src: url("../../../systems/tricube/style/fonts/Plank.ttf");
+}
+
+@font-face {
+    font-family: "Shufen";
+    src: url("../../../systems/tricube/style/fonts/Shufen.ttf");
+}
+
+@font-face {
+    font-family: "Western";
+    src: url("../../../systems/tricube/style/fonts/Western.ttf");
+}
 
 .charsheet {
     display: flex;
@@ -220,7 +254,7 @@
 
 :root { 
     --bg-image: url("../../../systems/tricube/style/images/white.svg");
-    --font-name: "Title";
+    --font-name: "Dominican";
     --main-font-color: #000000;
     --header-font-color: #000000;
     --list-header-font-color: #ffffff;

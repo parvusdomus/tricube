@@ -33,6 +33,8 @@
     "TRI.config.inputBgColorName": "Input Background Color",
     "TRI.config.inputBgColorHint": "Pick a Color to be Used as the Text Input Background Color",
     "TRI.config.inputFontColorName": "Input Font Color",
-    "TRI.config.inputFontColorHint": "Pick a Color to be Used as the Text Input Font Color"
+    "TRI.config.inputFontColorHint": "Pick a Color to be Used as the Text Input Font Color",
+    "TRI.config.titleFontName": "Header Font",
+    "TRI.config.titleFontHint": "Select a Font to be Used on Headers"
 
 }

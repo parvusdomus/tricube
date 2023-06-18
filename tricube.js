@@ -36,6 +36,25 @@ Hooks.once("init", function(){
     filePicker: 'image',
   });
 
+  game.settings.register('tricube', 'titleFont', {
+    name: game.i18n.localize("TRI.config.titleFontName"),
+    hint: game.i18n.localize("TRI.config.titleFontHint"),
+    config: true,
+    type: String,
+    choices: {
+      "Dominican": "Dominican",
+      "Batman": "Batman",
+      "Cloister": "Cloister",
+      "Devit": "Devit",
+      "Lordish": "Lordish",
+      "Plank": "Plank",
+      "Shufen": "Shufen",
+      "Western": "Western"
+    },
+    requiresReload: true,
+    default: 'Dominican',
+  });
+
   game.settings.register('tricube', 'listHeaderBgColor', {
       name: game.i18n.localize("TRI.config.listHeaderBgColorName"),
       hint: game.i18n.localize("TRI.config.listHeaderBgColorHint"),
@@ -113,6 +132,8 @@ Hooks.once("init", function(){
   root.style.setProperty('--input-bg-color',inputBgColor)
   let inputFontColor=game.settings.get ("tricube", "inputFontColor")
   root.style.setProperty('--input-text-color',inputFontColor)
+  let titleFont=game.settings.get ("tricube", "titleFont")
+  root.style.setProperty('--font-name',titleFont)  
 
 });
 

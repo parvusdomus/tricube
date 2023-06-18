@@ -33,5 +33,7 @@
     "TRI.config.inputBgColorName": "Color de Fondo de los Campos de Texto",
     "TRI.config.inputBgColorHint": "Elige un Color para Usar como Fondo de los Campos de Texto",
     "TRI.config.inputFontColorName": "Color de Fuente de los Campos de Texto",
-    "TRI.config.inputFontColorHint": "Elige un Color para Usar en la Fuente de los Campos de Texto"
+    "TRI.config.inputFontColorHint": "Elige un Color para Usar en la Fuente de los Campos de Texto",
+    "TRI.config.titleFontName": "Fuente de Cabeceras",
+    "TRI.config.titleFontHint": "Elige una Fuente para Usar en las Cabeceras"
 }
