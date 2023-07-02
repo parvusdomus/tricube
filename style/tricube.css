@@ -4,40 +4,189 @@
 }
 
 @font-face {
-    font-family: "Batman";
-    src: url("../../../systems/tricube/style/fonts/Batman.ttf");
+    font-family: "Almendrasc";
+    src: url("../../../systems/tricube/style/fonts/Almendrasc.ttf");
 }
 
 @font-face {
-    font-family: "Cloister";
-    src: url("../../../systems/tricube/style/fonts/Cloister.ttf");
+    font-family: "Amble";
+    src: url("../../../systems/tricube/style/fonts/Amble.ttf");
 }
 
 @font-face {
-    font-family: "Devit";
-    src: url("../../../systems/tricube/style/fonts/devit.otf");
+    font-family: "Bagnard";
+    src: url("../../../systems/tricube/style/fonts/Bagnard.otf");
 }
 
 @font-face {
-    font-family: "Lordish";
-    src: url("../../../systems/tricube/style/fonts/Lordish.ttf");
+    font-family: "Arkhip";
+    src: url("../../../systems/tricube/style/fonts/Arkhip.ttf");
 }
 
 @font-face {
-    font-family: "Plank";
-    src: url("../../../systems/tricube/style/fonts/Plank.ttf");
+    font-family: "Bangers";
+    src: url("../../../systems/tricube/style/fonts/Bangers.ttf");
 }
 
 @font-face {
-    font-family: "Shufen";
-    src: url("../../../systems/tricube/style/fonts/Shufen.ttf");
+    font-family: "Berry";
+    src: url("../../../systems/tricube/style/fonts/Berry.ttf");
 }
 
 @font-face {
-    font-family: "Western";
-    src: url("../../../systems/tricube/style/fonts/Western.ttf");
+    font-family: "BLACC";
+    src: url("../../../systems/tricube/style/fonts/BLACC.ttf");
 }
 
+@font-face {
+    font-family: "BLOODY";
+    src: url("../../../systems/tricube/style/fonts/BLOODY.ttf");
+}
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("../../../systems/tricube/style/fonts/Cinzel.otf");
+}
+
+@font-face {
+    font-family: "Corleone";
+    src: url("../../../systems/tricube/style/fonts/Corleone.TTF");
+}
+
+@font-face {
+    font-family: "Creepster";
+    src: url("../../../systems/tricube/style/fonts/Creepster.ttf");
+}
+
+@font-face {
+    font-family: "Duvall";
+    src: url("../../../systems/tricube/style/fonts/Duvall.ttf");
+}
+
+@font-face {
+    font-family: "East_Anglia";
+    src: url("../../../systems/tricube/style/fonts/East_Anglia.ttf");
+}
+
+@font-face {
+    font-family: "Foul";
+    src: url("../../../systems/tricube/style/fonts/Foul.ttf");
+}
+
+@font-face {
+    font-family: "Headhunter";
+    src: url("../../../systems/tricube/style/fonts/Headhunter.ttf");
+}
+
+@font-face {
+    font-family: "IMMORTAL";
+    src: url("../../../systems/tricube/style/fonts/IMMORTAL.ttf");
+}
+
+@font-face {
+    font-family: "IMPOS5";
+    src: url("../../../systems/tricube/style/fonts/IMPOS5.ttf");
+}
+
+@font-face {
+    font-family: "Mandalore_Halftone";
+    src: url("../../../systems/tricube/style/fonts/Mandalore_Halftone.ttf");
+}
+
+@font-face {
+    font-family: "mandalore";
+    src: url("../../../systems/tricube/style/fonts/mandalore.ttf");
+}
+
+@font-face {
+    font-family: "MetalMacabre";
+    src: url("../../../systems/tricube/style/fonts/MetalMacabre.ttf");
+}
+
+@font-face {
+    font-family: "MountainsofChristmas";
+    src: url("../../../systems/tricube/style/fonts/MountainsofChristmas.ttf");
+}
+
+@font-face {
+    font-family: "MysteryQuest";
+    src: url("../../../systems/tricube/style/fonts/MysteryQuest.ttf");
+}
+
+@font-face {
+    font-family: "Nautilus";
+    src: url("../../../systems/tricube/style/fonts/Nautilus.otf");
+}
+
+@font-face {
+    font-family: "OhioKraft";
+    src: url("../../../systems/tricube/style/fonts/OhioKraft.otf");
+}
+
+@font-face {
+    font-family: "pirulen";
+    src: url("../../../systems/tricube/style/fonts/pirulen.otf");
+}
+
+@font-face {
+    font-family: "RexliaRg";
+    src: url("../../../systems/tricube/style/fonts/RexliaRg.ttf");
+}
+
+@font-face {
+    font-family: "RifficFree";
+    src: url("../../../systems/tricube/style/fonts/RifficFree.ttf");
+}
+
+@font-face {
+    font-family: "Saddlebag";
+    src: url("../../../systems/tricube/style/fonts/Saddlebag.ttf");
+}
+
+@font-face {
+    font-family: "Skia";
+    src: url("../../../systems/tricube/style/fonts/Skia.ttf");
+}
+
+@font-face {
+    font-family: "Starjedi";
+    src: url("../../../systems/tricube/style/fonts/Starjedi.ttf");
+}
+
+@font-face {
+    font-family: "TradeWinds";
+    src: url("../../../systems/tricube/style/fonts/TradeWinds.ttf");
+}
+
+@font-face {
+    font-family: "Werewolf_Moon";
+    src: url("../../../systems/tricube/style/fonts/Werewolf_Moon.ttf");
+}
+
+@font-face {
+    font-family: "WHITC";
+    src: url("../../../systems/tricube/style/fonts/WHITC.ttf");
+}
+
+@font-face {
+    font-family: "WIZARDRY";
+    src: url("../../../systems/tricube/style/fonts/WIZARDRY.ttf");
+}
+
+@font-face {
+    font-family: "xirod";
+    src: url("../../../systems/tricube/style/fonts/xirod.otf");
+}
+
+@font-face {
+    font-family: "Yataghan";
+    src: url("../../../systems/tricube/style/fonts/Yataghan.otf");
+}
+
+@font-face {
+    font-family: "StoneAge";
+    src: url("../../../systems/tricube/style/fonts/StoneAge.otf");
+}
 .charsheet {
     display: flex;
   }
