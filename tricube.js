@@ -76,6 +76,7 @@ Hooks.once("init", function(){
       "Bagnard": "Tales of the City Guard",
       "MountainsofChristmas": "Tales of the Goblin Horde",
       "RifficFree": "Tales of the Little Adventurers",
+      "Orbitron": "Titan Effect: Covert Tales",
       "MetalMacabre": "Twisted Wishes",
       "Headhunter": "Voyage to the Isle of Skulls",
       "Saddlebag": "Wardens of the Weird West",

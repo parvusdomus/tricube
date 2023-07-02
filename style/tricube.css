@@ -124,6 +124,11 @@
 }
 
 @font-face {
+    font-family: "Orbitron";
+    src: url("../../../systems/tricube/style/fonts/Orbitron.ttf");
+}
+
+@font-face {
     font-family: "pirulen";
     src: url("../../../systems/tricube/style/fonts/pirulen.otf");
 }
