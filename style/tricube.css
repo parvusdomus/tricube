@@ -342,19 +342,21 @@
     border: none;
 }
 
+
 .item-list th{
     border: none;
     background-color: var(--list-header-color);
     color: var(--list-header-font-color);
     padding-left: 10px;
     padding-right: 8px;
-    padding-top:0;
-    padding-bottom: 0;
+    
 }
 .item-header {
     font-family: var(--font-name);
     border-bottom: none;
     text-align: left;
+    vertical-align: middle;
+    display: table-cell;
 }
 .item-list td{
     color: var(--list-text-color);
@@ -416,12 +418,105 @@
     --input-bg-color: #ffffdc;
     --list-text-color: #000000;
     --input-text-color: #000000;
+    --window-header-bg-color: #000000;
+    --window-header-font-color: #ffffff;
+    --die-roller-button-bg-color: #ffffff;
+    --die-roller-button-font-color: #000000;
+    --die-roller-font-color: #000000;
 }
 
-.window-app .window-content .tricube{
+.tricube{  
+    background-color: var(--window-header-bg-color);
+    color: var(--window-header-font-color);
+}
+
+.tricube .window-content{
     background-color: white;
     background: var(--bg-image) no-repeat;
     background-size: cover;
-    padding: 5px;
 }
 
+#die-roller-move-handle{
+    z-index: 101;
+    font-size: 1px;
+    line-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    width: 10px;
+    background: rgba(51, 51, 51, 0.8);
+}
+
+
+.die-roller .window-header
+{
+    display: none;
+    visibility: hidden;
+    height: 0;
+}
+
+.die-roller h2{
+    font-family: var(--font-name);
+    color: var(--die-roller-font-color);
+    border-bottom: none;
+    text-align: center;
+    
+}
+
+.die-roller button{
+    color: var(--die-roller-button-font-color);
+    background-color: var(--die-roller-button-bg-color);
+}
+
+.d-flex{
+    display:flex!important;
+    align-items: center;
+}
+
+.die-roller input{
+    font-family: var(--font-name);
+    border-radius: 16px; 
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+    font-size: 1em;
+    text-align: center;
+}
+
+.subtrait {
+    list-style: none;
+    margin: -0.5em 0px;
+    padding: 0px 0px 0px 0.5em;
+}
+
+.subtrait h1 {
+    color: var(--header-font-color);
+    font-family: var(--font-name);
+    border-bottom: none;
+}
+
+.subtrait li {
+    display: inline-block;
+    padding: 5px 1px;
+    vertical-align: middle;
+}
+
+.subtrait img {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: auto;
+}
+
+.subtable {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.subtable tr:nth-child(even){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.subtable tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0);
+}

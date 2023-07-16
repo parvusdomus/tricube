@@ -4,8 +4,9 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
           classes: ["tricube", "sheet", "actor"],
           template: "systems/tricube/templates/actors/character.html",
           width: 600,
-          height: 550,
-          tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }]
+          height: 620,
+          tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }],
+          scrollY: ['section.sheet-body']
         });
   
     }
@@ -23,6 +24,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       const Perks = [];
 		  const Quirks = [];
 		  const Afflictions = [];
+      const Knacks = [];
       for (let i of sheetData.items){
         switch (i.type){
 				  case 'perk':
@@ -41,12 +43,23 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
             Afflictions.push(i);
             break;
           }
+          case 'knack':
+          {
+            Knacks.push(i);
+            break;
+          }
         }
       }
       actorData.Perks = Perks;
       actorData.Quirks = Quirks;
       actorData.Afflictions = Afflictions;
+      actorData.Knacks = Knacks;
       this.actor.update ({ 'system.resources.afflictions.value': nAfflictions });
+      actorData.settings = {
+        enableKnacks: game.settings.get("tricube", "enableKnacks"),
+        enableSubTraits: game.settings.get("tricube", "enableSubTraits"),
+        enableSubStyles: game.settings.get("tricube", "enableSubStyles")
+      }
     }
 
     activateListeners(html)
@@ -67,6 +80,8 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       html.find('a.afflictions-change').click(this._onAfflictionsIncrease.bind(this));
       html.find('a.afflictions-change').contextmenu(this._onAfflictionsDecrease.bind(this));
       html.find('a.dice-roll').click(this._onDiceRoll.bind(this));
+      html.find ('a.subtrait-toggle').click(this._onSubTraitToggle.bind(this));
+      html.find ('a.substyle-toggle').click(this._onSubStyleToggle.bind(this));
     }
 
     _onItemCreate(event) {
@@ -154,6 +169,40 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       this.actor.update ({ 'system.trait': trait });
       return;
     }
+
+    async _onSubTraitToggle(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let subtraitName = 'system.subtrait.'+dataset.subtrait;
+      let subtrait = this.actor.system.subtrait[dataset.subtrait];
+      if (subtrait)
+      {
+        this.actor.update ({ [subtraitName]: false });
+      }
+      else
+      {
+        this.actor.update ({ [subtraitName]: true });
+      }
+      return;
+    }
+
+    async _onSubStyleToggle(event, data)
+    {
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      let substyleName = 'system.substyle.'+dataset.substyle;
+      let substyle = this.actor.system.substyle[dataset.substyle];
+      if (substyle)
+      {
+        this.actor.update ({ [substyleName]: false });
+      }
+      else
+      {
+        this.actor.update ({ [substyleName]: true });
+      }
+      return;
+    } 
 
     async _onCombatChange(event, data)
     {

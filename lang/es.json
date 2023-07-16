@@ -3,6 +3,7 @@
     "TYPES.Actor.Challenge": "Reto",
     "TYPES.Item.perk": "Ventaja",
     "TYPES.Item.quirk": "Peculiaridad",
+    "TYPES.Item.knack": "Truco",
     "TYPES.Item.affliction": "Afflicción",
 
     "TRI.resources.resolve": "Determinación",
@@ -12,6 +13,7 @@
 
     "TRI.ui.perks": "Ventajas",
     "TRI.ui.quirks": "Peculiaridades",
+    "TRI.ui.knacks": "Trucos",
     "TRI.ui.afflictions": "Aflicciones",
     "TRI.ui.concept": "Concepto",
     "TRI.ui.tab.general": "General",
@@ -19,6 +21,8 @@
     "TRI.ui.tag": "Etiquetas",
     "TRI.ui.deleteTitle": "¿Borrar objeto?",
     "TRI.ui.deleteText": "Por favor confirma si quieres borrar este objeto.",
+    "TRI.ui.subTraits": "Sub-Rasgos",
+    "TRI.ui.subStyles": "Sub-Estilos",
 
     "TRI.config.bgImageName": "Imagen de Fondo",
     "TRI.config.bgImageHint": "Elige la Imagen de Fondo de las Fichas",
@@ -35,5 +39,21 @@
     "TRI.config.inputFontColorName": "Color de Fuente de los Campos de Texto",
     "TRI.config.inputFontColorHint": "Elige un Color para Usar en la Fuente de los Campos de Texto",
     "TRI.config.titleFontName": "Fuente de Cabeceras",
-    "TRI.config.titleFontHint": "Elige una Fuente para Usar en las Cabeceras"
+    "TRI.config.titleFontHint": "Elige una Fuente para Usar en las Cabeceras",
+    "TRI.config.enableKnacksName": "Activar Trucos",
+    "TRI.config.enableKnacksHint": "Activar Trucos para Tricube Tactics",
+    "TRI.config.enableSubTraitsName": "Activar Sub-rasgos",
+    "TRI.config.enableSubTraitsHint": "Activar Sub-rasgos para Tricube Tactics",
+    "TRI.config.enableSubStylesName": "Activar Sub-estilos de Combate",
+    "TRI.config.enableSubStylesHint": "Activar Sub-estilos de Combate para Tricube Tactics",
+    "TRI.config.windowHeaderBgColorName": "Color de Fondo de la Barra de Título",
+    "TRI.config.windowHeaderBgColorHint": "Elige el Color de Fondo de la Barra de Título de la Hoja de Personaje",
+    "TRI.config.windowHeaderFontColorName": "Color de la Fuente de la Barra de Título",
+    "TRI.config.windowHeaderFontColorHint": "Elige el Color de Fondo del Texto de la Barra de Título de la Hoja de Personaje",
+    "TRI.config.dieRollerFontColorName": "Color de la Fuente del Lanzador de Dados",
+    "TRI.config.dieRollerFontColorHint": "Elige el Color de la Fuente del Lanzador de Dados",
+    "TRI.config.dieRollerButtonBgColorName": "Color de Fondo de los Botones del Lanzador de Dados",
+    "TRI.config.dieRollerButtonBgColorHint": "Elige el Color de Fondo de los Botones del Lanzador de Dados",
+    "TRI.config.dieRollerButtonFontColorName": "Color de Fuente de los Botones del Lanzador de Dados",
+    "TRI.config.dieRollerButtonFontColorHint": "Elige el Color del Texto de los Botones del Lanzador de Dados (iconos de dados)"
 }

@@ -3,6 +3,7 @@
     "TYPES.Actor.Challenge": "Challenge",
     "TYPES.Item.perk": "Perk",
     "TYPES.Item.quirk": "Quirk",
+    "TYPES.Item.knack": "Knack",
     "TYPES.Item.affliction": "Affliction",
 
     "TRI.resources.resolve": "Resolve",
@@ -12,6 +13,7 @@
 
     "TRI.ui.perks": "Perks",
     "TRI.ui.quirks": "Quirks",
+    "TRI.ui.knacks": "Knacks",
     "TRI.ui.afflictions": "Afflictions",
     "TRI.ui.concept": "Concept",
     "TRI.ui.tab.general": "General",
@@ -19,6 +21,8 @@
     "TRI.ui.tag": "Tags",
     "TRI.ui.deleteTitle": "Delete item?",
     "TRI.ui.deleteText": "Please confirm if you want to delete this item.",
+    "TRI.ui.subTraits": "Sub-Traits",
+    "TRI.ui.subStyles": "Sub-Styles",
 
     "TRI.config.bgImageName": "Background Image",
     "TRI.config.bgImageHint": "Select an Image to Use as Background",
@@ -35,6 +39,22 @@
     "TRI.config.inputFontColorName": "Input Font Color",
     "TRI.config.inputFontColorHint": "Pick a Color to be Used as the Text Input Font Color",
     "TRI.config.titleFontName": "Header Font",
-    "TRI.config.titleFontHint": "Select a Font to be Used on Headers"
+    "TRI.config.titleFontHint": "Select a Font to be Used on Headers",
+    "TRI.config.enableKnacksName": "Enable Knacks",
+    "TRI.config.enableKnacksHint": "Enable Knacks for Tricube Tactics",
+    "TRI.config.enableSubTraitsName": "Enable Subtraits",
+    "TRI.config.enableSubTraitsHint": "Enable Subtraits for Tricube Tactics",
+    "TRI.config.enableSubStylesName": "Enable Substyles",
+    "TRI.config.enableSubStylesHint": "Enable Substyles for Tricube Tactics",
+    "TRI.config.windowHeaderBgColorName": "Background Color for the Title Bar",
+    "TRI.config.windowHeaderBgColorHint": "Pick a Color to be Used as the Background Color for the Title Bar",
+    "TRI.config.windowHeaderFontColorName": "Title Bar Font Color",
+    "TRI.config.windowHeaderFontColorHint": "Pick a Color to be Used as the Text Color for the Title Bar",
+    "TRI.config.dieRollerFontColorName": "Dice Roller Font Color",
+    "TRI.config.dieRollerFontColorHint": "Pick a Color to be Used as the Dice Roller Font Color",
+    "TRI.config.dieRollerButtonBgColorName": "Dice Roller Button Background Color",
+    "TRI.config.dieRollerButtonBgColorHint": "Pick a Color to be Used as the Dice Roller Button Background Color",
+    "TRI.config.dieRollerButtonFontColorName": "Dice Roller Button Font Color",
+    "TRI.config.dieRollerButtonFontColorHint": "Pick a Color to be Used as the Dice Roller Button Font Color (Dice Icons)"
 
 }

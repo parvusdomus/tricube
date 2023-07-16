@@ -2,6 +2,9 @@ import TRICUBE_CHAR_SHEET from "./modules/tricube_charsheet.js";
 import TRICUBE_CHALLENGE_SHEET from "./modules/tricube_challengesheet.js";
 import TRICUBE_ITEM_SHEET from "./modules/tricube_itemsheet.js";
 import { preloadHandlebarsTemplates } from "./modules/preloadTemplates.js";
+import DieRoller from "./modules/DieRoller.js";
+
+
 
 Hooks.once("init", function(){
   document.getElementById("logo").src = "/systems/tricube/style/images/TT_Logo2.png";
@@ -19,11 +22,41 @@ Hooks.once("init", function(){
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("tricube", TRICUBE_ITEM_SHEET,{
     makeDefault: true,
-    types: ['perk','quirk','affliction']
+    types: ['perk','quirk','affliction','knack']
   });
   preloadHandlebarsTemplates();
 
   console.log("test | INITIALIZING TRICUBE SETTINGS...");
+
+  game.settings.register("tricube", "enableKnacks", {
+    name: game.i18n.localize("TRI.config.enableKnacksName"),
+    hint: game.i18n.localize("TRI.config.enableKnacksHint"),
+    scope: "world",
+    type: Boolean,
+    default: false,
+    requiresReload: true,
+    config: true
+  });
+
+  game.settings.register("tricube", "enableSubTraits", {
+    name: game.i18n.localize("TRI.config.enableSubTraitsName"),
+    hint: game.i18n.localize("TRI.config.enableSubTraitsHint"),
+    scope: "world",
+    type: Boolean,
+    default: false,
+    requiresReload: true,
+    config: true
+  });
+
+  game.settings.register("tricube", "enableSubStyles", {
+    name: game.i18n.localize("TRI.config.enableSubStylesName"),
+    hint: game.i18n.localize("TRI.config.enableSubStylesHint"),
+    scope: "world",
+    type: Boolean,
+    default: false,
+    requiresReload: true,
+    config: true
+  });
 
   game.settings.register('tricube', 'bgImage', {
     name: game.i18n.localize("TRI.config.bgImageName"),
@@ -41,6 +74,7 @@ Hooks.once("init", function(){
     hint: game.i18n.localize("TRI.config.titleFontHint"),
     config: true,
     type: String,
+    scope: 'world',
     choices: {
       "Dominican": "Default Tricube Tales Font",
       "Werewolf_Moon": "A Welsh Werewolf",
@@ -148,6 +182,57 @@ Hooks.once("init", function(){
     default: '#000000',
   });
 
+  /////
+
+  game.settings.register('tricube', 'windowHeaderBgColor', {
+    name: game.i18n.localize("TRI.config.windowHeaderBgColorName"),
+    hint: game.i18n.localize("TRI.config.windowHeaderBgColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#000000',
+  });
+
+  game.settings.register('tricube', 'windowHeaderFontColor', {
+    name: game.i18n.localize("TRI.config.windowHeaderFontColorName"),
+    hint: game.i18n.localize("TRI.config.windowHeaderFontColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#ffffff',
+  });
+
+  game.settings.register('tricube', 'dieRollerFontColor', {
+    name: game.i18n.localize("TRI.config.dieRollerFontColorName"),
+    hint: game.i18n.localize("TRI.config.dieRollerFontColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#000000',
+  });
+
+  game.settings.register('tricube', 'dieRollerButtonBgColor', {
+    name: game.i18n.localize("TRI.config.dieRollerButtonBgColorName"),
+    hint: game.i18n.localize("TRI.config.dieRollerButtonBgColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#ffffff',
+  });
+
+  game.settings.register('tricube', 'dieRollerButtonFontColor', {
+    name: game.i18n.localize("TRI.config.dieRollerButtonFontColorName"),
+    hint: game.i18n.localize("TRI.config.dieRollerButtonFontColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#000000',
+  });
   
 
   const root = document.querySelector(':root');
@@ -166,9 +251,23 @@ Hooks.once("init", function(){
   let inputFontColor=game.settings.get ("tricube", "inputFontColor")
   root.style.setProperty('--input-text-color',inputFontColor)
   let titleFont=game.settings.get ("tricube", "titleFont")
-  root.style.setProperty('--font-name',titleFont)  
+  root.style.setProperty('--font-name',titleFont) 
+  let windowHeaderBgColor=game.settings.get ("tricube", "windowHeaderBgColor")
+  root.style.setProperty('--window-header-bg-color',windowHeaderBgColor) 
+  let windowHeaderFontColor=game.settings.get ("tricube", "windowHeaderFontColor")
+  root.style.setProperty('--window-header-font-color',windowHeaderFontColor) 
+  let dieRollerFontColor=game.settings.get ("tricube", "dieRollerFontColor")
+  root.style.setProperty('--die-roller-font-color',dieRollerFontColor) 
+  let dieRollerButtonFontColor=game.settings.get ("tricube", "dieRollerButtonFontColor")
+  root.style.setProperty('--die-roller-button-font-color',dieRollerButtonFontColor) 
+  let dieRollerButtonBgColor=game.settings.get ("tricube", "dieRollerButtonBgColor")
+  root.style.setProperty('--die-roller-button-bg-color',dieRollerButtonBgColor) 
+
+  //ACTIVATE FLOATING DICE ROLLER
+  new DieRoller(DieRoller.defaultOptions, { excludeTextLabels: true }).render(true);
 
 });
+
 
 Hooks.on("renderPause", () => {
   $("#pause img").attr("class", "fa-spin pause-image");
@@ -196,5 +295,14 @@ Hooks.on('renderSettingsConfig', (app, el, data) => {
     .append(`<input type="color" value="${game.settings.get('tricube','inputBgColor')}" data-edit="tricube.inputBgColor">`)
   el.find('[name="tricube.inputFontColor"]').parent()
     .append(`<input type="color" value="${game.settings.get('tricube','inputFontColor')}" data-edit="tricube.inputFontColor">`)
-
+  el.find('[name="tricube.windowHeaderBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','windowHeaderBgColor')}" data-edit="tricube.windowHeaderBgColor">`)
+  el.find('[name="tricube.windowHeaderFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','windowHeaderFontColor')}" data-edit="tricube.windowHeaderFontColor">`)
+  el.find('[name="tricube.dieRollerFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerFontColor')}" data-edit="tricube.dieRollerFontColor">`)
+  el.find('[name="tricube.dieRollerButtonBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonBgColor')}" data-edit="tricube.dieRollerButtonBgColor">`)
+  el.find('[name="tricube.dieRollerButtonFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonFontColor')}" data-edit="tricube.dieRollerButtonFontColor">`)
 });

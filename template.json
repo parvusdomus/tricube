@@ -26,6 +26,28 @@
             "rank": 1,
             "trait": "Agile",
             "combat": "Ranged",
+            "subtrait": {
+                "dexterity": false,
+                "reflexes": false,
+                "stealth": false,
+                "strength": false,
+                "endurance": false,
+                "athletics": false,
+                "intellect": false,
+                "charisma": false,
+                "perception": false
+            },
+            "substyle": {
+                "armed": false,
+                "unarmed": false,
+                "parry": false,
+                "shoot": false,
+                "throw": false,
+                "evade": false,
+                "magic": false,
+                "tactics": false,
+                "resist": false
+            },
             "concept": "",
             "notes": ""
         },
@@ -47,9 +69,16 @@
         [
             "perk",
             "quirk",
-            "affliction"
+            "affliction",
+            "knack"
         ],
         "perk": {
+            "tag": "",
+            "bg_color": "#ffffff",
+            "text_color": "#000000",
+            "desc": ""
+        },
+        "knack": {
             "tag": "",
             "bg_color": "#ffffff",
             "text_color": "#000000",

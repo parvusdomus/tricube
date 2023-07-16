@@ -1,4 +1,4 @@
-<form class="{{cssClass}} tricube" autocomplete="off">
+<form class="{{cssClass}}" autocomplete="off">
   <div class="charsheet">
     <section class="left-section">
       <div class="char-name"><h2><input name="name" type="text" value="{{actor.name}}" placeholder='Nombre' onClick="this.select();"/></h2></div>
@@ -66,16 +66,78 @@
           {{#if (gt actor.system.resources.afflictions.value 5)}}<li><a class="afflictions-change"><img src="systems/tricube/style/icons/skull.svg" title="Shift+Left Click: Increase Max&#013;Shift+Right Click Decrease Max"></a></li>{{else}}<li><a class="afflictions-change"><img src="systems/tricube/style/icons/skull_grey.svg" title="Shift+Left Click: Increase Max&#013;Shift+Right Click Decrease Max"></a></li>{{/if}}
         {{/if}}
       </ul>
-      <ul class="dices">
-        <li><a class="dice-roll" data-ndice="1" data-ndiff="5"><img src="systems/tricube/style/icons/1dice.svg" title="One dice roll&#013;Click: VS 5&#013;Shift+Click: VS 4&#013;Ctrl+Click: VS 6"></a></li>
-        <li><a class="dice-roll" data-ndice="2" data-ndiff="5"><img src="systems/tricube/style/icons/2dice.svg" title="Two dice roll&#013;Click: VS 5&#013;Shift+Click: VS 4&#013;Ctrl+Click: VS 6"></a></li>
-        <li><a class="dice-roll" data-ndice="3" data-ndiff="5"><img src="systems/tricube/style/icons/3dice.svg" title="Three dice roll&#013;Click: VS 5&#013;Shift+Click: VS 4&#013;Ctrl+Click: VS 6"></a></li>
-      </ul>
+      <table class="subtable">
+        <tr>
+          <td>{{#if settings.enableSubTraits}}<h2><label>{{localize "TRI.ui.subTraits"}}</label></h2>{{/if}}</td>
+          <td>{{#if settings.enableSubStyles}}<h2><label>{{localize "TRI.ui.subStyles"}}</label></h2>{{/if}}</td>
+        </tr>
+        <tr>
+          <td>
+            {{#if settings.enableSubTraits}}
+              <ul class="subtrait">
+                <a class="subtrait-toggle" data-subtrait="dexterity"><li>{{#if actor.system.subtrait.dexterity}}<img src="systems/tricube/style/icons/dexterity_B.svg" title="DEXTERITY&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/dexterity.svg" title="DEXTERITY&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="reflexes"><li>{{#if actor.system.subtrait.reflexes}}<img src="systems/tricube/style/icons/reflexes_B.svg" title="REFLEXES&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/reflexes.svg" title="REFLEXES&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="stealth"><li>{{#if actor.system.subtrait.stealth}}<img src="systems/tricube/style/icons/stealth_B.svg" title="STEALTH&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/stealth.svg" title="STEALTH&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+            {{/if}}
+          </td>
+          <td>
+            {{#if settings.enableSubStyles}}
+              <ul class="subtrait">
+                <a class="substyle-toggle" data-substyle="armed"><li>{{#if actor.system.substyle.armed}}<img src="systems/tricube/style/icons/armed_B.svg" title="ARMED&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/armed.svg" title="ARMED&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="unarmed"><li>{{#if actor.system.substyle.unarmed}}<img src="systems/tricube/style/icons/unarmed_B.svg" title="UNARMED&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/unarmed.svg" title="UNARMED&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="parry"><li>{{#if actor.system.substyle.parry}}<img src="systems/tricube/style/icons/parry_B.svg" title="PARRY&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/parry.svg" title="PARRY&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+              {{/if}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{#if settings.enableSubTraits}}
+              <ul class="subtrait">
+                <a class="subtrait-toggle" data-subtrait="strength"><li>{{#if actor.system.subtrait.strength}}<img src="systems/tricube/style/icons/strength_B.svg" title="STRENGTH&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/strength.svg" title="STRENGTH&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="endurance"><li>{{#if actor.system.subtrait.endurance}}<img src="systems/tricube/style/icons/endurance_B.svg" title="ENDURANCE&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/endurance.svg" title="ENDURANCE&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="athletics"><li>{{#if actor.system.subtrait.athletics}}<img src="systems/tricube/style/icons/athletics_B.svg" title="ATHLETICS&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/athletics.svg" title="ATHLETICS&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+            {{/if}}
+          </td>
+          <td>
+            {{#if settings.enableSubStyles}}
+              <ul class="subtrait">
+                <a class="substyle-toggle" data-substyle="shoot"><li>{{#if actor.system.substyle.shoot}}<img src="systems/tricube/style/icons/shoot_B.svg" title="SHOOT&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/shoot.svg" title="SHOOT&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="throw"><li>{{#if actor.system.substyle.throw}}<img src="systems/tricube/style/icons/throw_B.svg" title="THROW&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/throw.svg" title="THROW&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="evade"><li>{{#if actor.system.substyle.evade}}<img src="systems/tricube/style/icons/evade_B.svg" title="EVADE&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/evade.svg" title="EVADE&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+              {{/if}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{#if settings.enableSubTraits}}
+              <ul class="subtrait">
+                <a class="subtrait-toggle" data-subtrait="intellect"><li>{{#if actor.system.subtrait.intellect}}<img src="systems/tricube/style/icons/intellect_B.svg" title="INTELLECT&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/intellect.svg" title="INTELLECT&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="charisma"><li>{{#if actor.system.subtrait.charisma}}<img src="systems/tricube/style/icons/charisma_B.svg" title="CHARISMA&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/charisma.svg" title="CHARISMA&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="perception"><li>{{#if actor.system.subtrait.perception}}<img src="systems/tricube/style/icons/perception_B.svg" title="PERCEPTION&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/perception.svg" title="PERCEPTION&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+            {{/if}}
+          </td>
+          <td>
+            {{#if settings.enableSubStyles}}
+              <ul class="subtrait">
+                <a class="substyle-toggle" data-substyle="magic"><li>{{#if actor.system.substyle.magic}}<img src="systems/tricube/style/icons/magic_B.svg" title="MAGIC&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/magic.svg" title="MAGIC&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="tactics"><li>{{#if actor.system.substyle.tactics}}<img src="systems/tricube/style/icons/tactics_B.svg" title="TACTICS&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/tactics.svg" title="TACTICS&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="resist"><li>{{#if actor.system.substyle.resist}}<img src="systems/tricube/style/icons/resist_B.svg" title="RESIST&#013;Click to toggle">{{else}}<img src="systems/tricube/style/icons/resist.svg" title="RESIST&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+              {{/if}}
+          </td>
+        </tr>
+      </table>
     </section>
     <section class="right-section">
         <nav class="sheet-tabs tabs" data-group="primary">
           <a class="item" data-tab="general">{{localize "TRI.ui.tab.general"}}</a>
           <a class="item" data-tab="bio">{{localize "TRI.ui.tab.notes"}}</a>
+          
         </nav>
         {{!-- Item Sheet Body --}}
         <section class="sheet-body">
