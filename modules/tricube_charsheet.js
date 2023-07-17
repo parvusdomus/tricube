@@ -14,6 +14,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       const data = super.getData();
       if (this.actor.type == 'Player') {
         this._prepareCharacterItems(data);
+        this._updateInitiative(data);
       }
       return data;
     }
@@ -61,6 +62,18 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         enableSubStyles: game.settings.get("tricube", "enableSubStyles")
       }
     }
+
+    _updateInitiative(sheetData){
+      let initiative=""
+      if (sheetData.actor.system.trait=="Agile" || sheetData.actor.system.subtrait.reflexes){
+        initiative="3d6cs>=5"
+      }
+      else{
+        initiative="2d6cs>=5"
+      }
+      this.actor.update ({ 'system.initiative': initiative });
+    }
+
 
     activateListeners(html)
 	  {

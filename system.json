@@ -41,7 +41,7 @@
         "flags": {}
       }
     ],
-    "initiative": "1",
+    "initiative": "@initiative",
     "gridDistance": 2,
     "gridUnits": "m",
     "primaryTokenAttribute": "resources.resolve",

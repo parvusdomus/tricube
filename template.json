@@ -48,6 +48,7 @@
                 "tactics": false,
                 "resist": false
             },
+            "initiative": "2d6cs>=5",
             "concept": "",
             "notes": ""
         },
@@ -59,6 +60,7 @@
                     "max": 3
                 }
             },
+            "initiative": "0.99",
             "traits": "",
             "rank": 1,
             "description": ""

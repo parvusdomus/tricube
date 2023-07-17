@@ -3,6 +3,7 @@ import TRICUBE_CHALLENGE_SHEET from "./modules/tricube_challengesheet.js";
 import TRICUBE_ITEM_SHEET from "./modules/tricube_itemsheet.js";
 import { preloadHandlebarsTemplates } from "./modules/preloadTemplates.js";
 import DieRoller from "./modules/DieRoller.js";
+import {_getInitiativeFormula} from './modules/combat.js';
 
 
 
