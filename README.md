@@ -44,11 +44,6 @@ On Afflictions (skull);
     - Shift + Left click increases Max value (max 6)
     - Shift + Right click decreases Max value (min 1)
 
-On the Dice Icons:
-    - Left click to roll the number of dices represented by the icon VS a difficulty of 5
-    - Shift + Left click to roll the number of dices represented by the icon VS a difficulty of 4
-    - Ctrl + Left click to roll the number of dices represented by the icon VS a difficulty of 6
-
 To add a Perk, Quirk or Affliction to the sheet, you'll have to create it in the Items tab and drop it in your character sheet. 
 When you add or remove an affliction the affliction marker (skull icon) will automatically update.
 
@@ -70,3 +65,6 @@ On Effort (heart):
     - Right click decreases current value
     - Shift + Left click increases Max value (Max 43)
     - Shift + Right click decreases current value (min 1)
+
+There are many settings to change fonts, colors and background images. Also you can activate several settings for Tricube Tactics, 
+such as Knacks, Subtraits and Substyles. The Tricube Tactics initiative is set as the default one.
