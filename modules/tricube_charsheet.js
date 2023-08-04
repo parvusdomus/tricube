@@ -59,7 +59,8 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       actorData.settings = {
         enableKnacks: game.settings.get("tricube", "enableKnacks"),
         enableSubTraits: game.settings.get("tricube", "enableSubTraits"),
-        enableSubStyles: game.settings.get("tricube", "enableSubStyles")
+        enableSubStyles: game.settings.get("tricube", "enableSubStyles"),
+        enableStyles: game.settings.get("tricube", "enableStyles")
       }
     }
 

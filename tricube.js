@@ -29,6 +29,16 @@ Hooks.once("init", function(){
 
   console.log("test | INITIALIZING TRICUBE SETTINGS...");
 
+  game.settings.register("tricube", "enableStyles", {
+    name: game.i18n.localize("TRI.config.enableStylesName"),
+    hint: game.i18n.localize("TRI.config.enableStylesHint"),
+    scope: "world",
+    type: Boolean,
+    default: false,
+    requiresReload: true,
+    config: true
+  });
+
   game.settings.register("tricube", "enableKnacks", {
     name: game.i18n.localize("TRI.config.enableKnacksName"),
     hint: game.i18n.localize("TRI.config.enableKnacksHint"),

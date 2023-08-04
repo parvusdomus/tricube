@@ -2,7 +2,7 @@
     "TYPES.Actor.Player": "Jugador",
     "TYPES.Actor.Challenge": "Reto",
     "TYPES.Item.perk": "Ventaja",
-    "TYPES.Item.quirk": "Peculiaridad",
+    "TYPES.Item.quirk": "Desventaja",
     "TYPES.Item.knack": "Truco",
     "TYPES.Item.affliction": "Afflicción",
 
@@ -12,7 +12,7 @@
     "TRI.resources.effort": "Esfuerzo",
 
     "TRI.ui.perks": "Ventajas",
-    "TRI.ui.quirks": "Peculiaridades",
+    "TRI.ui.quirks": "Desventajas",
     "TRI.ui.knacks": "Trucos",
     "TRI.ui.afflictions": "Aflicciones",
     "TRI.ui.concept": "Concepto",
@@ -40,6 +40,8 @@
     "TRI.config.inputFontColorHint": "Elige un Color para Usar en la Fuente de los Campos de Texto",
     "TRI.config.titleFontName": "Fuente de Cabeceras",
     "TRI.config.titleFontHint": "Elige una Fuente para Usar en las Cabeceras",
+    "TRI.config.enableStylesName": "Activar Estilos de Combate",
+    "TRI.config.enableStylesHint": "Activar Estilos de Combate (CaC/ A Distancia/ Mental)",
     "TRI.config.enableKnacksName": "Activar Trucos",
     "TRI.config.enableKnacksHint": "Activar Trucos para Tricube Tactics",
     "TRI.config.enableSubTraitsName": "Activar Sub-rasgos",
