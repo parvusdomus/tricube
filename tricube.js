@@ -27,6 +27,11 @@ Hooks.once("init", function(){
   });
   preloadHandlebarsTemplates();
 
+    // Slowing down pings
+    CONFIG.Canvas.pings.styles.pulse.duration = 2000
+    CONFIG.Canvas.pings.styles.alert.duration = 2000
+    CONFIG.Canvas.pings.styles.arrow.duration = 2000
+
   console.log("test | INITIALIZING TRICUBE SETTINGS...");
 
   game.settings.register("tricube", "enableStyles", {
