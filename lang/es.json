@@ -21,8 +21,8 @@
     "TRI.ui.tag": "Etiquetas",
     "TRI.ui.deleteTitle": "¿Borrar objeto?",
     "TRI.ui.deleteText": "Por favor confirma si quieres borrar este objeto.",
-    "TRI.ui.subTraits": "Sub-Rasgos",
-    "TRI.ui.subStyles": "Sub-Estilos",
+    "TRI.ui.subTraits": "S. Rasgos",
+    "TRI.ui.subStyles": "S. Estilos",
 
     "TRI.config.bgImageName": "Imagen de Fondo",
     "TRI.config.bgImageHint": "Elige la Imagen de Fondo de las Fichas",

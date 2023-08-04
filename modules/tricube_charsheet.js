@@ -1,10 +1,15 @@
 export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     static get defaultOptions() {
+      let adjusted_height= 500;
+      if (game.settings.get("tricube", "enableSubTraits")==true || game.settings.get("tricube", "enableSubStyles")==true){
+        adjusted_height+=130;
+      }
       return mergeObject(super.defaultOptions, {
           classes: ["tricube", "sheet", "actor"],
           template: "systems/tricube/templates/actors/character.html",
           width: 600,
-          height: 620,
+          //height: 620,
+          height: adjusted_height,
           tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }],
           scrollY: ['section.sheet-body']
         });
