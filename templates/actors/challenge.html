@@ -147,7 +147,9 @@
     </section>
     <section class="right-section">
       <ul class="npctag">
-        <li><h1><a class="rank-change"><label>{{actor.system.rank}}</label></a></h1></li>
+        {{#if settings.enableRank}}
+          <li><h1><a class="rank-change"><label>{{actor.system.rank}}</label></a></h1></li>
+        {{/if}}
         <li><input name="system.traits" type="text" value="{{actor.system.traits}}" placeholder='{{localize "TRI.ui.tag"}}' data-dtype="String"/></li>
       </ul>
       <div>

@@ -40,6 +40,8 @@
     "TRI.config.inputFontColorHint": "Elige un Color para Usar en la Fuente de los Campos de Texto",
     "TRI.config.titleFontName": "Fuente de Cabeceras",
     "TRI.config.titleFontHint": "Elige una Fuente para Usar en las Cabeceras",
+    "TRI.config.enableRankName": "Activar Rango",
+    "TRI.config.enableRankHint": "Activar Rango/Nivel",
     "TRI.config.enableStylesName": "Activar Estilos de Combate",
     "TRI.config.enableStylesHint": "Activar Estilos de Combate (CaC/ A Distancia/ Mental)",
     "TRI.config.enableKnacksName": "Activar Trucos",
