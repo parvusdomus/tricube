@@ -67,6 +67,8 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         enableSubStyles: game.settings.get("tricube", "enableSubStyles"),
         enableStyles: game.settings.get("tricube", "enableStyles")
       }
+      actorData.isGM = game.user.isGM;
+
     }
 
     _updateInitiative(sheetData){
@@ -365,12 +367,15 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let afflictions=this.actor.system.resources.afflictions.value
-      let max_afflictions=this.actor.system.resources.afflictions.max
-      if (event.shiftKey) {
-        max_afflictions++
-        if (max_afflictions > 6){max_afflictions=6}
-        this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
+      if (game.user.isGM == true)
+      {
+        let afflictions=this.actor.system.resources.afflictions.value
+        let max_afflictions=this.actor.system.resources.afflictions.max
+        if (event.shiftKey) {
+          max_afflictions++
+          if (max_afflictions > 6){max_afflictions=6}
+          this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
+        }
       }
       return;
     }
@@ -379,15 +384,18 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
     {
       event.preventDefault();
       const dataset = event.currentTarget.dataset;
-      let afflictions=this.actor.system.resources.afflictions.value
-      let max_afflictions=this.actor.system.resources.afflictions.max
-      if (event.shiftKey){
-        max_afflictions--
-        if (max_afflictions < 1){max_afflictions=1}
-        this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
-        if (afflictions > max_afflictions){
-          afflictions=max_afflictions
-          this.actor.update ({ 'system.resources.afflictions.value': afflictions });
+      if (game.user.isGM == true)
+      {
+        let afflictions=this.actor.system.resources.afflictions.value
+        let max_afflictions=this.actor.system.resources.afflictions.max
+        if (event.shiftKey){
+          max_afflictions--
+          if (max_afflictions < 1){max_afflictions=1}
+          this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
+          if (afflictions > max_afflictions){
+            afflictions=max_afflictions
+            this.actor.update ({ 'system.resources.afflictions.value': afflictions });
+          }
         }
       }
       return;
