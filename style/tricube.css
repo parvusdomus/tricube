@@ -264,6 +264,18 @@
     border-bottom: none;
 }
 
+.sheet .tabs .item.active {
+    background: var(--tab-bg-color-active);
+    color: var(--tab-text-color-active);
+    text-shadow: none;
+}
+
+.sheet .tabs .item:hover {
+    background: var(--tab-bg-color-hover);
+    color: var(--tab-text-color-hover);
+    text-shadow: none;
+}
+
 .right-section {
     width: 60%;
     height: 100%;
@@ -423,11 +435,15 @@
     --die-roller-button-bg-color: #ffffff;
     --die-roller-button-font-color: #000000;
     --die-roller-font-color: #000000;
+    --tab-bg-color-active: #000000;
+    --tab-bg-color-hover: #555353;
+    --tab-text-color-active: #ffffff;
+    --tab-text-color-hover: #d8d1d1;
+
 }
 
 .tricube{  
-    background-color: var(--window-header-bg-color);
-    color: var(--window-header-font-color);
+
 }
 
 .tricube .window-content{
@@ -520,3 +536,4 @@
 .subtable tr:nth-child(odd){
     background-color: rgba(255, 255, 255, 0);
 }
+

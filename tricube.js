@@ -208,8 +208,6 @@ Hooks.once("init", function(){
     default: '#000000',
   });
 
-  /////
-
   game.settings.register('tricube', 'windowHeaderBgColor', {
     name: game.i18n.localize("TRI.config.windowHeaderBgColorName"),
     hint: game.i18n.localize("TRI.config.windowHeaderBgColorHint"),
@@ -259,6 +257,46 @@ Hooks.once("init", function(){
     type: String,
     default: '#000000',
   });
+
+  game.settings.register('tricube', 'tabActiveBgColor', {
+    name: game.i18n.localize("TRI.config.tabActiveBgColorName"),
+    hint: game.i18n.localize("TRI.config.tabActiveBgColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#000000',
+  });
+
+  game.settings.register('tricube', 'tabActiveFontColor', {
+    name: game.i18n.localize("TRI.config.tabActiveFontColorName"),
+    hint: game.i18n.localize("TRI.config.tabActiveFontColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#ffffff',
+  });
+
+  game.settings.register('tricube', 'tabHoverBgColor', {
+    name: game.i18n.localize("TRI.config.tabHoverBgColorName"),
+    hint: game.i18n.localize("TRI.config.tabHoverBgColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#555353',
+  });
+
+  game.settings.register('tricube', 'tabHoverFontColor', {
+    name: game.i18n.localize("TRI.config.tabHoverFontColorName"),
+    hint: game.i18n.localize("TRI.config.tabHoverFontColorHint"),
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    type: String,
+    default: '#d8d1d1',
+  });
   
 
   const root = document.querySelector(':root');
@@ -288,6 +326,14 @@ Hooks.once("init", function(){
   root.style.setProperty('--die-roller-button-font-color',dieRollerButtonFontColor) 
   let dieRollerButtonBgColor=game.settings.get ("tricube", "dieRollerButtonBgColor")
   root.style.setProperty('--die-roller-button-bg-color',dieRollerButtonBgColor) 
+  let tabActiveBgColor=game.settings.get ("tricube", "tabActiveBgColor")
+  root.style.setProperty('--tab-bg-color-active',tabActiveBgColor)
+  let tabActiveFontColor=game.settings.get ("tricube", "tabActiveFontColor")
+  root.style.setProperty('--tab-text-color-active',tabActiveFontColor)
+  let tabHoverBgColor=game.settings.get ("tricube", "tabHoverBgColor")
+  root.style.setProperty('--tab-bg-color-hover',tabHoverBgColor)
+  let tabHoverFontColor=game.settings.get ("tricube", "tabHoverFontColor")
+  root.style.setProperty('--tab-text-color-hover',tabHoverFontColor)
 
   //ACTIVATE FLOATING DICE ROLLER
   new DieRoller(DieRoller.defaultOptions, { excludeTextLabels: true }).render(true);
@@ -331,4 +377,12 @@ Hooks.on('renderSettingsConfig', (app, el, data) => {
     .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonBgColor')}" data-edit="tricube.dieRollerButtonBgColor">`)
   el.find('[name="tricube.dieRollerButtonFontColor"]').parent()
     .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonFontColor')}" data-edit="tricube.dieRollerButtonFontColor">`)
+  el.find('[name="tricube.tabActiveBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabActiveBgColor')}" data-edit="tricube.tabActiveBgColor">`)
+  el.find('[name="tricube.tabActiveFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabActiveFontColor')}" data-edit="tricube.tabActiveFontColor">`)
+  el.find('[name="tricube.tabHoverBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabHoverBgColor')}" data-edit="tricube.tabHoverBgColor">`)
+  el.find('[name="tricube.tabHoverFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabHoverFontColor')}" data-edit="tricube.tabHoverFontColor">`)
 });
