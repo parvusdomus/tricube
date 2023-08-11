@@ -280,9 +280,12 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let resolve=this.actor.system.resources.resolve.value
       let max_resolve=this.actor.system.resources.resolve.max
       if (event.shiftKey) {
-        max_resolve++
-        if (max_resolve > 6){max_resolve=6}
-        this.actor.update ({ 'system.resources.resolve.max': max_resolve });
+        if (game.user.isGM == true)
+        {
+          max_resolve++
+          if (max_resolve > 6){max_resolve=6}
+          this.actor.update ({ 'system.resources.resolve.max': max_resolve });
+        }
       }
       else
       {
@@ -300,12 +303,15 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let resolve=this.actor.system.resources.resolve.value
       let max_resolve=this.actor.system.resources.resolve.max
       if (event.shiftKey) {
-        max_resolve--
-        if (max_resolve < 1){max_resolve=1}
-        this.actor.update ({ 'system.resources.resolve.max': max_resolve });
-        if (resolve > max_resolve){
-          resolve=max_resolve
-          this.actor.update ({ 'system.resources.resolve.value': resolve });
+        if (game.user.isGM == true)
+        {
+          max_resolve--
+          if (max_resolve < 1){max_resolve=1}
+          this.actor.update ({ 'system.resources.resolve.max': max_resolve });
+          if (resolve > max_resolve){
+            resolve=max_resolve
+            this.actor.update ({ 'system.resources.resolve.value': resolve });
+          }
         }
       }
       else{
@@ -324,9 +330,12 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let karma=this.actor.system.resources.karma.value
       let max_karma=this.actor.system.resources.karma.max
       if (event.shiftKey) {
-        max_karma++
-        if (max_karma > 6){max_karma=6}
-        this.actor.update ({ 'system.resources.karma.max': max_karma });
+        if (game.user.isGM == true)
+        {
+          max_karma++
+          if (max_karma > 6){max_karma=6}
+          this.actor.update ({ 'system.resources.karma.max': max_karma });
+        }
       }
       else
       {
@@ -345,12 +354,15 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let karma=this.actor.system.resources.karma.value
       let max_karma=this.actor.system.resources.karma.max
       if (event.shiftKey){
-        max_karma--
-        if (max_karma < 1){max_karma=1}
-        this.actor.update ({ 'system.resources.karma.max': max_karma });
-        if (karma > max_karma){
-          karma=max_karma
-          this.actor.update ({ 'system.resources.karma.value': karma });
+        if (game.user.isGM == true)
+        {
+          max_karma--
+          if (max_karma < 1){max_karma=1}
+          this.actor.update ({ 'system.resources.karma.max': max_karma });
+          if (karma > max_karma){
+            karma=max_karma
+            this.actor.update ({ 'system.resources.karma.value': karma });
+          }
         }
       }
       else
