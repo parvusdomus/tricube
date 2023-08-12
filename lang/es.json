@@ -66,6 +66,6 @@
     "TRI.config.tabActiveFontColorHint": "Elige el Color del Fondo de la Pestaña Activa",
     "TRI.config.tabHoverBgColorName": "Color de Fondo de al Pasar el Ratón por Pestaña",
     "TRI.config.tabHoverBgColorHint": "Elige el Color de Fondo al Pasar el Ratón por encima de una Pestaña",
-    "TRI.config.tabHoverFontColorName": "Color de Texto al Pasar el Ratón por Pestañar",
+    "TRI.config.tabHoverFontColorName": "Color de Texto al Pasar el Ratón por Pestaña",
     "TRI.config.tabHoverFontColorHint": "Elige el Color de Trxto al Pasar el Ratón por encima de una Pestaña"
 }
