@@ -94,12 +94,12 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       html.find('a.combat-change').click(this._onCombatChange.bind(this));
       html.find('a.rank-change').click(this._onRankIncrease.bind(this));
       html.find('a.rank-change').contextmenu(this._onRankDecrease.bind(this));
-      html.find('a.resolve-change').click(this._onResolveIncrease.bind(this));
-      html.find('a.resolve-change').contextmenu(this._onResolveDecrease.bind(this));
-      html.find('a.karma-change').click(this._onKarmaIncrease.bind(this));
-      html.find('a.karma-change').contextmenu(this._onKarmaDecrease.bind(this));
-      html.find('a.afflictions-change').click(this._onAfflictionsIncrease.bind(this));
-      html.find('a.afflictions-change').contextmenu(this._onAfflictionsDecrease.bind(this));
+      html.find('a.resolve-change').contextmenu(this._onResolveIncrease.bind(this));
+      html.find('a.resolve-change').click(this._onResolveDecrease.bind(this));
+      html.find('a.karma-change').contextmenu(this._onKarmaIncrease.bind(this));
+      html.find('a.karma-change').click(this._onKarmaDecrease.bind(this));
+      html.find('a.afflictions-change').contextmenu(this._onAfflictionsIncrease.bind(this));
+      html.find('a.afflictions-change').click(this._onAfflictionsDecrease.bind(this));
       html.find('a.dice-roll').click(this._onDiceRoll.bind(this));
       html.find ('a.subtrait-toggle').click(this._onSubTraitToggle.bind(this));
       html.find ('a.substyle-toggle').click(this._onSubStyleToggle.bind(this));
