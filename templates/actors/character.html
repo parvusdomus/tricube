@@ -45,7 +45,11 @@
           {{#if (gt actor.system.resources.karma.value 5)}}<li><a class="karma-change"><img src="systems/tricube/style/icons/clover.svg" title="Left Click: Increase Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Increase Max&#013;Shift+Right Click Decrease Max"></a></li>{{else}}<li><a class="karma-change"><img src="systems/tricube/style/icons/clover_grey.svg" title="Left Click: Increase Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Increase Max&#013;Shift+Right Click Decrease Max"></a></li>{{/if}}
         {{/if}}
       </ul>
-      <h2><label>{{localize "TRI.resources.afflictions"}}</label></h2>
+      {{#if (gt actor.system.resources.afflictions.value 0)}}
+        <h2><label>{{localize "TRI.resources.afflictions"}}</label></h2>
+      {{else}}
+        {{#if isGM}}<h2><label>{{localize "TRI.resources.afflictions"}}</label></h2>{{/if}}
+      {{/if}}
       <ul class="resources">
         {{#if (gt actor.system.resources.afflictions.max 0)}}
           {{#if (gt actor.system.resources.afflictions.value 0)}}<li><a class="afflictions-change"><img src="systems/tricube/style/icons/skull.svg" title="Shift+Left Click: Increase Max&#013;Shift+Right Click Decrease Max"></a></li>{{else}}{{#if isGM}}<li><a class="afflictions-change"><img src="systems/tricube/style/icons/skull_grey.svg" title="Shift+Left Click: Increase Max&#013;Shift+Right Click Decrease Max"></a></li>{{/if}}{{/if}}
