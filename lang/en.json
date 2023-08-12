@@ -59,6 +59,14 @@
     "TRI.config.dieRollerButtonBgColorName": "Dice Roller Button Background Color",
     "TRI.config.dieRollerButtonBgColorHint": "Pick a Color to be Used as the Dice Roller Button Background Color",
     "TRI.config.dieRollerButtonFontColorName": "Dice Roller Button Font Color",
-    "TRI.config.dieRollerButtonFontColorHint": "Pick a Color to be Used as the Dice Roller Button Font Color (Dice Icons)"
+    "TRI.config.dieRollerButtonFontColorHint": "Pick a Color to be Used as the Dice Roller Button Font Color (Dice Icons)",
+    "TRI.config.tabActiveBgColorName": "Active Tab Background Color",
+    "TRI.config.tabActiveBgColorHint": "Pick a Color to be Used as the Active Tab Background Color",
+    "TRI.config.tabActiveFontColorName": "Active Tab Font Color",
+    "TRI.config.tabActiveFontColorHint": "Pick a Color to be Used as the Active Tab Font Color",
+    "TRI.config.tabHoverBgColorName": "Hover Tab Background Color",
+    "TRI.config.tabHoverBgColorHint": "Pick a Color to be Used as the Hover Tab Background Color",
+    "TRI.config.tabHoverFontColorName": "Hover Tab Font Color",
+    "TRI.config.tabHoverFontColorHint": "Pick a Color to be Used as the Hover Tab Background Color"
 
 }

@@ -59,5 +59,13 @@
     "TRI.config.dieRollerButtonBgColorName": "Color de Fondo de los Botones del Lanzador de Dados",
     "TRI.config.dieRollerButtonBgColorHint": "Elige el Color de Fondo de los Botones del Lanzador de Dados",
     "TRI.config.dieRollerButtonFontColorName": "Color de Fuente de los Botones del Lanzador de Dados",
-    "TRI.config.dieRollerButtonFontColorHint": "Elige el Color del Texto de los Botones del Lanzador de Dados (iconos de dados)"
+    "TRI.config.dieRollerButtonFontColorHint": "Elige el Color del Texto de los Botones del Lanzador de Dados (iconos de dados)",
+    "TRI.config.tabActiveBgColorName": "Color de Fondo de la Pestaña Activa",
+    "TRI.config.tabActiveBgColorHint": "Elige el Color del Fondo de la Pestaña Activa",
+    "TRI.config.tabActiveFontColorName": "Color de Texto de la Pestaña Activa",
+    "TRI.config.tabActiveFontColorHint": "Elige el Color del Fondo de la Pestaña Activa",
+    "TRI.config.tabHoverBgColorName": "Color de Fondo de al Pasar el Ratón por Pestaña",
+    "TRI.config.tabHoverBgColorHint": "Elige el Color de Fondo al Pasar el Ratón por encima de una Pestaña",
+    "TRI.config.tabHoverFontColorName": "Color de Texto al Pasar el Ratón por Pestañar",
+    "TRI.config.tabHoverFontColorHint": "Elige el Color de Trxto al Pasar el Ratón por encima de una Pestaña"
 }
