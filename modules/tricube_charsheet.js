@@ -302,6 +302,8 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       const dataset = event.currentTarget.dataset;
       let resolve=this.actor.system.resources.resolve.value
       let max_resolve=this.actor.system.resources.resolve.max
+      let chatData = {}
+      let msg_content =""
       if (event.shiftKey) {
         if (game.user.isGM == true)
         {
@@ -317,6 +319,14 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       else{
         resolve--
         if (resolve < 0){resolve=0}
+        else{
+          msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:red; color:white;\">"+game.i18n.localize("TRI.ui.loseResolve")+"</h3></div>"
+          chatData = {
+            content: msg_content,
+            speaker: ChatMessage.getSpeaker()
+          };
+          ChatMessage.create(chatData);
+        }
         this.actor.update ({ 'system.resources.resolve.value': resolve });
       }
       
@@ -353,6 +363,8 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       const dataset = event.currentTarget.dataset;
       let karma=this.actor.system.resources.karma.value
       let max_karma=this.actor.system.resources.karma.max
+      let chatData = {}
+      let msg_content =""
       if (event.shiftKey){
         if (game.user.isGM == true)
         {
@@ -369,9 +381,16 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       {
         karma--
         if (karma < 0){karma=0}
+        else {
+          msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:green; color:white;\">"+game.i18n.localize("TRI.ui.loseKarma")+"</h3></div>"
+          chatData = {
+            content: msg_content,
+            speaker: ChatMessage.getSpeaker()
+          };
+          ChatMessage.create(chatData);
+        }
         this.actor.update ({ 'system.resources.karma.value': karma });
       }
-      
       return;
     }
     

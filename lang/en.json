@@ -23,6 +23,13 @@
     "TRI.ui.deleteText": "Please confirm if you want to delete this item.",
     "TRI.ui.subTraits": "Sub-Traits",
     "TRI.ui.subStyles": "Sub-Styles",
+    "TRI.ui.loseKarma": "You Spent Karma!",
+    "TRI.ui.spendKarma": "-> Spend Karma <-",
+    "TRI.ui.loseResolve": "You Lost Resolve!",
+    "TRI.ui.regularSuccess": "Success!",
+    "TRI.ui.criticalSuccess": "Exceptional Success!!",
+    "TRI.ui.regularFailure": "Failure",
+    "TRI.ui.criticalFailure": "Critical Failure!",
 
     "TRI.config.bgImageName": "Background Image",
     "TRI.config.bgImageHint": "Select an Image to Use as Background",

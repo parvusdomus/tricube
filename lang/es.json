@@ -23,6 +23,13 @@
     "TRI.ui.deleteText": "Por favor confirma si quieres borrar este objeto.",
     "TRI.ui.subTraits": "S. Rasgos",
     "TRI.ui.subStyles": "S. Estilos",
+    "TRI.ui.loseKarma": "¡Has Gastado Karma!",
+    "TRI.ui.spendKarma": "-> Gastar Karma <-",
+    "TRI.ui.loseResolve": "¡Pierdes Determinación!",
+    "TRI.ui.regularSuccess": "¡Éxito!",
+    "TRI.ui.criticalSuccess": "¡¡Éxito Excepcional!!",
+    "TRI.ui.regularFailure": "Fallo",
+    "TRI.ui.criticalFailure": "¡Fracaso Crítico!",
 
     "TRI.config.bgImageName": "Imagen de Fondo",
     "TRI.config.bgImageHint": "Elige la Imagen de Fondo de las Fichas",

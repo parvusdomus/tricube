@@ -4,6 +4,8 @@ import TRICUBE_ITEM_SHEET from "./modules/tricube_itemsheet.js";
 import { preloadHandlebarsTemplates } from "./modules/preloadTemplates.js";
 import DieRoller from "./modules/DieRoller.js";
 import {_getInitiativeFormula} from './modules/combat.js';
+import {diceToFaces} from "./modules/rolls.js";
+import tricubeChat from "./modules/chat.js";
 
 
 
@@ -345,6 +347,20 @@ Hooks.once("init", function(){
   //ACTIVATE FLOATING DICE ROLLER
   new DieRoller(DieRoller.defaultOptions, { excludeTextLabels: true }).render(true);
 
+  //DICE FACE HELPER
+  Handlebars.registerHelper("times", function(n, content)
+    {
+      let result = "";
+      for (let i = 0; i < n; ++i)
+      {
+          result += content.fn(i);
+      }
+    
+      return result;
+    });
+    
+  Handlebars.registerHelper("face", diceToFaces);
+
 });
 
 
@@ -393,3 +409,5 @@ Hooks.on('renderSettingsConfig', (app, el, data) => {
   el.find('[name="tricube.tabHoverFontColor"]').parent()
     .append(`<input type="color" value="${game.settings.get('tricube','tabHoverFontColor')}" data-edit="tricube.tabHoverFontColor">`)
 });
+
+Hooks.on('renderChatLog', (app, html, data) => tricubeChat.chatListeners(html))
