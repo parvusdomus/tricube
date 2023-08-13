@@ -413,27 +413,10 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       return;
     }
 
-    async _onDiceRoll(event,data)
+    async _onDiceRoll(event)
     {
       event.preventDefault();
-      const dataset = event.currentTarget.dataset;
-      let tirada= ""
-      let ndice=dataset.ndice
-      let difficulty=dataset.ndiff
-      if (event.shiftKey){
-        difficulty=4
-        
-      }
-      if (event.ctrlKey){
-        difficulty=6
-      }
-      tirada=ndice+"d6cs>="+difficulty
-      let d6Roll = new Roll(String(tirada)).roll({async: false});
-      d6Roll.toMessage({
-        flavor: ndice+"D6 VS "+difficulty,
-        rollMode: 'roll',
-        speaker: ChatMessage.getSpeaker({ alias: this.actor.name })
-        });
+      DiceRollV2(event);
       return;
     }
   

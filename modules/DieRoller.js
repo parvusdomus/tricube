@@ -1,3 +1,5 @@
+import {DiceRollV2} from "../modules/rolls.js";
+
 export default class DieRoller extends FormApplication {
     constructor(options) {
 	    super(options);
@@ -60,6 +62,7 @@ export default class DieRoller extends FormApplication {
     activateListeners(html)
     {
 
+        //html.find(".roll-dice").on('click', this._onDieRoll.bind(this));
         html.find(".roll-dice").on('click', this._onDieRoll.bind(this));
 
         let elmnt = html.find("#die-roller-move-handle");
@@ -111,18 +114,8 @@ export default class DieRoller extends FormApplication {
     async _onDieRoll(event)
     {
         event.preventDefault();
-      const dataset = event.currentTarget.dataset;
-      let tirada= ""
-      let ndice=dataset.ndice
-      let difficulty=document.getElementById("ndiff").value;
-      tirada=ndice+"d6cs>="+difficulty
-      let d6Roll = new Roll(String(tirada)).roll({async: false});
-      d6Roll.toMessage({
-        flavor: ndice+"D6 VS "+difficulty,
-        rollMode: 'roll',
-        speaker: ChatMessage.getSpeaker()
-        });
-      return;
+        DiceRollV2(event);
+        return;
     }
 
 }

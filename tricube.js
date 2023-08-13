@@ -34,6 +34,13 @@ Hooks.once("init", function(){
 
   console.log("test | INITIALIZING TRICUBE SETTINGS...");
 
+  game.settings.register("tricube", "dieRollerPosition", {
+    scope: "client",
+    config: false,
+    default: null,
+    type: Object
+  });
+
   game.settings.register("tricube", "enableRank", {
     name: game.i18n.localize("TRI.config.enableRankName"),
     hint: game.i18n.localize("TRI.config.enableRankHint"),
