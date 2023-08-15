@@ -48,6 +48,7 @@
     "TRI.ui.karmaIntrusion": "Accept it and recover KARMA",
     "TRI.ui.resolveIntrusion": "Accept it and recover RESOLVE",
     "TRI.ui.acceptIntrusion": "INTRUSSION ACCEPTED",
+    "TRI.ui.cantIntrusion": "Can't send intrussion. Resource at max value.",
 
 
     "TRI.config.bgImageName": "Background Image",

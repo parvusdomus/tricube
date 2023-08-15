@@ -151,11 +151,19 @@ export default class DieRoller extends FormApplication {
         {
             msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:goldenrod; color:white;\">"+game.i18n.localize("TRI.ui.proposeIntrusion")+"</h3></div>"
             if (event.shiftKey) {
-                msg_content+="<div class=\"tricube test-result\"><a class=\"gainResolve\" data-actor_id="+actor._id+"><h3 style=\"background-color:red;color:white\">"+game.i18n.localize("TRI.ui.resolveIntrusion")+"</h3></a></div>"
+                msg_content+="<div class=\"tricube test-result\"><a class=\"gainResolve\" data-actor_id="+actor._id+" data-current_resolve="+actor.system.resources.resolve.value+"><h3 style=\"background-color:red;color:white\">"+game.i18n.localize("TRI.ui.resolveIntrusion")+"</h3></a></div>"
+                if (actor.system.resources.resolve.value==actor.system.resources.resolve.max){
+                    ui.notifications.warn(game.i18n.localize("TRI.ui.cantIntrusion"));
+                    return 1
+                }
             }
             else
             {
-                msg_content+="<div class=\"tricube test-result\"><a class=\"gainKarma\" data-actor_id="+actor._id+"><h3 style=\"background-color:green;color:white\">"+game.i18n.localize("TRI.ui.karmaIntrusion")+"</h3></a></div>"
+                msg_content+="<div class=\"tricube test-result\"><a class=\"gainKarma\" data-actor_id="+actor._id+" data-current_karma="+actor.system.resources.karma.value+"><h3 style=\"background-color:green;color:white\">"+game.i18n.localize("TRI.ui.karmaIntrusion")+"</h3></a></div>"
+                if (actor.system.resources.karma.value==actor.system.resources.karma.max){
+                    ui.notifications.warn(game.i18n.localize("TRI.ui.cantIntrusion"));
+                    return 1 
+                }
             }
             chatData = {
                 content: msg_content,

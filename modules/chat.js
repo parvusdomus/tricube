@@ -62,6 +62,7 @@ export default class tricubeChat {
       const dataset = event.currentTarget.dataset;
       const element = event.currentTarget;
       let actor = game.actors.get(dataset.actor_id);
+      if (Number(actor.system.resources.resolve.value) != Number(dataset.current_resolve)){return 1}
       let resolve=Number(actor.system.resources.resolve.value)+1;
       let resolve_max=Number(actor.system.resources.resolve.max)
       if (resolve > resolve_max){resolve=resolve_max}
@@ -84,6 +85,7 @@ export default class tricubeChat {
       const dataset = event.currentTarget.dataset;
       const element = event.currentTarget;
       let actor = game.actors.get(dataset.actor_id);
+      if (Number(actor.system.resources.karma.value) != Number(dataset.current_karma)){return 1}
       let karma=Number(actor.system.resources.karma.value)+1;
       let karma_max=Number(actor.system.resources.karma.max)
       if (karma > karma_max){karma=karma_max}
