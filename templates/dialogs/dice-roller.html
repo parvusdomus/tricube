@@ -12,9 +12,13 @@
             <span class="fas fa-fw fa-cubes"></span>
         </button>
         <h2><label>&nbsp;VS&nbsp;</label></h2>
-
-        <div class="die-roller"><h2><input size="2" name="ndiff" id="ndiff" value="5" data-dtype="Number"/></h2></div>
-    
+        <div class="die-roller"><h2><input size="2" name="ndiff" id="ndiff" value="5" data-dtype="Number"/></h2></div>    
     </div>
+    {{isGM}}
+    {{#if isGM}}
+    <button class="roll-dice" data-ndice="3" data-ndiff="4" title="3 dice">
+        <span style="color:red" class="fas fa-fw fa-cubes"></span>
+    </button>
+    {{/if}}
 
 </form>

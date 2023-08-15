@@ -14,8 +14,6 @@ export async function DiceRollV2(event)
     let canSpendKarma=true
     let actor = game.actors.get(ChatMessage.getSpeaker().actor);
     let actor_id = ChatMessage.getSpeaker().actor;
-    console.log ("ACTOR ID")
-    console.log (actor_id)
     if (game.user.isGM==false){
         if (actor.system.resources.karma.value <= 0){canSpendKarma=false}
     }

@@ -345,7 +345,10 @@ Hooks.once("init", function(){
   root.style.setProperty('--tab-text-color-hover',tabHoverFontColor)
 
   //ACTIVATE FLOATING DICE ROLLER
-  new DieRoller(DieRoller.defaultOptions, { excludeTextLabels: true }).render(true);
+
+
+  
+
 
   //DICE FACE HELPER
   Handlebars.registerHelper("times", function(n, content)
@@ -369,9 +372,10 @@ Hooks.on("renderPause", () => {
   $("#pause figcaption").attr("class", "pause-tricube");
 });
 
-Hooks.on('setup', () => {
-
- 
+Hooks.on('ready', () => {
+  console.log ("IS GM")
+  console.log (game.user.isGM) 
+  new DieRoller(DieRoller.defaultOptions, { excludeTextLabels: true }).render(true);
   
 })
 
@@ -411,3 +415,7 @@ Hooks.on('renderSettingsConfig', (app, el, data) => {
 });
 
 Hooks.on('renderChatLog', (app, html, data) => tricubeChat.chatListeners(html))
+
+Hooks.on('refreshToken', () => {
+
+})

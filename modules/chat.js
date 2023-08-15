@@ -4,10 +4,8 @@ export default class tricubeChat {
     }
 
     static _spendKarma (event, data){
-      console.log ("FUNCION SPEND KARMA")
       const dataset = event.currentTarget.dataset;
       const element = event.currentTarget;
-      console.log (dataset)
       let dados_split = dataset.dados.split(',');
       let difficulty = Number(dataset.ndiff)-1
       let tirada=dataset.ndice+"d6"
@@ -17,8 +15,6 @@ export default class tricubeChat {
       let testResult=""
       let dados=[];
       let actor = game.actors.get(dataset.actor_id);
-      console.log ("ACTOR")
-      console.log (actor)
       if (game.user.isGM==false){
         let karma=Number(actor.system.resources.karma.value)-1;
         actor.update ({ 'system.resources.karma.value': karma });

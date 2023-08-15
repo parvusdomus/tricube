@@ -5,12 +5,19 @@ export default class DieRoller extends FormApplication {
 	    super(options);
 
     }
-
+        
     static get defaultOptions() {
+        let template=""
+        if (game.user.isGM==true){
+            template="systems/tricube/templates/dialogs/dice-rollerGM.html"
+        }
+        else{
+            template="systems/tricube/templates/dialogs/dice-roller.html"
+        }
         return mergeObject(super.defaultOptions, {
             id: "die-roller",
             title: game.i18n.localize("tricube.system.dieRoller"),
-            template: "systems/tricube/templates/dialogs/dice-roller.html",
+            template: template,
             classes: [ "tricube", "die-roller"],
             popout: false,
             buttons: [],
@@ -42,6 +49,7 @@ export default class DieRoller extends FormApplication {
 
     setPos() {
 
+
         let cssPosition = this.getPos();
         let position = this.pos;
 
@@ -64,6 +72,12 @@ export default class DieRoller extends FormApplication {
 
         //html.find(".roll-dice").on('click', this._onDieRoll.bind(this));
         html.find(".roll-dice").on('click', this._onDieRoll.bind(this));
+
+        html.find(".intrusion").on('click', this._onIntrussion.bind(this));
+        html.find(".resolve-remove").on('click', this._onResolveRemove.bind(this));
+        html.find(".resolve-add").on('click', this._onResolveAdd.bind(this));
+        html.find(".karma-remove").on('click', this._onKarmaRemove.bind(this));
+        html.find(".karma-add").on('click', this._onKarmaAdd.bind(this));
 
         let elmnt = html.find("#die-roller-move-handle");
         let dieRoller = elmnt.closest('.window-app');
@@ -115,6 +129,276 @@ export default class DieRoller extends FormApplication {
     {
         event.preventDefault();
         DiceRollV2(event);
+        return;
+    }
+
+    async _onIntrussion(event)
+    {
+        console.log ("INTRUSSION FUNCTION")
+        event.preventDefault();
+        return;
+    }
+    
+    async _onResolveRemove(event)
+    {
+        event.preventDefault();
+        const dataset = event.currentTarget.dataset;
+        let actor
+        let message=""
+        let resolve=0
+        let max_resolve=0
+        let effort=0
+        let max_effort=0
+        if (canvas.tokens.controlled[0])
+        {
+            actor=canvas.tokens.controlled[0].document.actor;
+        }
+        else
+        {
+            ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+            return 1;
+        }
+        if (actor.type=="Player")
+        {
+            resolve=actor.system.resources.resolve.value
+            max_resolve=actor.system.resources.resolve.max
+            let chatData = {}
+            let msg_content =""
+            if (event.shiftKey) {
+                if (game.user.isGM == true)
+                {
+                    max_resolve--
+                    if (max_resolve < 1){max_resolve=1}
+                    else{
+                        message=game.i18n.localize("TRI.ui.removeMaxResolve")+actor.name
+                        ui.notifications.info(message);
+                    }
+                    actor.update ({ 'system.resources.resolve.max': max_resolve });
+                    if (resolve > max_resolve){
+                        resolve=max_resolve
+                        actor.update ({ 'system.resources.resolve.value': resolve });
+                    }
+                }
+            }
+            else{
+                resolve--
+                if (resolve < 0){resolve=0}
+                else{
+                    msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:red; color:white;\">"+game.i18n.localize("TRI.ui.loseResolve")+"</h3></div>"
+                    chatData = {
+                        content: msg_content,
+                        speaker: ChatMessage.getSpeaker()
+                    };
+                    ChatMessage.create(chatData);
+                }
+                actor.update ({ 'system.resources.resolve.value': resolve });
+            }
+        }
+        else{
+            effort=actor.system.resources.effort.value
+            max_effort=actor.system.resources.effort.max
+            if (event.shiftKey) {
+                if (game.user.isGM == true)
+                {
+                    max_effort--
+                    if (max_effort < 1){max_effort=1}
+                    else{
+                        message=game.i18n.localize("TRI.ui.removeMaxEffort")+actor.name
+                        ui.notifications.info(message);
+                    }
+                    actor.update ({ 'system.resources.effort.max': max_effort });
+                    if (effort > max_effort){
+                        effort=max_effort
+                        actor.update ({ 'system.resources.effort.value': effort });
+                        //ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+                    }
+                }
+            }
+            else{
+                effort--
+                if (effort < 0){effort=0}
+                else{
+                    message=game.i18n.localize("TRI.ui.removeEffort")+actor.name
+                    ui.notifications.info(message);
+                }
+                actor.update ({ 'system.resources.effort.value': effort });
+            }
+        }
+        return;
+    }
+
+    async _onResolveAdd(event)
+    {
+        event.preventDefault();
+        const dataset = event.currentTarget.dataset;
+        let actor
+        let message=""
+        let resolve=0
+        let max_resolve=0
+        let effort=0
+        let max_effort=0
+        if (canvas.tokens.controlled[0])
+        {
+            actor=canvas.tokens.controlled[0].document.actor;
+        }
+        else
+        {
+            ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+            return 1;
+        }
+        if (actor.type=="Player")
+        {
+            resolve=actor.system.resources.resolve.value
+            max_resolve=actor.system.resources.resolve.max
+            if (event.shiftKey) {
+                if (game.user.isGM == true)
+                {
+                    max_resolve++
+                    if (max_resolve > 6){max_resolve=6}
+                    else{
+                        message=game.i18n.localize("TRI.ui.addMaxResolve")+actor.name
+                        ui.notifications.info(message);
+                    }
+                    actor.update ({ 'system.resources.resolve.max': max_resolve });
+                }
+            }
+            else
+            {
+                resolve++
+                if (resolve > max_resolve){resolve=max_resolve}
+                else {
+                    message=game.i18n.localize("TRI.ui.addResolve")+actor.name
+                    ui.notifications.info(message);
+                }
+                actor.update ({ 'system.resources.resolve.value': resolve });
+            }
+        }
+        else{
+            effort=actor.system.resources.effort.value
+            max_effort=actor.system.resources.effort.max
+            if (event.shiftKey) {
+                if (game.user.isGM == true)
+                {
+                    max_effort++
+                    if (max_effort > 36){max_effort=36}
+                    else{
+                        message=game.i18n.localize("TRI.ui.addMaxEffort")+actor.name
+                        ui.notifications.info(message);
+                    }
+                    actor.update ({ 'system.resources.effort.max': max_effort });
+                }
+            }
+            else
+            {
+                effort++
+                if (effort > max_effort){effort=max_effort}
+                else{
+                    message=game.i18n.localize("TRI.ui.addEffort")+actor.name
+                    ui.notifications.info(message);
+                }
+                actor.update ({ 'system.resources.effort.value': effort });
+            }
+        } 
+        
+        return;
+    }
+
+    async _onKarmaRemove(event)
+    {
+        event.preventDefault();
+        const dataset = event.currentTarget.dataset;
+        let actor
+        let message=""
+        if (canvas.tokens.controlled[0])
+        {
+            actor=canvas.tokens.controlled[0].document.actor;
+        }
+        else
+        {
+            ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+            return 1;
+        }
+        if (actor.type=="Player")
+        {
+            let karma=actor.system.resources.karma.value
+            let max_karma=actor.system.resources.karma.max
+            let chatData = {}
+            let msg_content =""
+            if (event.shiftKey) {
+                if (game.user.isGM == true)
+                {
+                    max_karma--
+                    if (max_karma < 1){max_karma=1}
+                    else{
+                        message=game.i18n.localize("TRI.ui.removeMaxKarma")+actor.name
+                        ui.notifications.info(message);
+                    }
+                    actor.update ({ 'system.resources.karma.max': max_karma });
+                    if (karma > max_karma){
+                        karma=max_karma
+                        actor.update ({ 'system.resources.karma.value': karma });
+                    }
+                }
+            }
+            else{
+                karma--
+                if (karma < 0){karma=0}
+                else{
+                    msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:green; color:white;\">"+game.i18n.localize("TRI.ui.loseKarma2")+"</h3></div>"
+                    chatData = {
+                        content: msg_content,
+                        speaker: ChatMessage.getSpeaker()
+                    };
+                    ChatMessage.create(chatData);
+                }
+                actor.update ({ 'system.resources.karma.value': karma });
+            }
+        }
+        return;
+    }
+
+    async _onKarmaAdd(event)
+    {
+        event.preventDefault();
+        const dataset = event.currentTarget.dataset;
+        let actor
+        let message=""
+        if (canvas.tokens.controlled[0])
+        {
+            actor=canvas.tokens.controlled[0].document.actor;
+        }
+        else
+        {
+            ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+            return 1;
+        }
+        if (actor.type=="Player")
+        {
+            let karma=actor.system.resources.karma.value
+            let max_karma=actor.system.resources.karma.max
+            if (event.shiftKey) {
+                if (game.user.isGM == true)
+                {
+                max_karma++
+                if (max_karma > 6){max_karma=6}
+                else {
+                    message=game.i18n.localize("TRI.ui.addMaxKarma")+actor.name
+                    ui.notifications.info(message);
+                }
+                actor.update ({ 'system.resources.karma.max': max_karma });
+                }
+            }
+            else
+            {
+                karma++
+                if (karma > max_karma){karma=max_karma}
+                else{
+                    message=game.i18n.localize("TRI.ui.addKarma")+actor.name
+                    ui.notifications.info(message);
+                }
+                actor.update ({ 'system.resources.karma.value': karma });
+            }
+        } 
         return;
     }
 
