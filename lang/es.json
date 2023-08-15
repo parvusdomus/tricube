@@ -44,6 +44,10 @@
     "TRI.ui.addMaxResolve": "Determinación MÁXIMA aumentada a: ",
     "TRI.ui.addMaxEffort": "Esfuerzo MÁXIMO aumentado a: ",
     "TRI.ui.addMaxKarma": "Karma MÁXIMO aumentado a: ",
+    "TRI.ui.proposeIntrusion": "El DJ te propone una INTROMISIÓN",
+    "TRI.ui.karmaIntrusion": "Acéptala y recupera KARMA",
+    "TRI.ui.resolveIntrusion": "Acéptala y recupera DETERMINACIÓN",
+    "TRI.ui.acceptIntrusion": "INTROMISIÓN ACEPTADA",
 
 
     "TRI.config.bgImageName": "Imagen de Fondo",

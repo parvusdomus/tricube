@@ -44,7 +44,10 @@
     "TRI.ui.addMaxResolve": "MAX Resolve increased to: ",
     "TRI.ui.addMaxEffort": "MAX Effort increased to: ",
     "TRI.ui.addMaxKarma": "MAX Karma increased to: ",
-
+    "TRI.ui.proposeIntrusion": "The GM proposes you an INTRUSSION",
+    "TRI.ui.karmaIntrusion": "Accept it and recover KARMA",
+    "TRI.ui.resolveIntrusion": "Accept it and recover RESOLVE",
+    "TRI.ui.acceptIntrusion": "INTRUSSION ACCEPTED",
 
 
     "TRI.config.bgImageName": "Background Image",

@@ -134,8 +134,35 @@ export default class DieRoller extends FormApplication {
 
     async _onIntrussion(event)
     {
-        console.log ("INTRUSSION FUNCTION")
         event.preventDefault();
+        let actor
+        let msg_content
+        let chatData
+        if (canvas.tokens.controlled[0])
+        {
+            actor=canvas.tokens.controlled[0].document.actor;
+        }
+        else
+        {
+            ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+            return 1;
+        }
+        if (actor.type=="Player")
+        {
+            msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:goldenrod; color:white;\">"+game.i18n.localize("TRI.ui.proposeIntrusion")+"</h3></div>"
+            if (event.shiftKey) {
+                msg_content+="<div class=\"tricube test-result\"><a class=\"gainResolve\" data-actor_id="+actor._id+"><h3 style=\"background-color:red;color:white\">"+game.i18n.localize("TRI.ui.resolveIntrusion")+"</h3></a></div>"
+            }
+            else
+            {
+                msg_content+="<div class=\"tricube test-result\"><a class=\"gainKarma\" data-actor_id="+actor._id+"><h3 style=\"background-color:green;color:white\">"+game.i18n.localize("TRI.ui.karmaIntrusion")+"</h3></a></div>"
+            }
+            chatData = {
+                content: msg_content,
+                speaker: ChatMessage.getSpeaker()
+            };
+            ChatMessage.create(chatData);
+        }
         return;
     }
     
@@ -210,7 +237,6 @@ export default class DieRoller extends FormApplication {
                     if (effort > max_effort){
                         effort=max_effort
                         actor.update ({ 'system.resources.effort.value': effort });
-                        //ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
                     }
                 }
             }
