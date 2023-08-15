@@ -373,8 +373,6 @@ Hooks.on("renderPause", () => {
 });
 
 Hooks.on('ready', () => {
-  console.log ("IS GM")
-  console.log (game.user.isGM) 
   new DieRoller(DieRoller.defaultOptions, { excludeTextLabels: true }).render(true);
   
 })
