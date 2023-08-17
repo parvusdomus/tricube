@@ -54,6 +54,8 @@
 
     "TRI.config.bgImageName": "Imagen de Fondo",
     "TRI.config.bgImageHint": "Elige la Imagen de Fondo de las Fichas",
+    "TRI.config.chatBgImageName": "Imagen de Fondo del Chat",
+    "TRI.config.chatBgImageHint": "Elige la Imagen de Fondo de las Tarjetas del Chat",
     "TRI.config.listHeaderBgColorName": "Color de Fondo de las Cabeceras de las Listas",
     "TRI.config.listHeaderBgColorHint": "Elige el Color de Fondo para Usar como Fondo de las Cabeceras de las Listas",
     "TRI.config.listHeaderFontColorName": "Color de Fuente de las Cabeceras de las Listas",

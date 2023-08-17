@@ -27,16 +27,16 @@ export default class tricubeChat {
         dados.push(dados_split[i]);
       }
       if (nExitos >= 1){
-        testResult="<h3 style=\"background-color:green; color:white;\">"+game.i18n.localize("TRI.ui.regularSuccess")+"</h3>"
+        testResult="<h3 class=\"regular-success\">"+game.i18n.localize("TRI.ui.regularSuccess")+"</h3>"
         if (nExitos >= 2){
-          testResult="<h3 style=\"background-color:blue; color:white;\">"+game.i18n.localize("TRI.ui.criticalSuccess")+"</h3>"
+          testResult="<h3 class=\"critical-success\">"+game.i18n.localize("TRI.ui.criticalSuccess")+"</h3>"
         }
       }
       else{
-        testResult="<h3 style=\"background-color:grey; color:white;\">"+game.i18n.localize("TRI.ui.regularFailure")+"</h3>"
+        testResult="<h3 class=\"regular-failure\">"+game.i18n.localize("TRI.ui.regularFailure")+"</h3>"
       }
       if (nUnos >= Number(dataset.ndice)){
-        testResult="<h3 style=\"background-color:red; color:white;\">"+game.i18n.localize("TRI.ui.criticalFailure")+"</h3>"
+        testResult="<h3 class=\"critical-failure\">"+game.i18n.localize("TRI.ui.criticalFailure")+"</h3>"
         canSpendKarma=false
       }
       const messageId = $(element)
@@ -71,7 +71,7 @@ export default class tricubeChat {
             .parents('[data-message-id]')
             .attr('data-message-id');
       const message = game.messages.get(messageId)
-      let msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:grey; color:white;\">"+game.i18n.localize("TRI.ui.acceptIntrusion")+"</h3></div>"
+      let msg_content="<div class=\"tricube test-result\"><h3 class=\"disabled\">"+game.i18n.localize("TRI.ui.acceptIntrusion")+"</h3></div>"
       //message.update({id: messageId, content: msg_content})
       let chatData = {
         content: msg_content,
@@ -94,7 +94,7 @@ export default class tricubeChat {
             .parents('[data-message-id]')
             .attr('data-message-id');
       const message = game.messages.get(messageId)
-      let msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:grey; color:white;\">"+game.i18n.localize("TRI.ui.acceptIntrusion")+"</h3></div>"
+      let msg_content="<div class=\"tricube test-result\"><h3 class=\"disabled\">"+game.i18n.localize("TRI.ui.acceptIntrusion")+"</h3></div>"
       //message.update({id: messageId, content: msg_content})
       let chatData = {
         content: msg_content,

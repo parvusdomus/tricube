@@ -104,6 +104,17 @@ Hooks.once("init", function(){
     filePicker: 'image',
   });
 
+  game.settings.register('tricube', 'chatBgImage', {
+    name: game.i18n.localize("TRI.config.chatBgImageName"),
+    hint: game.i18n.localize("TRI.config.chatBgImageHint"),
+    type: String,
+    default: 'systems/tricube/style/images/white.webp',
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    filePicker: 'image',
+  });
+
   game.settings.register('tricube', 'titleFont', {
     name: game.i18n.localize("TRI.config.titleFontName"),
     hint: game.i18n.localize("TRI.config.titleFontHint"),
@@ -311,6 +322,8 @@ Hooks.once("init", function(){
   const root = document.querySelector(':root');
   let bgImagePath="url(../../../"+game.settings.get ("tricube", "bgImage")+")"
   root.style.setProperty('--bg-image',bgImagePath)
+  let chatbgImagePath="url(../../../"+game.settings.get ("tricube", "chatBgImage")+")"
+  root.style.setProperty('--chat-bg-image',chatbgImagePath)
   let listHeaderBgColor=game.settings.get ("tricube", "listHeaderBgColor")
   root.style.setProperty('--list-header-color',listHeaderBgColor)
   let listHeaderFontColor=game.settings.get ("tricube", "listHeaderFontColor")

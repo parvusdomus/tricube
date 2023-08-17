@@ -26,16 +26,16 @@ export async function DiceRollV2(event)
         dados.push(d6Roll.terms[0].results[i].result);
     }
     if (nExitos >= 1){
-        testResult="<h3 style=\"background-color:green; color:white;\">"+game.i18n.localize("TRI.ui.regularSuccess")+"</h3>"
+        testResult="<h3 class=\"regular-success\">"+game.i18n.localize("TRI.ui.regularSuccess")+"</h3>"
         if (nExitos >= 2){
-            testResult="<h3 style=\"background-color:blue; color:white;\">"+game.i18n.localize("TRI.ui.criticalSuccess")+"</h3>"
+            testResult="<h3 class=\"critical-success\">"+game.i18n.localize("TRI.ui.criticalSuccess")+"</h3>"
         }
     }
     else{
-        testResult="<h3 style=\"background-color:grey; color:white;\">"+game.i18n.localize("TRI.ui.regularFailure")+"</h3>"
+        testResult="<h3 class=\"regular-failure\">"+game.i18n.localize("TRI.ui.regularFailure")+"</h3>"
     }
     if (nUnos >= nDice){
-        testResult="<h3 style=\"background-color:red; color:white;\">"+game.i18n.localize("TRI.ui.criticalFailure")+"</h3>"
+        testResult="<h3 class=\"critical-failure\">"+game.i18n.localize("TRI.ui.criticalFailure")+"</h3>"
         canSpendKarma=false
     }
 

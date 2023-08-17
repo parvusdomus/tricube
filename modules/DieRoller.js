@@ -149,9 +149,9 @@ export default class DieRoller extends FormApplication {
         }
         if (actor.type=="Player")
         {
-            msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:goldenrod; color:white;\">"+game.i18n.localize("TRI.ui.proposeIntrusion")+"</h3></div>"
+            msg_content="<div class=\"tricube test-result\"><h3 class=\"enabled\">"+game.i18n.localize("TRI.ui.proposeIntrusion")+"</h3></div>"
             if (event.shiftKey) {
-                msg_content+="<div class=\"tricube test-result\"><a class=\"gainResolve\" data-actor_id="+actor._id+" data-current_resolve="+actor.system.resources.resolve.value+"><h3 style=\"background-color:red;color:white\">"+game.i18n.localize("TRI.ui.resolveIntrusion")+"</h3></a></div>"
+                msg_content+="<div class=\"tricube test-result\"><a class=\"gainResolve\" data-actor_id="+actor._id+" data-current_resolve="+actor.system.resources.resolve.value+"><h3 class=\"resolve-button\">"+game.i18n.localize("TRI.ui.resolveIntrusion")+"</h3></a></div>"
                 if (actor.system.resources.resolve.value==actor.system.resources.resolve.max){
                     ui.notifications.warn(game.i18n.localize("TRI.ui.cantIntrusion"));
                     return 1
@@ -159,7 +159,7 @@ export default class DieRoller extends FormApplication {
             }
             else
             {
-                msg_content+="<div class=\"tricube test-result\"><a class=\"gainKarma\" data-actor_id="+actor._id+" data-current_karma="+actor.system.resources.karma.value+"><h3 style=\"background-color:green;color:white\">"+game.i18n.localize("TRI.ui.karmaIntrusion")+"</h3></a></div>"
+                msg_content+="<div class=\"tricube test-result\"><a class=\"gainKarma\" data-actor_id="+actor._id+" data-current_karma="+actor.system.resources.karma.value+"><h3 class=\"karma-button\">"+game.i18n.localize("TRI.ui.karmaIntrusion")+"</h3></a></div>"
                 if (actor.system.resources.karma.value==actor.system.resources.karma.max){
                     ui.notifications.warn(game.i18n.localize("TRI.ui.cantIntrusion"));
                     return 1 
@@ -219,7 +219,7 @@ export default class DieRoller extends FormApplication {
                 resolve--
                 if (resolve < 0){resolve=0}
                 else{
-                    msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:red; color:white;\">"+game.i18n.localize("TRI.ui.loseResolve")+"</h3></div>"
+                    msg_content="<div class=\"tricube test-result\"><h3 class=\"resolve-button\">"+game.i18n.localize("TRI.ui.loseResolve")+"</h3></div>"
                     chatData = {
                         content: msg_content,
                         speaker: ChatMessage.getSpeaker()
@@ -378,7 +378,7 @@ export default class DieRoller extends FormApplication {
                 karma--
                 if (karma < 0){karma=0}
                 else{
-                    msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:green; color:white;\">"+game.i18n.localize("TRI.ui.loseKarma2")+"</h3></div>"
+                    msg_content="<div class=\"tricube test-result\"><h3 class=\"karma-button\">"+game.i18n.localize("TRI.ui.loseKarma2")+"</h3></div>"
                     chatData = {
                         content: msg_content,
                         speaker: ChatMessage.getSpeaker()

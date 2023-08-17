@@ -53,6 +53,8 @@
 
     "TRI.config.bgImageName": "Background Image",
     "TRI.config.bgImageHint": "Select an Image to Use as Background",
+    "TRI.config.chatBgImageName": "Chat Card Background Image",
+    "TRI.config.chatBgImageHint": "Select an Image to Use as the Background for the Chat Cards",
     "TRI.config.listHeaderBgColorName": "List Header Background Color",
     "TRI.config.listHeaderBgColorHint": "Pick a Color to be Used as the Item List Header Background Color",
     "TRI.config.listHeaderFontColorName": "List Header Font Color",

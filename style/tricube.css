@@ -421,7 +421,8 @@
 
 
 :root { 
-    --bg-image: url("../../../systems/tricube/style/images/white.svg");
+    --bg-image: url("../../../systems/tricube/style/images/white.webp");
+    --chat-bg-image: url("../../../systems/tricube/style/images/white.webp");
     --font-name: "Dominican";
     --main-font-color: #000000;
     --header-font-color: #000000;
@@ -551,3 +552,47 @@
     background-color: rgba(255, 255, 255, 0);
 }
 
+.regular-success {
+    background-color: rgba(0, 128, 0, 0.5);
+    color: white;
+}
+
+.critical-success {
+    background-color: rgba(0, 0, 128, 0.5);
+    color: white;
+}
+
+.regular-failure {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+}
+
+.critical-failure {
+    background-color: rgba(128, 0, 0, 0.5);
+    color: white;
+}
+
+.disabled {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+}
+
+.enabled {
+    background-color: rgba(218, 165, 32, 0.5);
+    color: white;
+}
+
+.chat-message {
+    background: var(--chat-bg-image) no-repeat;
+    background-size: 100% 100%;
+}
+
+.resolve-button {
+    background-color: rgba(128, 0, 0, 0.5);
+    color: white;
+}
+
+.karma-button {
+    background-color: rgba(0, 128, 0, 0.5);
+    color: white;
+}
