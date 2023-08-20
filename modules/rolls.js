@@ -1,6 +1,5 @@
 export async function DiceRollV2(event)
 {
-    console.log ("ON DIE ROLL V2")
     event.preventDefault();
     const dataset = event.currentTarget.dataset;
     let tirada= ""

@@ -35,10 +35,10 @@ On the trait icon (beside Rank and concept)
     - Left click cycles through "Agile" (juggler icon), "Brawny" (strong man icon) and "Crafty" (brain icon)
 
 On Resolve (heart) and Karma (clover):
-    - Left click increases current value
-    - Right click decreases current value
-    - Shift + Left click increases Max value (max 6)
-    - Shift + Right click decreases Max value (min 1)
+    - Left click decreases current value
+    - Right click increases current value
+    - Shift + Left click decreases Max value (max 6)
+    - Shift + Right click increases Max value (min 1)
 
 On Afflictions (skull);
     - Shift + Left click increases Max value (max 6)
@@ -57,14 +57,14 @@ In the Challenge Sheet
 
 On the Rank number:
     - Left click increases current value
-    - Right click decreases current value
+    - Right Click Increases current value
 
 
 On Effort (heart):
-    - Left click increases current value
-    - Right click decreases current value
-    - Shift + Left click increases Max value (Max 43)
-    - Shift + Right click decreases current value (min 1)
+    - Left click decreases current value
+    - Right Click increases current value
+    - Shift + Left click decreases Max value (Max 43)
+    - Shift + Right Click increases current value (min 1)
 
 There are many settings to change fonts, colors and background images. Also you can activate several settings for Tricube Tactics, 
 such as Knacks, Subtraits and Substyles. The Tricube Tactics initiative is set as the default one.

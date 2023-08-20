@@ -19,8 +19,8 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
 		  super.activateListeners(html);
       html.find('a.rank-change').click(this._onRankIncrease.bind(this));
       html.find('a.rank-change').contextmenu(this._onRankDecrease.bind(this));
-      html.find('a.effort-change').click(this._onEffortIncrease.bind(this));
-      html.find('a.effort-change').contextmenu(this._onEffortDecrease.bind(this));
+      html.find('a.effort-change').contextmenu(this._onEffortIncrease.bind(this));
+      html.find('a.effort-change').click(this._onEffortDecrease.bind(this));
     }
   
     async _onRankIncrease(event, data)
