@@ -30,7 +30,7 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
       let rank=this.actor.system.rank
       rank++
       if (rank > 6){rank=6}
-      this.actor.update ({ 'system.rank': rank });
+      await this.actor.update ({ 'system.rank': rank });
       return;
     }
 
@@ -41,7 +41,7 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
       let rank=this.actor.system.rank
       rank--
       if (rank < 1){rank=1}
-      this.actor.update ({ 'system.rank': rank });
+      await this.actor.update ({ 'system.rank': rank });
       return;
     }
 
@@ -55,13 +55,13 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
       if (event.shiftKey) {
         max_effort++
         if (max_effort > 36){max_effort=36}
-        this.actor.update ({ 'system.resources.effort.max': max_effort });
+        await this.actor.update ({ 'system.resources.effort.max': max_effort });
       }
       else
       {
         effort++
         if (effort > max_effort){effort=max_effort}
-        this.actor.update ({ 'system.resources.effort.value': effort });
+        await this.actor.update ({ 'system.resources.effort.value': effort });
       } 
       return;
     }
@@ -76,16 +76,16 @@ export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
       if (event.shiftKey) {
         max_effort--
         if (max_effort < 1){max_effort=1}
-        this.actor.update ({ 'system.resources.effort.max': max_effort });
+        await this.actor.update ({ 'system.resources.effort.max': max_effort });
         if (effort > max_effort){
           effort=max_effort
-          this.actor.update ({ 'system.resources.effort.value': effort });
+          await this.actor.update ({ 'system.resources.effort.value': effort });
         }
       }
       else{
         effort--
         if (effort < 0){effort=0}
-        this.actor.update ({ 'system.resources.effort.value': effort });
+        await this.actor.update ({ 'system.resources.effort.value': effort });
       }
       
       return;

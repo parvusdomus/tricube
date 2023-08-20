@@ -208,10 +208,10 @@ export default class DieRoller extends FormApplication {
                         message=game.i18n.localize("TRI.ui.removeMaxResolve")+actor.name
                         ui.notifications.info(message);
                     }
-                    actor.update ({ 'system.resources.resolve.max': max_resolve });
+                    await actor.update ({ 'system.resources.resolve.max': max_resolve });
                     if (resolve > max_resolve){
                         resolve=max_resolve
-                        actor.update ({ 'system.resources.resolve.value': resolve });
+                        await actor.update ({ 'system.resources.resolve.value': resolve });
                     }
                 }
             }
@@ -226,7 +226,7 @@ export default class DieRoller extends FormApplication {
                     };
                     ChatMessage.create(chatData);
                 }
-                actor.update ({ 'system.resources.resolve.value': resolve });
+                await actor.update ({ 'system.resources.resolve.value': resolve });
             }
         }
         else{
@@ -241,10 +241,10 @@ export default class DieRoller extends FormApplication {
                         message=game.i18n.localize("TRI.ui.removeMaxEffort")+actor.name
                         ui.notifications.info(message);
                     }
-                    actor.update ({ 'system.resources.effort.max': max_effort });
+                    await actor.update ({ 'system.resources.effort.max': max_effort });
                     if (effort > max_effort){
                         effort=max_effort
-                        actor.update ({ 'system.resources.effort.value': effort });
+                        await actor.update ({ 'system.resources.effort.value': effort });
                     }
                 }
             }
@@ -255,7 +255,7 @@ export default class DieRoller extends FormApplication {
                     message=game.i18n.localize("TRI.ui.removeEffort")+actor.name
                     ui.notifications.info(message);
                 }
-                actor.update ({ 'system.resources.effort.value': effort });
+                await actor.update ({ 'system.resources.effort.value': effort });
             }
         }
         return;
@@ -293,7 +293,7 @@ export default class DieRoller extends FormApplication {
                         message=game.i18n.localize("TRI.ui.addMaxResolve")+actor.name
                         ui.notifications.info(message);
                     }
-                    actor.update ({ 'system.resources.resolve.max': max_resolve });
+                    await actor.update ({ 'system.resources.resolve.max': max_resolve });
                 }
             }
             else
@@ -304,7 +304,7 @@ export default class DieRoller extends FormApplication {
                     message=game.i18n.localize("TRI.ui.addResolve")+actor.name
                     ui.notifications.info(message);
                 }
-                actor.update ({ 'system.resources.resolve.value': resolve });
+                await actor.update ({ 'system.resources.resolve.value': resolve });
             }
         }
         else{
@@ -319,7 +319,7 @@ export default class DieRoller extends FormApplication {
                         message=game.i18n.localize("TRI.ui.addMaxEffort")+actor.name
                         ui.notifications.info(message);
                     }
-                    actor.update ({ 'system.resources.effort.max': max_effort });
+                    await actor.update ({ 'system.resources.effort.max': max_effort });
                 }
             }
             else
@@ -330,7 +330,7 @@ export default class DieRoller extends FormApplication {
                     message=game.i18n.localize("TRI.ui.addEffort")+actor.name
                     ui.notifications.info(message);
                 }
-                actor.update ({ 'system.resources.effort.value': effort });
+                await actor.update ({ 'system.resources.effort.value': effort });
             }
         } 
         
@@ -367,10 +367,10 @@ export default class DieRoller extends FormApplication {
                         message=game.i18n.localize("TRI.ui.removeMaxKarma")+actor.name
                         ui.notifications.info(message);
                     }
-                    actor.update ({ 'system.resources.karma.max': max_karma });
+                    await actor.update ({ 'system.resources.karma.max': max_karma });
                     if (karma > max_karma){
                         karma=max_karma
-                        actor.update ({ 'system.resources.karma.value': karma });
+                        await actor.update ({ 'system.resources.karma.value': karma });
                     }
                 }
             }
@@ -385,7 +385,7 @@ export default class DieRoller extends FormApplication {
                     };
                     ChatMessage.create(chatData);
                 }
-                actor.update ({ 'system.resources.karma.value': karma });
+                await actor.update ({ 'system.resources.karma.value': karma });
             }
         }
         return;
@@ -419,7 +419,7 @@ export default class DieRoller extends FormApplication {
                     message=game.i18n.localize("TRI.ui.addMaxKarma")+actor.name
                     ui.notifications.info(message);
                 }
-                actor.update ({ 'system.resources.karma.max': max_karma });
+                await actor.update ({ 'system.resources.karma.max': max_karma });
                 }
             }
             else
@@ -430,7 +430,7 @@ export default class DieRoller extends FormApplication {
                     message=game.i18n.localize("TRI.ui.addKarma")+actor.name
                     ui.notifications.info(message);
                 }
-                actor.update ({ 'system.resources.karma.value': karma });
+                await actor.update ({ 'system.resources.karma.value': karma });
             }
         } 
         return;

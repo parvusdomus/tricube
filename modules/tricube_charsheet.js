@@ -187,7 +187,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
           break;
         }
       }
-      this.actor.update ({ 'system.trait': trait });
+      await this.actor.update ({ 'system.trait': trait });
       return;
     }
 
@@ -199,11 +199,11 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let subtrait = this.actor.system.subtrait[dataset.subtrait];
       if (subtrait)
       {
-        this.actor.update ({ [subtraitName]: false });
+        await this.actor.update ({ [subtraitName]: false });
       }
       else
       {
-        this.actor.update ({ [subtraitName]: true });
+        await this.actor.update ({ [subtraitName]: true });
       }
       return;
     }
@@ -216,11 +216,11 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let substyle = this.actor.system.substyle[dataset.substyle];
       if (substyle)
       {
-        this.actor.update ({ [substyleName]: false });
+        await this.actor.update ({ [substyleName]: false });
       }
       else
       {
-        this.actor.update ({ [substyleName]: true });
+        await this.actor.update ({ [substyleName]: true });
       }
       return;
     } 
@@ -247,7 +247,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
           break;
         }
       }
-      this.actor.update ({ 'system.combat': combat });
+      await this.actor.update ({ 'system.combat': combat });
       return;
     }
     
@@ -258,7 +258,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let rank=this.actor.system.rank
       rank++
       if (rank > 6){rank=6}
-      this.actor.update ({ 'system.rank': rank });
+      await this.actor.update ({ 'system.rank': rank });
       return;
     }
 
@@ -269,7 +269,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       let rank=this.actor.system.rank
       rank--
       if (rank < 1){rank=1}
-      this.actor.update ({ 'system.rank': rank });
+      await this.actor.update ({ 'system.rank': rank });
       return;
     }
 
@@ -284,14 +284,14 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         {
           max_resolve++
           if (max_resolve > 6){max_resolve=6}
-          this.actor.update ({ 'system.resources.resolve.max': max_resolve });
+          await this.actor.update ({ 'system.resources.resolve.max': max_resolve });
         }
       }
       else
       {
         resolve++
         if (resolve > max_resolve){resolve=max_resolve}
-        this.actor.update ({ 'system.resources.resolve.value': resolve });
+        await this.actor.update ({ 'system.resources.resolve.value': resolve });
       } 
       return;
     }
@@ -309,10 +309,10 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         {
           max_resolve--
           if (max_resolve < 1){max_resolve=1}
-          this.actor.update ({ 'system.resources.resolve.max': max_resolve });
+          await this.actor.update ({ 'system.resources.resolve.max': max_resolve });
           if (resolve > max_resolve){
             resolve=max_resolve
-            this.actor.update ({ 'system.resources.resolve.value': resolve });
+            await this.actor.update ({ 'system.resources.resolve.value': resolve });
           }
         }
       }
@@ -320,14 +320,14 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         resolve--
         if (resolve < 0){resolve=0}
         else{
-          msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:red; color:white;\">"+game.i18n.localize("TRI.ui.loseResolve")+"</h3></div>"
+          msg_content="<div class=\"tricube test-result\"><h3 class=\"resolve-button\">"+game.i18n.localize("TRI.ui.loseResolve")+"</h3></div>"
           chatData = {
             content: msg_content,
             speaker: ChatMessage.getSpeaker()
           };
           ChatMessage.create(chatData);
         }
-        this.actor.update ({ 'system.resources.resolve.value': resolve });
+        await this.actor.update ({ 'system.resources.resolve.value': resolve });
       }
       
       return;
@@ -344,14 +344,14 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         {
           max_karma++
           if (max_karma > 6){max_karma=6}
-          this.actor.update ({ 'system.resources.karma.max': max_karma });
+          await this.actor.update ({ 'system.resources.karma.max': max_karma });
         }
       }
       else
       {
         karma++
         if (karma > max_karma){karma=max_karma}
-        this.actor.update ({ 'system.resources.karma.value': karma });
+        await this.actor.update ({ 'system.resources.karma.value': karma });
       }
       
       return;
@@ -370,10 +370,10 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         {
           max_karma--
           if (max_karma < 1){max_karma=1}
-          this.actor.update ({ 'system.resources.karma.max': max_karma });
+          await this.actor.update ({ 'system.resources.karma.max': max_karma });
           if (karma > max_karma){
             karma=max_karma
-            this.actor.update ({ 'system.resources.karma.value': karma });
+            await this.actor.update ({ 'system.resources.karma.value': karma });
           }
         }
       }
@@ -382,14 +382,14 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         karma--
         if (karma < 0){karma=0}
         else {
-          msg_content="<div class=\"tricube test-result\"><h3 style=\"background-color:green; color:white;\">"+game.i18n.localize("TRI.ui.loseKarma")+"</h3></div>"
+          msg_content="<div class=\"tricube test-result\"><h3 class=\"karma-button\">"+game.i18n.localize("TRI.ui.loseKarma")+"</h3></div>"
           chatData = {
             content: msg_content,
             speaker: ChatMessage.getSpeaker()
           };
           ChatMessage.create(chatData);
         }
-        this.actor.update ({ 'system.resources.karma.value': karma });
+        await this.actor.update ({ 'system.resources.karma.value': karma });
       }
       return;
     }
@@ -405,7 +405,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         if (event.shiftKey) {
           max_afflictions++
           if (max_afflictions > 6){max_afflictions=6}
-          this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
+          await this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
         }
       }
       return;
@@ -422,10 +422,10 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
         if (event.shiftKey){
           max_afflictions--
           if (max_afflictions < 1){max_afflictions=1}
-          this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
+          await this.actor.update ({ 'system.resources.afflictions.max': max_afflictions });
           if (afflictions > max_afflictions){
             afflictions=max_afflictions
-            this.actor.update ({ 'system.resources.afflictions.value': afflictions });
+            await this.actor.update ({ 'system.resources.afflictions.value': afflictions });
           }
         }
       }
