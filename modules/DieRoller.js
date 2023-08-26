@@ -78,6 +78,9 @@ export default class DieRoller extends FormApplication {
         html.find(".resolve-add").on('click', this._onResolveAdd.bind(this));
         html.find(".karma-remove").on('click', this._onKarmaRemove.bind(this));
         html.find(".karma-add").on('click', this._onKarmaAdd.bind(this));
+        html.find(".defeat-toggle").on('click', this._onDefeatToggle.bind(this));
+        html.find(".death-toggle").on('click', this._onDeathToggle.bind(this));
+
 
         let elmnt = html.find("#die-roller-move-handle");
         let dieRoller = elmnt.closest('.window-app');
@@ -433,6 +436,52 @@ export default class DieRoller extends FormApplication {
                 await actor.update ({ 'system.resources.karma.value': karma });
             }
         } 
+        return;
+    }
+
+    async _onDefeatToggle(event)
+    {
+        console.log ("DEFEAT TOGGLE")
+        event.preventDefault();
+        const dataset = event.currentTarget.dataset;
+        let actor
+        let token
+        let message=""
+        if (canvas.tokens.controlled[0])
+        {
+            actor=canvas.tokens.controlled[0].document.actor;
+            token=canvas.tokens.controlled[0]
+            await token.toggleEffect('icons/svg/falling.svg', { overlay: true});
+        }
+        else
+        {
+            ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+            return 1;
+        }
+        
+        return;
+    }
+
+    async _onDeathToggle(event)
+    {
+        console.log ("DEATH TOGGLE")
+        event.preventDefault();
+        const dataset = event.currentTarget.dataset;
+        let actor
+        let token
+        let message=""
+        if (canvas.tokens.controlled[0])
+        {
+            actor=canvas.tokens.controlled[0].document.actor;
+            token=canvas.tokens.controlled[0]
+            await token.toggleEffect('icons/svg/skull.svg', { overlay: true});
+        }
+        else
+        {
+            ui.notifications.warn(game.i18n.localize("TRI.ui.noSelectedToken"));
+            return 1;
+        }
+
         return;
     }
 
