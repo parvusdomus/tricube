@@ -4,7 +4,7 @@ export default class TRICUBE_CHAR_SHEET extends ActorSheet{
       if (game.settings.get("tricube", "enableSubTraits")==true || game.settings.get("tricube", "enableSubStyles")==true){
         adjusted_height+=130;
       }
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["tricube", "sheet", "actor"],
           template: "systems/tricube/templates/actors/character.html",
           width: 600,

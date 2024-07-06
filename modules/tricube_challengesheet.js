@@ -1,6 +1,6 @@
 export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["tricube", "sheet", "actor"],
           template: "systems/tricube/templates/actors/challenge.html",
           width: 600,

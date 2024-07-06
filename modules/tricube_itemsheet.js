@@ -1,6 +1,6 @@
 export default class TRICUBE_ITEM_SHEET extends ItemSheet{
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["tricube", "sheet", "item"],
           template: "systems/tricube/templates/actors/character.html",
           width: 400,
