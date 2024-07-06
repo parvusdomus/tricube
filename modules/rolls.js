@@ -18,7 +18,7 @@ export async function DiceRollV2(event)
     }
     tirada=nDice+"d6"
     rollText="<label>"+tirada+" VS "+difficulty+"</label>"
-    let d6Roll = await new Roll(String(tirada)).roll({async: false});
+    let d6Roll = await new Roll(String(tirada)).roll();
     for (let i = 0; i < nDice; i++) {
         if (d6Roll.terms[0].results[i].result >= difficulty){nExitos++}
         if (d6Roll.terms[0].results[i].result == 1){nUnos++}
