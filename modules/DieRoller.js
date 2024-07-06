@@ -14,7 +14,7 @@ export default class DieRoller extends FormApplication {
         else{
             template="systems/tricube/templates/dialogs/dice-roller.html"
         }
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             id: "die-roller",
             title: game.i18n.localize("tricube.system.dieRoller"),
             template: template,
@@ -451,6 +451,10 @@ export default class DieRoller extends FormApplication {
         {
             actor=canvas.tokens.controlled[0].document.actor;
             token=canvas.tokens.controlled[0]
+            console.log ("ACTOR")
+            console.log (actor)
+            console.log ("TOKEN")
+            console.log (token)
             await token.toggleEffect('icons/svg/falling.svg', { overlay: true});
         }
         else
