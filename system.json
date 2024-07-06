@@ -2,7 +2,7 @@
     "id": "tricube",
     "title": "Tricube Tales",
     "description": "Game System for Tricube Tales. (And now Tricube Tactics)",
-    "version": "2.1.5",
+    "version": "2.2.0",
     "authors": [
       {
         "name": "ParvusDomus",
@@ -10,8 +10,8 @@
       }
     ],
     "compatibility": {
-      "minimum": "11",
-      "verified": "11"
+      "minimum": "12",
+      "verified": "12"
     },
     "esmodules": [
       "tricube.js"
