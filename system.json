@@ -42,8 +42,10 @@
       }
     ],
     "initiative": "@initiative",
-    "gridDistance": 2,
-    "gridUnits": "m",
+    "grid": {
+      "distance": 2,
+      "units": "m"
+    },
     "primaryTokenAttribute": "resources.resolve",
     "secondaryTokenAttribute": "resources.karma",
     "url": "https://github.com/parvusdomus/tricube",
