@@ -2,7 +2,7 @@
     "id": "tricube",
     "title": "Tricube Tales",
     "description": "Game System for Tricube Tales. (And now Tricube Tactics)",
-    "version": "2.2.0",
+    "version": "2.13.0",
     "authors": [
       {
         "name": "ParvusDomus",
@@ -28,12 +28,12 @@
     ],
     "relationships": {
     "requires": [{
-      "id": "colorsettings",
+      "id": "color-picker",
       "type": "module",
-      "manifest": "https://raw.githubusercontent.com/ardittristan/VTTColorSettings/master/module.json",
+      "manifest": "https://github.com/Larkinabout/fvtt-color-picker/releases/latest/download/module.json",
       "compatibility": {
-        "minimum" : "3.0.4",
-        "verified": "3.0.4"
+        "minimum" : "1.6",
+        "verified": "1.6"
       }
     }]
     },
