@@ -10,7 +10,7 @@ import tricubeChat from "./modules/chat.js";
 
 
 Hooks.once("init", function(){
-  document.getElementById("logo").src = "/systems/tricube/style/images/TT_Logo2.png";
+  //document.getElementById("logo").src = "/systems/tricube/style/images/TT_Logo2.png";
   console.log("test | INITIALIZING TRICUBE CHARACTER SHEETS...");
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("tricube", TRICUBE_CHAR_SHEET, {
@@ -168,35 +168,37 @@ Hooks.once("init", function(){
     default: 'Dominican',
   });
 
-  game.settings.register('tricube', 'listHeaderBgColor', {
-      name: game.i18n.localize("TRI.config.listHeaderBgColorName"),
-      hint: game.i18n.localize("TRI.config.listHeaderBgColorHint"),
-      scope: 'world',
-      requiresReload: true,
-      config: true,
-      type: String,
-      default: '#000000',
+  game.settings.register("tricube", "listHeaderBgColor", {
+    name: game.i18n.localize("TRI.config.listHeaderBgColorName"),
+    hint: game.i18n.localize("TRI.config.listHeaderBgColorHint"),
+    scope: "world",
+    config: true,
+    default: '#000000ff',
+    requiresReload: true,
+    type: new game.colorPicker.ColorPickerField(),
   });
 
-  game.settings.register('tricube', 'listHeaderFontColor', {
+  game.settings.register("tricube", "listHeaderFontColor", {
     name: game.i18n.localize("TRI.config.listHeaderFontColorName"),
     hint: game.i18n.localize("TRI.config.listHeaderFontColorHint"),
-    scope: 'world',
-    requiresReload: true,
+    scope: "world",
     config: true,
-    type: String,
-    default: '#ffffff',
-  }); 
+    default: '#ffffffff',
+    requiresReload: true,
+    type: new game.colorPicker.ColorPickerField(),
+  });
 
-  game.settings.register('tricube', 'headerFontColor', {
+  game.settings.register("tricube", "headerFontColor", {
     name: game.i18n.localize("TRI.config.headerFontColorName"),
     hint: game.i18n.localize("TRI.config.headerFontColorHint"),
-    scope: 'world',
-    requiresReload: true,
+    scope: "world",
     config: true,
-    type: String,
-    default: '#000000',
+    default: '#000000ff',
+    requiresReload: true,
+    type: new game.colorPicker.ColorPickerField(),
   });
+
+  //VOY POR AQUI
 
   game.settings.register('tricube', 'regularFontColor', {
     name: game.i18n.localize("TRI.config.itemFontColorName"),
@@ -204,8 +206,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#000000',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#000000ff',
   });
 
   game.settings.register('tricube', 'inputBgColor', {
@@ -214,8 +216,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#ffffdc',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#ffffdcff',
   });
 
   game.settings.register('tricube', 'inputFontColor', {
@@ -224,8 +226,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#000000',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#000000ff',
   });
 
   game.settings.register('tricube', 'windowHeaderBgColor', {
@@ -234,8 +236,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#000000',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#000000ff',
   });
 
   game.settings.register('tricube', 'windowHeaderFontColor', {
@@ -244,8 +246,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#ffffff',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#ffffffff',
   });
 
   game.settings.register('tricube', 'dieRollerFontColor', {
@@ -254,8 +256,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#000000',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#000000ff',
   });
 
   game.settings.register('tricube', 'dieRollerButtonBgColor', {
@@ -264,8 +266,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#ffffff',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#ffffffff',
   });
 
   game.settings.register('tricube', 'dieRollerButtonFontColor', {
@@ -274,8 +276,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#000000',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#000000ff',
   });
 
   game.settings.register('tricube', 'tabActiveBgColor', {
@@ -284,8 +286,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#000000',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#000000ff',
   });
 
   game.settings.register('tricube', 'tabActiveFontColor', {
@@ -294,8 +296,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#ffffff',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#ffffffff',
   });
 
   game.settings.register('tricube', 'tabHoverBgColor', {
@@ -304,8 +306,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#555353',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#555353ff',
   });
 
   game.settings.register('tricube', 'tabHoverFontColor', {
@@ -314,8 +316,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: String,
-    default: '#d8d1d1',
+    type: new game.colorPicker.ColorPickerField(),
+    default: '#d8d1d1ff',
   });
   
 
@@ -391,7 +393,9 @@ Hooks.on('ready', () => {
 })
 
 
-Hooks.on('renderSettingsConfig', (app, el, data) => {
+//Hooks.on('renderSettingsConfig', (app, el, data) => {
+  /*Hooks.on('renderSettingsConfig', (app, html) => {
+    const el = html
   // Insert color picker input
   el.find('[name="tricube.listHeaderBgColor"]').parent()
     .append(`<input type="color" value="${game.settings.get('tricube','listHeaderBgColor')}" data-edit="tricube.listHeaderBgColor">`)
@@ -423,9 +427,9 @@ Hooks.on('renderSettingsConfig', (app, el, data) => {
     .append(`<input type="color" value="${game.settings.get('tricube','tabHoverBgColor')}" data-edit="tricube.tabHoverBgColor">`)
   el.find('[name="tricube.tabHoverFontColor"]').parent()
     .append(`<input type="color" value="${game.settings.get('tricube','tabHoverFontColor')}" data-edit="tricube.tabHoverFontColor">`)
-});
+});*/
 
-Hooks.on('renderChatLog', (app, html, data) => tricubeChat.chatListeners(html))
+Hooks.on('renderChatMessage', (message, html) => tricubeChat.chatListeners(message, html))
 
 Hooks.on('refreshToken', () => {
 

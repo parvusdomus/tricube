@@ -10,8 +10,8 @@
       }
     ],
     "compatibility": {
-      "minimum": "12",
-      "verified": "12"
+      "minimum": "13",
+      "verified": "13"
     },
     "esmodules": [
       "tricube.js"
@@ -26,7 +26,18 @@
         "thumbnail": "systems/tricube/style/images/TT_Logo2.png"
       }
     ],
-  
+    "relationships": {
+    "requires": [{
+      "id": "colorsettings",
+      "type": "module",
+      "manifest": "https://raw.githubusercontent.com/ardittristan/VTTColorSettings/master/module.json",
+      "compatibility": {
+        "minimum" : "3.0.4",
+        "verified": "3.0.4"
+      }
+    }]
+    },
+
     "languages": [
       {
         "lang": "es",
