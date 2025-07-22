@@ -12,22 +12,23 @@ import tricubeChat from "./modules/chat.js";
 Hooks.once("init", function(){
   //document.getElementById("logo").src = "/systems/tricube/style/images/TT_Logo2.png";
   console.log("test | INITIALIZING TRICUBE CHARACTER SHEETS...");
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("tricube", TRICUBE_CHAR_SHEET, {
+  foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
+  foundry.documents.collections.Actors.registerSheet("tricube", TRICUBE_CHAR_SHEET, {
     makeDefault: true,
     types: ['Player']
   });
-  Actors.registerSheet("tricube", TRICUBE_CHALLENGE_SHEET, {
+  foundry.documents.collections.Actors.registerSheet("tricube", TRICUBE_CHALLENGE_SHEET, {
     makeDefault: true,
     types: ['Challenge']
   });
   console.log("test | INITIALIZING TRICUBE ITEM SHEETS...");
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("tricube", TRICUBE_ITEM_SHEET,{
+  foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
+  foundry.documents.collections.Items.registerSheet("tricube", TRICUBE_ITEM_SHEET,{
     makeDefault: true,
     types: ['perk','quirk','affliction','knack']
   });
   preloadHandlebarsTemplates();
+  
 
     // Slowing down pings
     CONFIG.Canvas.pings.styles.pulse.duration = 2000
@@ -392,44 +393,28 @@ Hooks.on('ready', () => {
   
 })
 
+/*Hooks.on('renderChatMessageHTML', (message, html) => {
+  console.log ("MESSAGE HTML")
+  console.log (message)
+  console.log ("HTML HTML")
+  console.log (html)
+  tricubeChat.chatListeners(message, html)
+})*/
+//Hooks.on('renderChatMessage', (message, html) => tricubeChat.chatListeners(message, html))
 
-//Hooks.on('renderSettingsConfig', (app, el, data) => {
-  /*Hooks.on('renderSettingsConfig', (app, html) => {
-    const el = html
-  // Insert color picker input
-  el.find('[name="tricube.listHeaderBgColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','listHeaderBgColor')}" data-edit="tricube.listHeaderBgColor">`)
-  el.find('[name="tricube.listHeaderFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','listHeaderFontColor')}" data-edit="tricube.listHeaderFontColor">`) 
-  el.find('[name="tricube.headerFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','headerFontColor')}" data-edit="tricube.headerFontColor">`)
-  el.find('[name="tricube.regularFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','regularFontColor')}" data-edit="tricube.regularFontColor">`)
-  el.find('[name="tricube.inputBgColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','inputBgColor')}" data-edit="tricube.inputBgColor">`)
-  el.find('[name="tricube.inputFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','inputFontColor')}" data-edit="tricube.inputFontColor">`)
-  el.find('[name="tricube.windowHeaderBgColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','windowHeaderBgColor')}" data-edit="tricube.windowHeaderBgColor">`)
-  el.find('[name="tricube.windowHeaderFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','windowHeaderFontColor')}" data-edit="tricube.windowHeaderFontColor">`)
-  el.find('[name="tricube.dieRollerFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerFontColor')}" data-edit="tricube.dieRollerFontColor">`)
-  el.find('[name="tricube.dieRollerButtonBgColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonBgColor')}" data-edit="tricube.dieRollerButtonBgColor">`)
-  el.find('[name="tricube.dieRollerButtonFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonFontColor')}" data-edit="tricube.dieRollerButtonFontColor">`)
-  el.find('[name="tricube.tabActiveBgColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','tabActiveBgColor')}" data-edit="tricube.tabActiveBgColor">`)
-  el.find('[name="tricube.tabActiveFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','tabActiveFontColor')}" data-edit="tricube.tabActiveFontColor">`)
-  el.find('[name="tricube.tabHoverBgColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','tabHoverBgColor')}" data-edit="tricube.tabHoverBgColor">`)
-  el.find('[name="tricube.tabHoverFontColor"]').parent()
-    .append(`<input type="color" value="${game.settings.get('tricube','tabHoverFontColor')}" data-edit="tricube.tabHoverFontColor">`)
-});*/
+/*Hooks.on('renderChatMessage', (message, html) => {
+  console.log ("MESSAGE")
+  console.log (message)
+  console.log ("HTML")
+  console.log (html)
+  tricubeChat.chatListeners(message, html)
+})*/
 
-Hooks.on('renderChatMessage', (message, html) => tricubeChat.chatListeners(message, html))
+Hooks.on("renderChatMessageHTML", (message, html) => {
+  html.querySelector(".spendKarma")?.addEventListener('click', () => {tricubeChat._spendKarma(html,message)});
+  html.querySelector(".gainResolve")?.addEventListener('click', () => {tricubeChat._gainResolve(html)});
+  html.querySelector(".gainKarma")?.addEventListener('click', () => {tricubeChat._gainKarma(html)});
+});
 
 Hooks.on('refreshToken', () => {
 
