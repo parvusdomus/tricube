@@ -10,25 +10,24 @@ import tricubeChat from "./modules/chat.js";
 
 
 Hooks.once("init", function(){
-  //document.getElementById("logo").src = "/systems/tricube/style/images/TT_Logo2.png";
+  document.getElementById("logo").src = "/systems/tricube/style/images/TT_Logo2.png";
   console.log("test | INITIALIZING TRICUBE CHARACTER SHEETS...");
-  foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
-  foundry.documents.collections.Actors.registerSheet("tricube", TRICUBE_CHAR_SHEET, {
+  Actors.unregisterSheet("core", ActorSheet);
+  Actors.registerSheet("tricube", TRICUBE_CHAR_SHEET, {
     makeDefault: true,
     types: ['Player']
   });
-  foundry.documents.collections.Actors.registerSheet("tricube", TRICUBE_CHALLENGE_SHEET, {
+  Actors.registerSheet("tricube", TRICUBE_CHALLENGE_SHEET, {
     makeDefault: true,
     types: ['Challenge']
   });
   console.log("test | INITIALIZING TRICUBE ITEM SHEETS...");
-  foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
-  foundry.documents.collections.Items.registerSheet("tricube", TRICUBE_ITEM_SHEET,{
+  Items.unregisterSheet("core", ItemSheet);
+  Items.registerSheet("tricube", TRICUBE_ITEM_SHEET,{
     makeDefault: true,
     types: ['perk','quirk','affliction','knack']
   });
   preloadHandlebarsTemplates();
-  
 
     // Slowing down pings
     CONFIG.Canvas.pings.styles.pulse.duration = 2000
@@ -169,37 +168,35 @@ Hooks.once("init", function(){
     default: 'Dominican',
   });
 
-  game.settings.register("tricube", "listHeaderBgColor", {
-    name: game.i18n.localize("TRI.config.listHeaderBgColorName"),
-    hint: game.i18n.localize("TRI.config.listHeaderBgColorHint"),
-    scope: "world",
-    config: true,
-    default: '#000000ff',
-    requiresReload: true,
-    type: new game.colorPicker.ColorPickerField(),
+  game.settings.register('tricube', 'listHeaderBgColor', {
+      name: game.i18n.localize("TRI.config.listHeaderBgColorName"),
+      hint: game.i18n.localize("TRI.config.listHeaderBgColorHint"),
+      scope: 'world',
+      requiresReload: true,
+      config: true,
+      type: String,
+      default: '#000000',
   });
 
-  game.settings.register("tricube", "listHeaderFontColor", {
+  game.settings.register('tricube', 'listHeaderFontColor', {
     name: game.i18n.localize("TRI.config.listHeaderFontColorName"),
     hint: game.i18n.localize("TRI.config.listHeaderFontColorHint"),
-    scope: "world",
-    config: true,
-    default: '#ffffffff',
+    scope: 'world',
     requiresReload: true,
-    type: new game.colorPicker.ColorPickerField(),
-  });
+    config: true,
+    type: String,
+    default: '#ffffff',
+  }); 
 
-  game.settings.register("tricube", "headerFontColor", {
+  game.settings.register('tricube', 'headerFontColor', {
     name: game.i18n.localize("TRI.config.headerFontColorName"),
     hint: game.i18n.localize("TRI.config.headerFontColorHint"),
-    scope: "world",
-    config: true,
-    default: '#000000ff',
+    scope: 'world',
     requiresReload: true,
-    type: new game.colorPicker.ColorPickerField(),
+    config: true,
+    type: String,
+    default: '#000000',
   });
-
-  //VOY POR AQUI
 
   game.settings.register('tricube', 'regularFontColor', {
     name: game.i18n.localize("TRI.config.itemFontColorName"),
@@ -207,8 +204,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#000000ff',
+    type: String,
+    default: '#000000',
   });
 
   game.settings.register('tricube', 'inputBgColor', {
@@ -217,8 +214,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#ffffdcff',
+    type: String,
+    default: '#ffffdc',
   });
 
   game.settings.register('tricube', 'inputFontColor', {
@@ -227,8 +224,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#000000ff',
+    type: String,
+    default: '#000000',
   });
 
   game.settings.register('tricube', 'windowHeaderBgColor', {
@@ -237,8 +234,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#000000ff',
+    type: String,
+    default: '#000000',
   });
 
   game.settings.register('tricube', 'windowHeaderFontColor', {
@@ -247,8 +244,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#ffffffff',
+    type: String,
+    default: '#ffffff',
   });
 
   game.settings.register('tricube', 'dieRollerFontColor', {
@@ -257,8 +254,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#000000ff',
+    type: String,
+    default: '#000000',
   });
 
   game.settings.register('tricube', 'dieRollerButtonBgColor', {
@@ -267,8 +264,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#ffffffff',
+    type: String,
+    default: '#ffffff',
   });
 
   game.settings.register('tricube', 'dieRollerButtonFontColor', {
@@ -277,8 +274,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#000000ff',
+    type: String,
+    default: '#000000',
   });
 
   game.settings.register('tricube', 'tabActiveBgColor', {
@@ -287,8 +284,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#000000ff',
+    type: String,
+    default: '#000000',
   });
 
   game.settings.register('tricube', 'tabActiveFontColor', {
@@ -297,8 +294,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#ffffffff',
+    type: String,
+    default: '#ffffff',
   });
 
   game.settings.register('tricube', 'tabHoverBgColor', {
@@ -307,8 +304,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#555353ff',
+    type: String,
+    default: '#555353',
   });
 
   game.settings.register('tricube', 'tabHoverFontColor', {
@@ -317,8 +314,8 @@ Hooks.once("init", function(){
     scope: 'world',
     requiresReload: true,
     config: true,
-    type: new game.colorPicker.ColorPickerField(),
-    default: '#d8d1d1ff',
+    type: String,
+    default: '#d8d1d1',
   });
   
 
@@ -393,28 +390,42 @@ Hooks.on('ready', () => {
   
 })
 
-/*Hooks.on('renderChatMessageHTML', (message, html) => {
-  console.log ("MESSAGE HTML")
-  console.log (message)
-  console.log ("HTML HTML")
-  console.log (html)
-  tricubeChat.chatListeners(message, html)
-})*/
-//Hooks.on('renderChatMessage', (message, html) => tricubeChat.chatListeners(message, html))
 
-/*Hooks.on('renderChatMessage', (message, html) => {
-  console.log ("MESSAGE")
-  console.log (message)
-  console.log ("HTML")
-  console.log (html)
-  tricubeChat.chatListeners(message, html)
-})*/
-
-Hooks.on("renderChatMessageHTML", (message, html) => {
-  html.querySelector(".spendKarma")?.addEventListener('click', () => {tricubeChat._spendKarma(html,message)});
-  html.querySelector(".gainResolve")?.addEventListener('click', () => {tricubeChat._gainResolve(html)});
-  html.querySelector(".gainKarma")?.addEventListener('click', () => {tricubeChat._gainKarma(html)});
+Hooks.on('renderSettingsConfig', (app, el, data) => {
+  // Insert color picker input
+  el.find('[name="tricube.listHeaderBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','listHeaderBgColor')}" data-edit="tricube.listHeaderBgColor">`)
+  el.find('[name="tricube.listHeaderFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','listHeaderFontColor')}" data-edit="tricube.listHeaderFontColor">`) 
+  el.find('[name="tricube.headerFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','headerFontColor')}" data-edit="tricube.headerFontColor">`)
+  el.find('[name="tricube.regularFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','regularFontColor')}" data-edit="tricube.regularFontColor">`)
+  el.find('[name="tricube.inputBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','inputBgColor')}" data-edit="tricube.inputBgColor">`)
+  el.find('[name="tricube.inputFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','inputFontColor')}" data-edit="tricube.inputFontColor">`)
+  el.find('[name="tricube.windowHeaderBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','windowHeaderBgColor')}" data-edit="tricube.windowHeaderBgColor">`)
+  el.find('[name="tricube.windowHeaderFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','windowHeaderFontColor')}" data-edit="tricube.windowHeaderFontColor">`)
+  el.find('[name="tricube.dieRollerFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerFontColor')}" data-edit="tricube.dieRollerFontColor">`)
+  el.find('[name="tricube.dieRollerButtonBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonBgColor')}" data-edit="tricube.dieRollerButtonBgColor">`)
+  el.find('[name="tricube.dieRollerButtonFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','dieRollerButtonFontColor')}" data-edit="tricube.dieRollerButtonFontColor">`)
+  el.find('[name="tricube.tabActiveBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabActiveBgColor')}" data-edit="tricube.tabActiveBgColor">`)
+  el.find('[name="tricube.tabActiveFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabActiveFontColor')}" data-edit="tricube.tabActiveFontColor">`)
+  el.find('[name="tricube.tabHoverBgColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabHoverBgColor')}" data-edit="tricube.tabHoverBgColor">`)
+  el.find('[name="tricube.tabHoverFontColor"]').parent()
+    .append(`<input type="color" value="${game.settings.get('tricube','tabHoverFontColor')}" data-edit="tricube.tabHoverFontColor">`)
 });
+
+Hooks.on('renderChatLog', (app, html, data) => tricubeChat.chatListeners(html))
 
 Hooks.on('refreshToken', () => {
 
