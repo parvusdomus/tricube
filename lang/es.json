@@ -51,7 +51,7 @@
     "TRI.ui.cantIntrusion": "No se le puede enviar la intromisión. El recurso está al máximo.",
 
 
-
+    "TRI.config.ChooseColor": "Elije Color",
     "TRI.config.bgImageName": "Imagen de Fondo",
     "TRI.config.bgImageHint": "Elige la Imagen de Fondo de las Fichas",
     "TRI.config.chatBgImageName": "Imagen de Fondo del Chat",
