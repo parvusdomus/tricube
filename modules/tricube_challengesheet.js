@@ -1,4 +1,4 @@
-export default class TRICUBE_CHALLENGE_SHEET extends foundry.appv1.sheets.ActorSheet{
+export default class TRICUBE_CHALLENGE_SHEET extends ActorSheet{
     static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["tricube", "sheet", "actor"],

@@ -1,6 +1,5 @@
 import {DiceRollV2} from "../modules/rolls.js";
 
-
 export default class DieRoller extends FormApplication {
     constructor(options) {
 	    super(options);

@@ -1,14 +1,13 @@
 export default class tricubeChat {
-    static chatListeners (message, html) {
+    static chatListeners (html) {
       html.on('click', '.spendKarma', this._spendKarma.bind(this));
       html.on('click', '.gainResolve', this._gainResolve.bind(this));
       html.on('click', '.gainKarma', this._gainKarma.bind(this));
     }
-    
 
-    static _spendKarma (html, msg){
-      let data=html.querySelector(".spendKarma")
-      const dataset = data.dataset;
+    static _spendKarma (event, data){
+      const dataset = event.currentTarget.dataset;
+      const element = event.currentTarget;
       let dados_split = dataset.dados.split(',');
       let difficulty = Number(dataset.ndiff)-1
       let tirada=dataset.ndice+"d6"
@@ -40,7 +39,10 @@ export default class tricubeChat {
         testResult="<h3 class=\"critical-failure\">"+game.i18n.localize("TRI.ui.criticalFailure")+"</h3>"
         canSpendKarma=false
       }
-      const message = game.messages.get(msg._id)
+      const messageId = $(element)
+            .parents('[data-message-id]')
+            .attr('data-message-id');
+      const message = game.messages.get(messageId)
       const archivo_template = '/systems/tricube/templates/chat/test-result-karma.html';
       const datos_template = {
         dados: dados,
@@ -49,22 +51,26 @@ export default class tricubeChat {
         nDiff: difficulty,
         testResult: testResult
       };
-      foundry.applications.handlebars.renderTemplate(archivo_template, datos_template).then(
+      renderTemplate(archivo_template, datos_template).then(
         (contenido_Dialogo_chat)=> {
-          message.update({id: msg._id, content: contenido_Dialogo_chat})
+          message.update({id: messageId, content: contenido_Dialogo_chat})
       })
 
     }
 
-    static _gainResolve (html){
-      let data=html.querySelector(".gainResolve")
-      const dataset = data.dataset;
+    static _gainResolve (event, data){
+      const dataset = event.currentTarget.dataset;
+      const element = event.currentTarget;
       let actor = game.actors.get(dataset.actor_id);
       if (Number(actor.system.resources.resolve.value) != Number(dataset.current_resolve)){return 1}
       let resolve=Number(actor.system.resources.resolve.value)+1;
       let resolve_max=Number(actor.system.resources.resolve.max)
       if (resolve > resolve_max){resolve=resolve_max}
       actor.update ({ 'system.resources.resolve.value': resolve });
+      const messageId = $(element)
+            .parents('[data-message-id]')
+            .attr('data-message-id');
+      const message = game.messages.get(messageId)
       let msg_content="<div class=\"tricube test-result\"><h3 class=\"disabled\">"+game.i18n.localize("TRI.ui.acceptIntrusion")+"</h3></div>"
       //message.update({id: messageId, content: msg_content})
       let chatData = {
@@ -75,15 +81,19 @@ export default class tricubeChat {
 
     }
 
-    static _gainKarma (html){
-      let data=html.querySelector(".gainResolve")
-      const dataset = data.dataset;
+    static _gainKarma (event, data){
+      const dataset = event.currentTarget.dataset;
+      const element = event.currentTarget;
       let actor = game.actors.get(dataset.actor_id);
       if (Number(actor.system.resources.karma.value) != Number(dataset.current_karma)){return 1}
       let karma=Number(actor.system.resources.karma.value)+1;
       let karma_max=Number(actor.system.resources.karma.max)
       if (karma > karma_max){karma=karma_max}
       actor.update ({ 'system.resources.karma.value': karma });
+      const messageId = $(element)
+            .parents('[data-message-id]')
+            .attr('data-message-id');
+      const message = game.messages.get(messageId)
       let msg_content="<div class=\"tricube test-result\"><h3 class=\"disabled\">"+game.i18n.localize("TRI.ui.acceptIntrusion")+"</h3></div>"
       //message.update({id: messageId, content: msg_content})
       let chatData = {
