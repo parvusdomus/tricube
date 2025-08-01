@@ -2,7 +2,7 @@
     "id": "tricube",
     "title": "Tricube Tales",
     "description": "Game System for Tricube Tales. (And now Tricube Tactics)",
-    "version": "2.2.0",
+    "version": "2.13.2",
     "authors": [
       {
         "name": "ParvusDomus",
@@ -10,8 +10,8 @@
       }
     ],
     "compatibility": {
-      "minimum": "12",
-      "verified": "12"
+      "minimum": "13",
+      "verified": "13"
     },
     "esmodules": [
       "tricube.js"
@@ -26,7 +26,18 @@
         "thumbnail": "systems/tricube/style/images/TT_Logo2.png"
       }
     ],
-  
+    "relationships": {
+    "requires": [{
+      "id": "color-picker",
+      "type": "module",
+      "manifest": "https://github.com/Larkinabout/fvtt-color-picker/releases/latest/download/module.json",
+      "compatibility": {
+        "minimum" : "1.6",
+        "verified": "1.6"
+      }
+    }]
+    },
+
     "languages": [
       {
         "lang": "es",

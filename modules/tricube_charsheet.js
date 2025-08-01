@@ -1,4 +1,4 @@
-export default class TRICUBE_CHAR_SHEET extends ActorSheet{
+export default class TRICUBE_CHAR_SHEET extends foundry.appv1.sheets.ActorSheet{
     static get defaultOptions() {
       let adjusted_height= 500;
       if (game.settings.get("tricube", "enableSubTraits")==true || game.settings.get("tricube", "enableSubStyles")==true){

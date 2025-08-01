@@ -1,4 +1,4 @@
-export default class TRICUBE_ITEM_SHEET extends ItemSheet{
+export default class TRICUBE_ITEM_SHEET extends foundry.appv1.sheets.ItemSheet{
     static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["tricube", "sheet", "item"],

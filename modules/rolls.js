@@ -38,7 +38,7 @@ export async function DiceRollV2(event)
         canSpendKarma=false
     }
 
-    let renderedRoll = await renderTemplate("systems/tricube/templates/chat/test-result.html", { 
+    let renderedRoll = await foundry.applications.handlebars.renderTemplate("systems/tricube/templates/chat/test-result.html", { 
         rollResult: d6Roll, 
         actor_id: actor_id,
         dados:dados,

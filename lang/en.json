@@ -50,7 +50,7 @@
     "TRI.ui.acceptIntrusion": "INTRUSSION ACCEPTED",
     "TRI.ui.cantIntrusion": "Can't send intrussion. Resource at max value.",
 
-
+    "TRI.config.ChooseColor": "Choose Color",
     "TRI.config.bgImageName": "Background Image",
     "TRI.config.bgImageHint": "Select an Image to Use as Background",
     "TRI.config.chatBgImageName": "Chat Card Background Image",
