@@ -7,7 +7,7 @@ export default class DieRoller extends FormApplication {
 
     }
         
-    static get defaultOptions() {
+    /*static get defaultOptions() {
         let template=""
         if (game.user.isGM==true){
             template="systems/tricube/templates/dialogs/dice-rollerGM.html"
@@ -23,7 +23,28 @@ export default class DieRoller extends FormApplication {
             popout: false,
             buttons: [],
         });
-    }
+    }*/
+   static DEFAULT_OPTIONS = {
+        id: "die-roller",
+        title: "tricube.system.dieRoller",
+        template: "template",
+        classes: [ "tricube", "die-roller"],
+        popout: false,
+        buttons: [],
+   }
+   get template() {
+        let template=""
+        if (game.user.isGM==true){
+            template="systems/tricube/templates/dialogs/dice-rollerGM.html"
+        }
+        else{
+            template="systems/tricube/templates/dialogs/dice-roller.html"
+        }
+        return template
+   }
+   get title(){
+        return game.i18n.localize(this.options.title)
+   }
 
     getPos() {
         this.pos = game.user.getFlag("tricube", "dieRollerPosition");
